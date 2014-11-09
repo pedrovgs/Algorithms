@@ -28,8 +28,18 @@ public class BitsCounter {
    * In space terms, the complexity order is O(N) where N is the number of digits used to represent
    * the parameter using binary format. This cost is associated to the usage of an auxiliary String
    * to keep the binary result.
+   *
+   * To get the binary representation we are going to use a static method of Integer class:
+   * Integer.toBinaryString.
    */
   public int countBitsToOneBasedOnString(int n) {
-    return 0;
+    int result = 0;
+    String binaryNumber = Integer.toBinaryString(n);
+    for (char c : binaryNumber.toCharArray()) {
+      if (c == '1') {
+        result++;
+      }
+    }
+    return result;
   }
 }
