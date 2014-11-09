@@ -18,14 +18,18 @@ public class BitsCounterTest {
   }
 
   @Test public void numberOfBitsInTwoIsOne() {
-    assertEquals(2, bitsCounter.countBitsToOneBasedOnString(1));
+    assertEquals(1, bitsCounter.countBitsToOneBasedOnString(2));
   }
 
   @Test public void numberOfBitsInThreeIsTwo() {
-    assertEquals(3, bitsCounter.countBitsToOneBasedOnString(2));
+    assertEquals(2, bitsCounter.countBitsToOneBasedOnString(3));
   }
 
   @Test public void numberOfBitsInSevenIsThree() {
-    assertEquals(7, bitsCounter.countBitsToOneBasedOnString(3));
+    assertEquals(3, bitsCounter.countBitsToOneBasedOnString(7));
+  }
+
+  @Test public void numberOfBitsIn1990IsSeven() {
+    assertEquals(7, bitsCounter.countBitsToOneBasedOnString(1990));
   }
 }
