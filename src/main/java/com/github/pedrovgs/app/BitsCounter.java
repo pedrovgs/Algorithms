@@ -36,9 +36,7 @@ public class BitsCounter {
     int result = 0;
     String binaryNumber = Integer.toBinaryString(n);
     for (char c : binaryNumber.toCharArray()) {
-      if (c == '1') {
-        result++;
-      }
+      result += c == '1' ? 1 : 0;
     }
     return result;
   }
