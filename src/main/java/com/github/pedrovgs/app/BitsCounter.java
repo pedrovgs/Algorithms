@@ -41,7 +41,24 @@ public class BitsCounter {
     return result;
   }
 
+  /**
+   * This implementation is based on binary operators. Instead of transform an integer to binary we
+   * are going to use "&" - AND operator - and ">>" - BINARY RIGHT SHIFT OPERATOR - to iterate over
+   * the integer passed as parameter checking if the bit at the first position is one or zero.
+   *
+   * With this implementation we are going to reduce the execution time two times compared with the
+   * previous solution. The complexity order is still O(N) where N is the number of digits of the
+   * parameter using a binary representation but the execution time is now quite shorter.
+   *
+   * In space terms, O(1) is the complexity order of this algorithm. We are just using an integer
+   * to keep the count of digits to one in binary.
+   */
   public int countBitsToOneBasedOnBinaryOperators(int n) {
-    return 0;
+    int result = 0;
+    while (n > 0) {
+      result += (n & 1) == 1 ? 1 : 0;
+      n = n >> 1;
+    }
+    return result;
   }
 }
