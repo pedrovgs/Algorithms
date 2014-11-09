@@ -1,0 +1,35 @@
+# Built application files
+*.jar
+
+# Java class files
+*.class
+ 
+# Generated files
+bin/
+gen/
+classes/
+ 
+# Maven output folder
+target
+ 
+# Eclipse project files
+.classpath
+.project
+.metadata
+.settings
+ 
+# IntelliJ files
+.idea
+*.iml
+ 
+# OSX files
+.DS_Store
+ 
+# Windows files
+Thumbs.db
+ 
+# vi swap files
+*.swap
+ 
+# backup files
+*.bak
