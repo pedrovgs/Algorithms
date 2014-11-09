@@ -26,10 +26,30 @@ public class BitsCounterTest {
   }
 
   @Test public void numberOfBitsInSevenIsThree() {
-    assertEquals(3, bitsCounter.countBitsToOneBasedOnString(7));
+    assertEquals(3, bitsCounter.countBitsToOneBasedOnBinaryOperators(7));
   }
 
   @Test public void numberOfBitsIn1990IsSeven() {
-    assertEquals(7, bitsCounter.countBitsToOneBasedOnString(1990));
+    assertEquals(7, bitsCounter.countBitsToOneBasedOnBinaryOperators(1990));
+  }
+
+  @Test public void numberOfBitsInOneIsOneBasedOnBinaryOperator() {
+    assertEquals(1, bitsCounter.countBitsToOneBasedOnBinaryOperators(1));
+  }
+
+  @Test public void numberOfBitsInTwoIsOneBasedOnBinaryOperator() {
+    assertEquals(1, bitsCounter.countBitsToOneBasedOnBinaryOperators(2));
+  }
+
+  @Test public void numberOfBitsInThreeIsTwoBasedOnBinaryOperator() {
+    assertEquals(2, bitsCounter.countBitsToOneBasedOnBinaryOperators(3));
+  }
+
+  @Test public void numberOfBitsInSevenIsThreeBasedOnBinaryOperator() {
+    assertEquals(3, bitsCounter.countBitsToOneBasedOnBinaryOperators(7));
+  }
+
+  @Test public void numberOfBitsIn1990IsSevenBasedOnBinaryOperator() {
+    assertEquals(7, bitsCounter.countBitsToOneBasedOnBinaryOperators(1990));
   }
 }

@@ -40,4 +40,8 @@ public class BitsCounter {
     }
     return result;
   }
+
+  public int countBitsToOneBasedOnBinaryOperators(int n) {
+    return 0;
+  }
 }
