@@ -24,6 +24,12 @@ public class VectorScalarProductTest {
     vectorScalarProduct.calculateScalarProduct(v1, v2);
   }
 
+  @Test(expected = IllegalArgumentException.class) public void nullVectorsShouldThrowException() {
+    Vector v1 = new Vector(1, 2, 3, 4);
+
+    vectorScalarProduct.calculateScalarProduct(v1, null);
+  }
+
   @Test public void shouldReturnZeroIfOneVectorIsFullOfZeros() {
     Vector v1 = new Vector(1, 2, 3, 4);
     Vector v2 = new Vector(0, 0, 0, 0);
@@ -48,6 +54,6 @@ public class VectorScalarProductTest {
 
     int result = vectorScalarProduct.calculateScalarProduct(v1, v2);
 
-    assertEquals(-2, result);
+    assertEquals(-4, result);
   }
 }
