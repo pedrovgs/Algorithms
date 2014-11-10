@@ -5,6 +5,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * @author Pedro Vicente Gómez Sánchez.
+ */
 public class BitsCounterTest {
 
   private BitsCounter bitsCounter;
