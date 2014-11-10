@@ -1,4 +1,4 @@
-package com.github.pedrovgs.app;
+package com.github.pedrovgs.app.problem1;
 
 import org.junit.Before;
 import org.junit.Test;

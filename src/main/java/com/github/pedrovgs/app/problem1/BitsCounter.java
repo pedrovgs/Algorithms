@@ -1,4 +1,4 @@
-package com.github.pedrovgs.app;
+package com.github.pedrovgs.app.problem1;
 
 /**
  * Given a positive integer passed as parameter return the number of bits that parameter contains
