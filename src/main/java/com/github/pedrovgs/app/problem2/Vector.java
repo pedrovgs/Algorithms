@@ -24,4 +24,8 @@ public class Vector {
   public int getAt(int index) {
     return elements[index];
   }
+
+  public int size() {
+    return elements.length;
+  }
 }
