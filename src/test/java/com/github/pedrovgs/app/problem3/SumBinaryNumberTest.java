@@ -24,8 +24,8 @@ public class SumBinaryNumberTest {
   public void shouldNotAcceptMalformedBinaryNumbers() {
     String n1 = "10";
     String n2 = "2";
-    
-    sumBinaryNumbers.sumBinaryNumbersCheating(null, null);
+
+    sumBinaryNumbers.sumBinaryNumbersCheating(n1, n2);
   }
 
   @Test public void zeroPlusZeroEqualsZero() {
