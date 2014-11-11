@@ -74,4 +74,61 @@ public class SumBinaryNumbers {
     }
     return value;
   }
+
+  /**
+   * This solution is the faster I've found. It's similar to how a human sum two binary numbers.
+   *
+   * The complexity order of this algorithm is O(N) where N is the number of digits of the biggest
+   * binary number. This is the faster implementation because we are not parsing data from binary
+   * to integer and then from integer to binary.
+   *
+   * To solve this problem is needed go through the String from right to left, and take always
+   * into account the accumulated value of the sum.
+   */
+  public String sumBinaryNumbersBasedOnCount(String n1, String n2) {
+    if (n1 == null || n2 == null) {
+      throw new IllegalArgumentException("n1 and n2 parameters can't be null");
+    }
+
+    StringBuilder result = new StringBuilder();
+    int lengthVal1 = n1.length();
+    int lengthVal2 = n2.length();
+    int length = Math.max(lengthVal1, lengthVal2);
+    int acc = 0;
+    for (int i = 0; i < length; i++) {
+      //This is a beautiful trick to avoid IndexOutOfBoundExceptions.
+      char c1 = i >= lengthVal1 ? '0' : n1.charAt(lengthVal1 - i - 1);
+      char c2 = i >= lengthVal2 ? '0' : n2.charAt(lengthVal2 - i - 1);
+
+      //Check every different combination taking into account the accumulated value.
+      if (c1 == '0' && c2 == '0') {
+        if (acc == 0) {
+          result.append(0);
+        } else {
+          result.append(1);
+        }
+        acc = 0;
+      } else if (c1 == '0' && c2 == '1' || c1 == '1' && c2 == '0') {
+        if (acc == 0) {
+          result.append(1);
+          acc = 0;
+        } else {
+          result.append(0);
+          acc = 1;
+        }
+      } else if (c1 == '1' && c2 == '1') {
+        if (acc == 0) {
+          result.append(0);
+        } else {
+          result.append(1);
+        }
+        acc = 1;
+      } else {
+        throw new IllegalArgumentException(
+            "Error parsing input data, review your parameters, should be a valid binary number!");
+      }
+    }
+    result.append(acc);
+    return result.reverse().toString();
+  }
 }
