@@ -34,4 +34,44 @@ public class SumBinaryNumbers {
     int result = number1 + number2;
     return Integer.toBinaryString(result);
   }
+
+  /**
+   * To improve the execution time of the previous algorithm we are going to  use how an integer is
+   * represented in binary. We are going to go through the binary number calculating the number
+   * value and at the same time getting the result. This solution is based on the binary number
+   * structure where 101 = 1*2^2 + 0*2^1 + 1*2^0 = 5. With this solution we are not going to use
+   * Integer.parseInt(..) method to parse input data.
+   *
+   * The complexity order of this solution is O(N) in time terms where N is the number of digits in
+   * the binary number. Is the same complexity order we had, but the execution time is lower.
+   *
+   * With this solution we are still using 'Integer.toBinaryString(result)' to get the binary
+   * representation.
+   */
+  public String sumBinaryNumbersBasedOnPowersOfTwo(String n1, String n2) {
+    if (n1 == null || n2 == null) {
+      throw new IllegalArgumentException("n1 and n2 parameters can't be null");
+    }
+
+    int result = 0;
+    int length = Math.max(n1.length(), n2.length());
+    for (int i = 0; i < length; i++) {
+      result += getValueAt(n1, i) * Math.pow(2, length - i - 1);
+      result += getValueAt(n2, i) * Math.pow(2, length - i - 1);
+    }
+    return Integer.toBinaryString(result);
+  }
+
+  /**
+   * We are going to subtract 48 to the char to get the number value from the String. This is
+   * going to work because the char set we are using is ASCII.
+   */
+  private static int getValueAt(String binaryNumber, int index) {
+    int value = binaryNumber.charAt(index) - 48;
+    if (value < 0 || value > 1) {
+      throw new IllegalArgumentException(
+          "Error parsing input data, review your parameters, should be a valid binary number!");
+    }
+    return value;
+  }
 }

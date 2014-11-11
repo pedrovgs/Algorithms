@@ -54,4 +54,44 @@ public class SumBinaryNumberTest {
 
     assertEquals("1100", result);
   }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptNullInputsBasedOnPowersOfTwo() {
+    sumBinaryNumbers.sumBinaryNumbersBasedOnPowersOfTwo(null, null);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptMalformedBinaryNumbersBasedOnPowersOfTwo() {
+    String n1 = "10";
+    String n2 = "2";
+
+    sumBinaryNumbers.sumBinaryNumbersBasedOnPowersOfTwo(n1, n2);
+  }
+
+  @Test public void zeroPlusZeroEqualsZeroBasedOnPowersOfTwo() {
+    String n1 = "0";
+    String n2 = "0";
+
+    String result = sumBinaryNumbers.sumBinaryNumbersBasedOnPowersOfTwo(n1, n2);
+
+    assertEquals("0", result);
+  }
+
+  @Test public void zeroPlusTwoEqualsTwoBasedOnPowersOfTwo() {
+    String n1 = "00";
+    String n2 = "10";
+
+    String result = sumBinaryNumbers.sumBinaryNumbersBasedOnPowersOfTwo(n1, n2);
+
+    assertEquals("10", result);
+  }
+
+  @Test public void fivePlusSevenEqualsTwelveBasedOnPowersOfTwo() {
+    String n1 = "101";
+    String n2 = "111";
+
+    String result = sumBinaryNumbers.sumBinaryNumbersBasedOnPowersOfTwo(n1, n2);
+
+    assertEquals("1100", result);
+  }
 }
