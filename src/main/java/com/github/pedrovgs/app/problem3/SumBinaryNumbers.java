@@ -9,7 +9,7 @@ package com.github.pedrovgs.app.problem3;
  */
 public class SumBinaryNumbers {
 
-  public String sumBinaryNumbers(String n1, String n2) {
+  public String sumBinaryNumbersCheating(String n1, String n2) {
     return n1;
   }
 }

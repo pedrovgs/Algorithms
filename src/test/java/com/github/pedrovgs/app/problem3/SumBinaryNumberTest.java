@@ -17,14 +17,22 @@ public class SumBinaryNumberTest {
   }
 
   @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullInputs() {
-    sumBinaryNumbers.sumBinaryNumbers(null, null);
+    sumBinaryNumbers.sumBinaryNumbersCheating(null, null);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptMalformedBinaryNumbers() {
+    String n1 = "10";
+    String n2 = "2";
+    
+    sumBinaryNumbers.sumBinaryNumbersCheating(null, null);
   }
 
   @Test public void zeroPlusZeroEqualsZero() {
     String n1 = "0";
     String n2 = "0";
 
-    String result = sumBinaryNumbers.sumBinaryNumbers(n1, n2);
+    String result = sumBinaryNumbers.sumBinaryNumbersCheating(n1, n2);
 
     assertEquals(0, result);
   }
@@ -33,7 +41,7 @@ public class SumBinaryNumberTest {
     String n1 = "0";
     String n2 = "10";
 
-    String result = sumBinaryNumbers.sumBinaryNumbers(n1, n2);
+    String result = sumBinaryNumbers.sumBinaryNumbersCheating(n1, n2);
 
     assertEquals("10", result);
   }
@@ -42,7 +50,7 @@ public class SumBinaryNumberTest {
     String n1 = "101";
     String n2 = "111";
 
-    String result = sumBinaryNumbers.sumBinaryNumbers(n1, n2);
+    String result = sumBinaryNumbers.sumBinaryNumbersCheating(n1, n2);
 
     assertEquals("1100", result);
   }
