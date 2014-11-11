@@ -34,7 +34,7 @@ public class SumBinaryNumberTest {
 
     String result = sumBinaryNumbers.sumBinaryNumbersCheating(n1, n2);
 
-    assertEquals(0, result);
+    assertEquals("0", result);
   }
 
   @Test public void zeroPlusTwoEqualsTwo() {
