@@ -34,19 +34,19 @@ public class SquareRootTest {
   }
 
   @Test public void squareRootOfFourEqualsToTwo() {
-    float result = squareRoot.calculateSquareRoot(4);
+    float result = squareRoot.calculateSquareRootIterative(4);
 
     assertEquals(2, result, DELTA);
   }
 
   @Test public void squareRootOfNineEqualsToThree() {
-    float result = squareRoot.calculateSquareRoot(9);
+    float result = squareRoot.calculateSquareRootIterative(9);
 
     assertEquals(3, result, DELTA);
   }
 
   @Test public void shouldCalculateNonPerfectSquares() {
-    float result = squareRoot.calculateSquareRoot(7);
+    float result = squareRoot.calculateSquareRootIterative(7);
 
     assertEquals(2.64575f, result, DELTA);
   }

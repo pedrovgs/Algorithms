@@ -22,7 +22,49 @@ package com.github.pedrovgs.app.problem4;
  */
 public class SquareRoot {
 
-  public float calculateSquareRoot(int n) {
-    return 0;
+  private static final double DELTA = 0.1;
+
+  /**
+   * Solution implemented to calculate the square root of a given number based on an iterative
+   * algorithm.
+   *
+   * First, we are going to find the first number witch square is greater than the number. Once we
+   * have that number we are going to apply a binary search between candidate and candidate +1.
+   *
+   * The complexity order in space terms of this algorithm is O(1) because we are not using any
+   * additional data structure. The complexity order in time terms is more difficult to calculate
+   * O(sqrt(N)) + O(binarySearch) = O(sqrt(N)) the binary search complexity order depends on the
+   * number of decimals the solution contains.
+   */
+  public float calculateSquareRootIterative(int number) {
+    //Search first candidate
+    float candidate = 1f;
+    while (candidate * candidate <= number) {
+      candidate++;
+    }
+    candidate--;
+    if (isGoodResultForSqrt(number, candidate * candidate)) {
+      return candidate;
+    }
+
+    //Apply binary search.
+    float top = candidate + 1;
+    float bottom = candidate;
+    float newCandidate = (top + bottom) / 2;
+    float result = newCandidate * newCandidate;
+    while (!isGoodResultForSqrt(number, result)) {
+      if (result > number) {
+        top -= 0.1f;
+      } else {
+        bottom -= 0.1f;
+      }
+      newCandidate = (top + bottom) / 2;
+      result = newCandidate * newCandidate;
+    }
+    return Math.abs(newCandidate);
+  }
+
+  private static boolean isGoodResultForSqrt(float number, float result) {
+    return Math.abs(result - number) < DELTA;
   }
 }
