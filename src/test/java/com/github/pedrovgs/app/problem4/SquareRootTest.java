@@ -39,14 +39,32 @@ public class SquareRootTest {
     assertEquals(2, result, DELTA);
   }
 
-  @Test public void squareRootOfNineEqualsToThree() {
+  @Test public void squareRootOfNineEqualsToThreeIterative() {
     float result = squareRoot.calculateSquareRootIterative(9);
 
     assertEquals(3, result, DELTA);
   }
 
-  @Test public void shouldCalculateNonPerfectSquares() {
+  @Test public void shouldCalculateNonPerfectSquaresIterative() {
     float result = squareRoot.calculateSquareRootIterative(7);
+
+    assertEquals(2.64575f, result, DELTA);
+  }
+
+  @Test public void squareRootOfFourEqualsToTwoRecursiveIterative() {
+    float result = squareRoot.calculateSquareRootRecursive(4);
+
+    assertEquals(2, result, DELTA);
+  }
+
+  @Test public void squareRootOfNineEqualsToThreeRecursive() {
+    float result = squareRoot.calculateSquareRootRecursive(9);
+
+    assertEquals(3, result, DELTA);
+  }
+
+  @Test public void shouldCalculateNonPerfectSquaresRecursive() {
+    float result = squareRoot.calculateSquareRootRecursive(7);
 
     assertEquals(2.64575f, result, DELTA);
   }

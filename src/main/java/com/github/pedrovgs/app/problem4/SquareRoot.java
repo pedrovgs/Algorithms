@@ -64,6 +64,27 @@ public class SquareRoot {
     return Math.abs(newCandidate);
   }
 
+  /**
+   * Tail recursive approach to resolve this problem. This algorithm is based on a binary search,
+   * as
+   * the previous one, but implemented using a tail recursive approach. In space terms, the
+   * complexity order of this solution is O(1) and in time terms is O(log(N)), similar to the other
+   * implementation.
+   *
+   * This public method uses a private method to hide the algorithm implementation.
+   */
+  public float calculateSquareRootRecursive(int number) {
+    return sqrtRecursiveInner(number, 0, number);
+  }
+
+  private static float sqrtRecursiveInner(float n, float low, float high) {
+    float sqrt = (low + high) / 2;
+    float diff = sqrt * sqrt - n;
+    if (diff > DELTA) return sqrtRecursiveInner(n, low, sqrt);
+    if (-diff > DELTA) return sqrtRecursiveInner(n, sqrt, high);
+    return sqrt;
+  }
+
   private static boolean isGoodResultForSqrt(float number, float result) {
     return Math.abs(result - number) < DELTA;
   }
