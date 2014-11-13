@@ -38,14 +38,14 @@ public class DivideUsingSubtractionTest {
     int dividend = 100;
     int divider = 0;
 
-    divideUsingSubtraction.divide(dividend, divider);
+    divideUsingSubtraction.divideIterative(dividend, divider);
   }
 
   @Test public void fourDividedByTwoEqualsToTwo() {
     int dividend = 4;
     int divider = 2;
 
-    float result = divideUsingSubtraction.divide(dividend, divider);
+    float result = divideUsingSubtraction.divideIterative(dividend, divider);
 
     assertEquals(2, result, DELTA);
   }
@@ -54,7 +54,7 @@ public class DivideUsingSubtractionTest {
     int dividend = 5;
     int divider = 2;
 
-    float result = divideUsingSubtraction.divide(dividend, divider);
+    float result = divideUsingSubtraction.divideIterative(dividend, divider);
 
     assertEquals(2.5, result, DELTA);
   }
@@ -63,7 +63,7 @@ public class DivideUsingSubtractionTest {
     int dividend = 60;
     int divider = 12;
 
-    float result = divideUsingSubtraction.divide(dividend, divider);
+    float result = divideUsingSubtraction.divideIterative(dividend, divider);
 
     assertEquals(5, result, DELTA);
   }

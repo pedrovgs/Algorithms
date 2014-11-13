@@ -22,7 +22,27 @@ package com.github.pedrovgs.app.problem5;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class DivideUsingSubtraction {
-  public float divide(int dividend, int divider) {
-    return 0;
+
+  /**
+   * This algorithm is based on the mathematical property related with the division where a
+   * division es a continuous subtraction.
+   *
+   * In space terms, the complexity of this algorithm is O(1) because we are not using any
+   * additional data structure. In time terms, the complexity of this algorithm is O(N) where N is
+   * the number of times you can subtract the divider to the dividend.
+   */
+  public float divideIterative(int dividend, int divider) {
+    if (divider == 0) {
+      throw new IllegalArgumentException(
+          "You can't divide using 0 as divider. That operation is not defined");
+    }
+    float result = 0;
+    while (dividend > divider) {
+      dividend -= divider;
+      result++;
+    }
+    float decimalPart = (float) dividend / (float) divider;
+    result += decimalPart;
+    return result;
   }
 }
