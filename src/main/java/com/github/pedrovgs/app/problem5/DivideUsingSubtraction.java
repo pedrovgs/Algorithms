@@ -45,4 +45,25 @@ public class DivideUsingSubtraction {
     result += decimalPart;
     return result;
   }
+
+  /**
+   * Recursive version of the previous algorithm .The complexity order in space and memory terms is
+   * the same than the iterative version. However this algorithm is more expensive in computation
+   * terms because recursion is going to add a new frame to the stack every time a recursive call
+   * is performed. Review this algorithm and take into account this algorithm is not tail
+   * recursive.
+   */
+  public float divideRecursive(int dividend, int divider) {
+    if (divider == 0) {
+      throw new IllegalArgumentException(
+          "You can't divide using 0 as divider. That operation is not defined");
+    }
+    if (dividend == 0) {
+      return 0f;
+    } else if (dividend < divider) {
+      return (float) dividend / (float) divider;
+    } else {
+      return 1f + divideRecursive(dividend - divider, divider);
+    }
+  }
 }
