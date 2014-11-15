@@ -18,7 +18,7 @@ package com.github.pedrovgs.app.problem6;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 /**
  * @author Pedro Vicente Gómez Sánchez.
@@ -42,7 +42,7 @@ public class MergeSortedArraysTest {
     int[] result = mergeSortedArrays.merge(a1, a2);
 
     int[] expectedArray = { 1, 2, 3, 4, 5, 7, 8, 9 };
-    assertEquals(expectedArray, result);
+    assertArrayEquals(expectedArray, result);
   }
 
   @Test public void shouldMergeArraysWithCollisions() {
@@ -51,7 +51,7 @@ public class MergeSortedArraysTest {
 
     int[] result = mergeSortedArrays.merge(a1, a2);
 
-    int[] expectedArray = { 1, 2, 3, 4, 5, 7, 9, 10, 11 };
-    assertEquals(expectedArray, result);
+    int[] expectedArray = { 1, 2, 3, 4, 5, 6, 7, 9, 10, 11 };
+    assertArrayEquals(expectedArray, result);
   }
 }
