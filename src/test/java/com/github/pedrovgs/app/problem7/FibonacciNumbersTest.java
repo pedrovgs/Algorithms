@@ -31,15 +31,16 @@ public class FibonacciNumbersTest {
     fibonacciNumbers = new FibonacciNumbers();
   }
 
-  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNegativeValues() {
-    fibonacciNumbers.get(-1);
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptNegativeValuesRecursive() {
+    fibonacciNumbers.getRecursive(-1);
   }
 
-  @Test public void fourthNumberInFibonacciSequenceIsThree() {
-    assertEquals(3, fibonacciNumbers.get(4));
+  @Test public void fourthNumberInFibonacciSequenceIsThreeRecursive() {
+    assertEquals(5, fibonacciNumbers.getRecursive(4));
   }
 
-  @Test public void eleventhNumberInFibonacciSequenceIs() {
-    assertEquals(89, fibonacciNumbers.get(11));
+  @Test public void eleventhNumberInFibonacciSequenceIsRecursive() {
+    assertEquals(144, fibonacciNumbers.getRecursive(11));
   }
 }

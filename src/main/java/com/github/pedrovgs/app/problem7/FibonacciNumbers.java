@@ -33,7 +33,22 @@ package com.github.pedrovgs.app.problem7;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class FibonacciNumbers {
-  public int get(int n) {
-    return -1;
+
+  /**
+   * Recursive solution based on Fibonacci sequence definition. F(N) = F(N-1) + F(N-2).
+   *
+   * The complexity order of this algorithm is O(N) where N is integer used as parameter. In time
+   * terms, the complexity order of this algorithm is O(1) because we are not using any auxiliary
+   * data structure to solve this problem.
+   */
+  public int getRecursive(int n) {
+    if (n < 0) {
+      throw new IllegalArgumentException("You can't use negative values as parameter.");
+    }
+    if (n == 0 || n == 1) {
+      return 1;
+    } else {
+      return getRecursive(n - 1) + getRecursive(n - 2);
+    }
   }
 }
