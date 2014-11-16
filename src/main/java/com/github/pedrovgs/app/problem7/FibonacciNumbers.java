@@ -74,4 +74,32 @@ public class FibonacciNumbers {
     }
     return element;
   }
+
+  private static int[] elements = new int[1000];
+
+  /**
+   * This version of the recursive algorithm is better in performance terms because we are caching
+   * every calculated element to avoid every branch of the recursion the same values. Is faster
+   * because one branch is going to take the already calculated value from other branches and when
+   * you are going to calculate the 11th value the only thing you have to calculate is to take
+   * previous values from the array instead of iterate from nth to 1 and sum every value. I've used
+   * a dynamic programming technique.
+   *
+   * The problem with this algorithm is related with the space complexity which is much bigger than
+   * the one used for the previous algorithms. In this case, we have O(N) because we are using an
+   * additional data structure to store partial results.
+   */
+  public int getRecursiveWithCatching(int n) {
+    if (n < 0) {
+      throw new IllegalArgumentException("You can't use negative values as parameter.");
+    }
+    
+    if (n <= 1) {
+      return 1;
+    } else if (elements[n] != 0) {
+      return elements[n];
+    }
+    elements[n] = getRecursiveWithCatching(n - 1) + getRecursiveWithCatching(n - 2);
+    return elements[n];
+  }
 }
