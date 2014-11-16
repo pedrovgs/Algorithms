@@ -51,4 +51,27 @@ public class FibonacciNumbers {
       return getRecursive(n - 1) + getRecursive(n - 2);
     }
   }
+
+  /**
+   * Iterative approach. The complexity order in this algorithm is O(N) where N is the integer used
+   * as parameter. In space terms, the complexity order of this algorithm is again O(1).
+   */
+  public int getIterative(int n) {
+    if (n < 0) {
+      throw new IllegalArgumentException("You can't use negative values as parameter.");
+    }
+
+    if (n <= 1) {
+      return 1;
+    }
+    int previous = 1;
+    int current = 1;
+    int element = 0;
+    for (int i = 2; i <= n; i++) {
+      element = previous + current;
+      previous = current;
+      current = element;
+    }
+    return element;
+  }
 }
