@@ -26,5 +26,8 @@ package com.github.pedrovgs.app.problem8;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class SplitArray {
-  
+
+  public void split(int[] array) {
+
+  }
 }
