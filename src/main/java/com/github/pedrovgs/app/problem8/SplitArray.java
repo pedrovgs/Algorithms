@@ -60,7 +60,7 @@ public class SplitArray {
    * the number of elements in the array. In space terms is O(1) because we are not using any
    * additional data structure.
    */
-  public void splitSwapping(int[] array) {
+  public void splitSwappingIterative(int[] array) {
     if (array == null) {
       throw new IllegalArgumentException("Array passed as parameter can't be null.");
     }
@@ -72,11 +72,49 @@ public class SplitArray {
       boolean shouldChangeRight = array[right] < 0;
       if (shouldChangeLeft && shouldChangeRight) {
         swap(array, left, right);
+        left++;
+        right--;
       } else {
         if (!shouldChangeLeft) {
           left++;
         } else if (!shouldChangeRight) {
           right--;
+        }
+      }
+    }
+  }
+
+  /**
+   * Tail recursive solution for this problem. This implementation has the same complexity order
+   * O(N) and the only change is how we are going to iterate over the array, with the previous
+   * implementation we are using a classic iterative approach and with this solution we are using
+   * recursion to iterate. In space terms is O(1) because we are not using any
+   * additional data structure.
+   */
+  public void splitSwappingRecursive(int[] array) {
+    if (array == null) {
+      throw new IllegalArgumentException("Array passed as parameter can't be null.");
+    }
+
+    if (array.length == 0) {
+      return;
+    }
+
+    splitSwappingRecursiveInner(array, 0, array.length - 1);
+  }
+
+  private void splitSwappingRecursiveInner(int[] array, int left, int right) {
+    if (left < right) {
+      boolean shouldChangeLeft = array[left] >= 0;
+      boolean shouldChangeRight = array[right] < 0;
+      if (shouldChangeLeft && shouldChangeRight) {
+        swap(array, left, right);
+        splitSwappingRecursiveInner(array, left + 1, right - 1);
+      } else {
+        if (!shouldChangeLeft) {
+          splitSwappingRecursiveInner(array, left + 1, right);
+        } else if (!shouldChangeRight) {
+          splitSwappingRecursiveInner(array, left, right - 1);
         }
       }
     }

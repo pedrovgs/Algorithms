@@ -68,42 +68,77 @@ public class SplitArrayTest {
   }
 
 
-  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullArraysWithTwoPointers() {
-    splitArray.splitSwapping(null);
+  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullArraysWithTwoPointersIterative() {
+    splitArray.splitSwappingIterative(null);
   }
 
-  @Test public void shouldSupportEmptyArraysWithTwoPointers() {
+  @Test public void shouldSupportEmptyArraysWithTwoPointersIterative() {
     int[] array = new int[0];
 
-    splitArray.splitSwapping(array);
+    splitArray.splitSwappingIterative(array);
 
     assertNegativeElementsAreBeforePositiveOnes(array);
   }
 
-  @Test public void shouldWorkWithAnArrayFullOfPositiveNumbersWithTwoPointers() {
+  @Test public void shouldWorkWithAnArrayFullOfPositiveNumbersWithTwoPointersIterative() {
     int[] array = { 1, 2, 1, 3, 4, 6 };
 
-    splitArray.splitSwapping(array);
+    splitArray.splitSwappingIterative(array);
 
     assertNegativeElementsAreBeforePositiveOnes(array);
   }
 
-  @Test public void shouldWorkWithAnArrayFullOfNegativeNumbersWithTwoPointers() {
+  @Test public void shouldWorkWithAnArrayFullOfNegativeNumbersWithTwoPointersIterative() {
     int[] array = { 1, 2, 1, 3, 4, 6 };
 
-    splitArray.splitSwapping(array);
+    splitArray.splitSwappingIterative(array);
 
     assertNegativeElementsAreBeforePositiveOnes(array);
   }
 
-  @Test public void shouldMoveNegativeElementsToTheLeftWithTwoPointers() {
+  @Test public void shouldMoveNegativeElementsToTheLeftWithTwoPointersIterative() {
     int[] array = { 1, 2, -1, -3, 4, -6 };
 
-    splitArray.splitSwapping(array);
+    splitArray.splitSwappingIterative(array);
 
     assertNegativeElementsAreBeforePositiveOnes(array);
   }
 
+  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullArraysWithTwoPointersRecursive() {
+    splitArray.splitSwappingRecursive(null);
+  }
+
+  @Test public void shouldSupportEmptyArraysWithTwoPointersRecursive() {
+    int[] array = new int[0];
+
+    splitArray.splitSwappingRecursive(array);
+
+    assertNegativeElementsAreBeforePositiveOnes(array);
+  }
+
+  @Test public void shouldWorkWithAnArrayFullOfPositiveNumbersWithTwoPointersRecursive() {
+    int[] array = { 1, 2, 1, 3, 4, 6 };
+
+    splitArray.splitSwappingRecursive(array);
+
+    assertNegativeElementsAreBeforePositiveOnes(array);
+  }
+
+  @Test public void shouldWorkWithAnArrayFullOfNegativeNumbersWithTwoPointersRecursive() {
+    int[] array = { 1, 2, 1, 3, 4, 6 };
+
+    splitArray.splitSwappingRecursive(array);
+
+    assertNegativeElementsAreBeforePositiveOnes(array);
+  }
+
+  @Test public void shouldMoveNegativeElementsToTheLeftWithTwoPointersRecursive() {
+    int[] array = { 1, 2, -1, -3, 4, -6 };
+
+    splitArray.splitSwappingRecursive(array);
+
+    assertNegativeElementsAreBeforePositiveOnes(array);
+  }
 
   private void assertNegativeElementsAreBeforePositiveOnes(int[] array) {
     if (array.length != 0) {
