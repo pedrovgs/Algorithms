@@ -33,7 +33,8 @@ public class SplitArray {
    *
    * The complexity order in this O(N^2) where N is number of elements in the array. Is even worst
    * than the bubble sorting algorithm because to check if we have to swap any element is really
-   * expensive.
+   * expensive. In time terms, the complexity order of this algorithm is O(1) because we are not
+   * using any additional data structure.
    */
   public void splitSorting(int[] array) {
     if (array == null) {
@@ -47,6 +48,35 @@ public class SplitArray {
         if (array[j] > array[j + 1]) {
           swap(array, j, j + 1);
           flag = true;
+        }
+      }
+    }
+  }
+
+  /**
+   * This solution for the problem is much faster than the previous one. Instead of use a sorting
+   * algorithm we are going to go over the array from left to right using two pointers and swapping
+   * elements if needed. The complexity order of this algorithm in time terms is O(N) where N is
+   * the number of elements in the array. In space terms is O(1) because we are not using any
+   * additional data structure.
+   */
+  public void splitSwapping(int[] array) {
+    if (array == null) {
+      throw new IllegalArgumentException("Array passed as parameter can't be null.");
+    }
+
+    int left = 0;
+    int right = array.length - 1;
+    while (left < right) {
+      boolean shouldChangeLeft = array[left] >= 0;
+      boolean shouldChangeRight = array[right] < 0;
+      if (shouldChangeLeft && shouldChangeRight) {
+        swap(array, left, right);
+      } else {
+        if (!shouldChangeLeft) {
+          left++;
+        } else if (!shouldChangeRight) {
+          right--;
         }
       }
     }

@@ -67,6 +67,44 @@ public class SplitArrayTest {
     assertNegativeElementsAreBeforePositiveOnes(array);
   }
 
+
+  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullArraysWithTwoPointers() {
+    splitArray.splitSwapping(null);
+  }
+
+  @Test public void shouldSupportEmptyArraysWithTwoPointers() {
+    int[] array = new int[0];
+
+    splitArray.splitSwapping(array);
+
+    assertNegativeElementsAreBeforePositiveOnes(array);
+  }
+
+  @Test public void shouldWorkWithAnArrayFullOfPositiveNumbersWithTwoPointers() {
+    int[] array = { 1, 2, 1, 3, 4, 6 };
+
+    splitArray.splitSwapping(array);
+
+    assertNegativeElementsAreBeforePositiveOnes(array);
+  }
+
+  @Test public void shouldWorkWithAnArrayFullOfNegativeNumbersWithTwoPointers() {
+    int[] array = { 1, 2, 1, 3, 4, 6 };
+
+    splitArray.splitSwapping(array);
+
+    assertNegativeElementsAreBeforePositiveOnes(array);
+  }
+
+  @Test public void shouldMoveNegativeElementsToTheLeftWithTwoPointers() {
+    int[] array = { 1, 2, -1, -3, 4, -6 };
+
+    splitArray.splitSwapping(array);
+
+    assertNegativeElementsAreBeforePositiveOnes(array);
+  }
+
+
   private void assertNegativeElementsAreBeforePositiveOnes(int[] array) {
     if (array.length != 0) {
       boolean foundPositiveNumbers = false;
