@@ -27,7 +27,34 @@ package com.github.pedrovgs.app.problem8;
  */
 public class SplitArray {
 
-  public void split(int[] array) {
+  /**
+   * First solution implemented for this problem. It's is based on a sorting algorithm called
+   * "Bubble Sorting Algorithm".
+   *
+   * The complexity order in this O(N^2) where N is number of elements in the array. Is even worst
+   * than the bubble sorting algorithm because to check if we have to swap any element is really
+   * expensive.
+   */
+  public void splitSorting(int[] array) {
+    if (array == null) {
+      throw new IllegalArgumentException("Array passed as parameter can't be null.");
+    }
 
+    boolean flag = true;
+    while (flag) {
+      flag = false;
+      for (int j = 0; j < array.length - 1; j++) {
+        if (array[j] > array[j + 1]) {
+          swap(array, j, j + 1);
+          flag = true;
+        }
+      }
+    }
+  }
+
+  private void swap(int[] array, int left, int right) {
+    int aux = array[right];
+    array[right] = array[left];
+    array[left] = aux;
   }
 }

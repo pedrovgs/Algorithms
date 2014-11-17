@@ -31,38 +31,38 @@ public class SplitArrayTest {
     splitArray = new SplitArray();
   }
 
-  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullArrays() {
-    splitArray.split(null);
+  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullArraysSorting() {
+    splitArray.splitSorting(null);
   }
 
-  @Test public void shouldSupportEmptyArrays() {
+  @Test public void shouldSupportEmptyArraysSorting() {
     int[] array = new int[0];
 
-    splitArray.split(array);
+    splitArray.splitSorting(array);
 
     assertNegativeElementsAreBeforePositiveOnes(array);
   }
 
-  @Test public void shouldWorkWithAnArrayFullOfPositiveNumbers() {
+  @Test public void shouldWorkWithAnArrayFullOfPositiveNumbersSorting() {
     int[] array = { 1, 2, 1, 3, 4, 6 };
 
-    splitArray.split(array);
+    splitArray.splitSorting(array);
 
     assertNegativeElementsAreBeforePositiveOnes(array);
   }
 
-  @Test public void shouldWorkWithAnArrayFullOfNegativeNumbers() {
+  @Test public void shouldWorkWithAnArrayFullOfNegativeNumbersSorting() {
     int[] array = { 1, 2, 1, 3, 4, 6 };
 
-    splitArray.split(array);
+    splitArray.splitSorting(array);
 
     assertNegativeElementsAreBeforePositiveOnes(array);
   }
 
-  @Test public void shouldMoveNegativeElementsToTheLeft() {
+  @Test public void shouldMoveNegativeElementsToTheLeftSorting() {
     int[] array = { 1, 2, -1, -3, 4, -6 };
 
-    splitArray.split(array);
+    splitArray.splitSorting(array);
 
     assertNegativeElementsAreBeforePositiveOnes(array);
   }
