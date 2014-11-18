@@ -52,6 +52,15 @@ public class SumBinaryNumberTest {
     assertEquals("0", result);
   }
 
+  @Test public void onePlusOneEqualsTwo() {
+    String n1 = "01";
+    String n2 = "01";
+
+    String result = sumBinaryNumbers.sumBinaryNumbersCheating(n1, n2);
+
+    assertEquals("10", result);
+  }
+
   @Test public void zeroPlusTwoEqualsTwo() {
     String n1 = "0";
     String n2 = "10";
@@ -92,6 +101,15 @@ public class SumBinaryNumberTest {
     assertEquals("0", result);
   }
 
+  @Test public void onePlusOneEqualsTwoBasedOnPowersOfTwo() {
+    String n1 = "01";
+    String n2 = "01";
+
+    String result = sumBinaryNumbers.sumBinaryNumbersBasedOnPowersOfTwo(n1, n2);
+
+    assertEquals("10", result);
+  }
+
   @Test public void zeroPlusTwoEqualsTwoBasedOnPowersOfTwo() {
     String n1 = "00";
     String n2 = "10";
@@ -130,6 +148,15 @@ public class SumBinaryNumberTest {
     String result = sumBinaryNumbers.sumBinaryNumbersBasedOnCount(n1, n2);
 
     assertEquals(Integer.parseInt("0", 2), Integer.parseInt(result, 2));
+  }
+
+  @Test public void onePlusOneEqualsTwoBasedOnCount() {
+    String n1 = "01";
+    String n2 = "01";
+
+    String result = sumBinaryNumbers.sumBinaryNumbersBasedOnCount(n1, n2);
+
+    assertEquals("010", result);
   }
 
   @Test public void zeroPlusTwoEqualsTwoBasedOnCount() {
