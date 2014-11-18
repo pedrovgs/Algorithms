@@ -33,23 +33,23 @@ public class FactorialTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void shouldNotCalculateFactorialOfNegativeIntegers() {
-    factorial.get(-1);
+    factorial.getIterative(-1);
   }
 
   @Test public void factorialOfZeroEqualsToOne() {
-    int result = factorial.get(0);
+    int result = factorial.getIterative(0);
 
     assertEquals(1, result);
   }
 
   @Test public void factorialOfFiveEqualsTo120() {
-    int result = factorial.get(5);
+    int result = factorial.getIterative(5);
 
     assertEquals(120, result);
   }
 
   @Test public void factorialOfSevenEqualsTo5040() {
-    int result = factorial.get(7);
+    int result = factorial.getIterative(7);
 
     assertEquals(5040, result);
   }

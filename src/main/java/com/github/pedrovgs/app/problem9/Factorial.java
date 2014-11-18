@@ -29,7 +29,22 @@ package com.github.pedrovgs.app.problem9;
  */
 public class Factorial {
 
-  public int get(int n) {
-    return 0;
+  /**
+   * Iterative solution for this problem. This version is based on the factorial definition
+   * described in the statement and the complexity order in time terms of this solution is O(N)
+   * where N is integer passed as argument. In space terms, the complexity order of this algorithm
+   * is O(1) because we are not using any additional data structure related to the integer passed
+   * as parameter.
+   */
+  public int getIterative(int n) {
+    if (n < 0) {
+      throw new IllegalArgumentException("Negative numbers factorial is not defined.");
+    }
+
+    int result = 1;
+    for (int i = n; i >= 2; i--) {
+      result *= i;
+    }
+    return result;
   }
 }
