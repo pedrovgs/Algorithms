@@ -47,4 +47,20 @@ public class Factorial {
     }
     return result;
   }
+
+  /**
+   * Recursive implementation of the previous algorithm. The complexity order in time and space
+   * terms is the same. Take into account that this implementation is not tail recursive.
+   */
+  public int getRecursive(int n) {
+    if (n < 0) {
+      throw new IllegalArgumentException("Negative numbers factorial is not defined.");
+    }
+
+    if (n == 0) {
+      return 1;
+    } else {
+      return n * getRecursive(n - 1);
+    }
+  }
 }
