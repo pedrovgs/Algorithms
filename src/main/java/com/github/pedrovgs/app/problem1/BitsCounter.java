@@ -26,9 +26,6 @@ package com.github.pedrovgs.app.problem1;
  * Input: 7. Output: 3. Binary representation 111.
  */
 public class BitsCounter {
-  public static void main(String[] args) {
-    System.out.println("Hello World!");
-  }
 
   /**
    * This implementation is based on Strings. Transforming an integer into the binary
