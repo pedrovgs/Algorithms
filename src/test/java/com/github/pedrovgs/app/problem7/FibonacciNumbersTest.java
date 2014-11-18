@@ -36,6 +36,10 @@ public class FibonacciNumbersTest {
     fibonacciNumbers.getRecursive(-1);
   }
 
+  @Test public void firstNumberInFibonacciSequenceIsThreeRecursive() {
+    assertEquals(1, fibonacciNumbers.getRecursive(1));
+  }
+
   @Test public void fourthNumberInFibonacciSequenceIsThreeRecursive() {
     assertEquals(5, fibonacciNumbers.getRecursive(4));
   }
@@ -46,27 +50,31 @@ public class FibonacciNumbersTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void shouldNotAcceptNegativeValuesIterative() {
-    fibonacciNumbers.getRecursive(-1);
+    fibonacciNumbers.getIterative(-1);
+  }
+
+  @Test public void firstNumberInFibonacciSequenceIsThreeIterative() {
+    assertEquals(1, fibonacciNumbers.getIterative(1));
   }
 
   @Test public void fourthNumberInFibonacciSequenceIsThreeIterative() {
-    assertEquals(5, fibonacciNumbers.getRecursive(4));
+    assertEquals(5, fibonacciNumbers.getIterative(4));
   }
 
   @Test public void eleventhNumberInFibonacciSequenceIsIterative() {
-    assertEquals(144, fibonacciNumbers.getRecursive(11));
+    assertEquals(144, fibonacciNumbers.getIterative(11));
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void shouldNotAcceptNegativeValuesIterativeWithCatching() {
+  public void shouldNotAcceptNegativeValuesRecursiveWithCatching() {
     fibonacciNumbers.getRecursiveWithCatching(-1);
   }
 
-  @Test public void fourthNumberInFibonacciSequenceIsThreeIterativeWithCatching() {
+  @Test public void fourthNumberInFibonacciSequenceIsThreeRecursiveWithCatching() {
     assertEquals(5, fibonacciNumbers.getRecursiveWithCatching(4));
   }
 
-  @Test public void eleventhNumberInFibonacciSequenceIsIterativeWithCatching() {
+  @Test public void eleventhNumberInFibonacciSequenceIsRecursiveWithCatching() {
     assertEquals(144, fibonacciNumbers.getRecursiveWithCatching(11));
   }
 }
