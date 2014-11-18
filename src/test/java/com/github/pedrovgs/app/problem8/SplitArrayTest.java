@@ -67,8 +67,16 @@ public class SplitArrayTest {
     assertNegativeElementsAreBeforePositiveOnes(array);
   }
 
+  @Test public void shouldMoveNegativeElementsToTheLeftWithWithMoreNegativeElementsSorting() {
+    int[] array = { 1, -2, -1, -3, 4, -6 };
 
-  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullArraysWithTwoPointersIterative() {
+    splitArray.splitSorting(array);
+
+    assertNegativeElementsAreBeforePositiveOnes(array);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptNullArraysWithTwoPointersIterative() {
     splitArray.splitSwappingIterative(null);
   }
 
@@ -104,7 +112,17 @@ public class SplitArrayTest {
     assertNegativeElementsAreBeforePositiveOnes(array);
   }
 
-  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullArraysWithTwoPointersRecursive() {
+  @Test
+  public void shouldMoveNegativeElementsToTheLeftWithWithMoreNegativeElementsTwoPointersIterative() {
+    int[] array = { 1, -2, -1, -3, 4, -6 };
+
+    splitArray.splitSwappingIterative(array);
+
+    assertNegativeElementsAreBeforePositiveOnes(array);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptNullArraysWithTwoPointersRecursive() {
     splitArray.splitSwappingRecursive(null);
   }
 
@@ -134,6 +152,15 @@ public class SplitArrayTest {
 
   @Test public void shouldMoveNegativeElementsToTheLeftWithTwoPointersRecursive() {
     int[] array = { 1, 2, -1, -3, 4, -6 };
+
+    splitArray.splitSwappingRecursive(array);
+
+    assertNegativeElementsAreBeforePositiveOnes(array);
+  }
+
+  @Test
+  public void shouldMoveNegativeElementsToTheLeftWithWithMoreNegativeElementsTwoPointersRecursive() {
+    int[] array = { 1, -2, -1, -3, 4, -6 };
 
     splitArray.splitSwappingRecursive(array);
 
