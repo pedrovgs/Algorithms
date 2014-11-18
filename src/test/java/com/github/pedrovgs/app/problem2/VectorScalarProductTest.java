@@ -45,6 +45,10 @@ public class VectorScalarProductTest {
     vectorScalarProduct.calculateScalarProduct(v1, null);
   }
 
+  @Test public void shoudlReturnZeroIfVectorsAreEmpty() {
+    assertEquals(0, vectorScalarProduct.calculateScalarProduct(new Vector(null), new Vector(null)));
+  }
+
   @Test public void shouldReturnZeroIfOneVectorIsFullOfZeros() {
     Vector v1 = new Vector(1, 2, 3, 4);
     Vector v2 = new Vector(0, 0, 0, 0);
