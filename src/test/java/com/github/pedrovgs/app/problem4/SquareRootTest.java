@@ -51,6 +51,12 @@ public class SquareRootTest {
     assertEquals(2.64575f, result, DELTA);
   }
 
+  @Test public void shouldCalculateSquaresOfTwoDigitsIterative() {
+    float result = squareRoot.calculateSquareRootIterative(12);
+
+    assertEquals(3.46410f, result, DELTA);
+  }
+
   @Test public void squareRootOfFourEqualsToTwoRecursiveIterative() {
     float result = squareRoot.calculateSquareRootRecursive(4);
 
@@ -67,5 +73,11 @@ public class SquareRootTest {
     float result = squareRoot.calculateSquareRootRecursive(7);
 
     assertEquals(2.64575f, result, DELTA);
+  }
+
+  @Test public void shouldCalculateSquaresOfTwoDigitsRecursive() {
+    float result = squareRoot.calculateSquareRootRecursive(12);
+
+    assertEquals(3.46410f, result, DELTA);
   }
 }
