@@ -76,4 +76,27 @@ public class FactorialTest {
 
     assertEquals(5040, result);
   }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotCalculateFactorialOfNegativeIntegersTailRecursive() {
+    factorial.getTailRecursive(-1);
+  }
+
+  @Test public void factorialOfZeroEqualsToOneTailRecursive() {
+    int result = factorial.getTailRecursive(0);
+
+    assertEquals(1, result);
+  }
+
+  @Test public void factorialOfFiveEqualsTo120TailRecursive() {
+    int result = factorial.getTailRecursive(5);
+
+    assertEquals(120, result);
+  }
+
+  @Test public void factorialOfSevenEqualsTo5040TailRecursive() {
+    int result = factorial.getTailRecursive(7);
+
+    assertEquals(5040, result);
+  }
 }

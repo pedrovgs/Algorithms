@@ -63,4 +63,24 @@ public class Factorial {
       return n * getRecursive(n - 1);
     }
   }
+
+  /**
+   * Tail recursive implementation of the previous algorithm. The complexity order in time and
+   * space terms is the same but the resources needed by the CPU to execute this method is lower
+   * because this implementation is tail recursive.
+   */
+  public int getTailRecursive(int n) {
+    if (n < 0) {
+      throw new IllegalArgumentException("Negative numbers factorial is not defined.");
+    }
+    return getTailRecursiveInner(n, 1);
+  }
+
+  private int getTailRecursiveInner(int n, int acc) {
+    if (n == 0) {
+      return acc;
+    } else {
+      return getTailRecursiveInner(n - 1, acc * n);
+    }
+  }
 }
