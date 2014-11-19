@@ -15,7 +15,11 @@
  */
 package com.github.pedrovgs.app.problem10;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -32,16 +36,48 @@ public class RemoveDuplicates {
   /**
    * Implementation based on Java Sets. To solve this algorithm we have used a Java HashSet and the
    * complexity order of this algorithm in time is O(N) where N is the number of elements in the
-   * input array. In space terms, the complexity order of this algorithm is also O(N).
+   * input array. In space terms, the complexity order of this algorithm is also O(N), because we
+   * are using an auxiliary data structure.
+   *
+   * This implementation is possible in O(N) because the complexity order of HashSets for
+   * insertions is O(1).
    */
   public Integer[] removeUsingSet(int[] numbers) {
     if (numbers == null) {
       throw new IllegalArgumentException("You can't pass a null array");
     }
+
     Set<Integer> uniqueElements = new HashSet<Integer>();
     for (int i : numbers) {
       uniqueElements.add(i);
     }
     return uniqueElements.toArray(new Integer[uniqueElements.size()]);
+  }
+
+  /**
+   * Slow implementation for this algorithm. First of all, sort the array using QuickSort algorithm
+   * and then, go through the array and add to a list just those consecutive elements that are
+   * different.
+   *
+   * The complexity order of this algorithm in space terms is O(N) where N is the number of
+   * elements in the input array. The complexity order in time terms is equals to the sorting
+   * algorithm, O( N log(N)).
+   */
+  public Integer[] removeUsingSorting(Integer[] array) {
+    if (array == null) {
+      throw new IllegalArgumentException("You can't pass a null array");
+    }
+    if (array.length == 1) {
+      return array;
+    }
+
+    Collections.sort(Arrays.asList(array));
+    List<Integer> result = new LinkedList<Integer>();
+    for (int i = 0; i < array.length - 1; i++) {
+      if (!array[i].equals(array[i + 1])) {
+        result.add(i);
+      }
+    }
+    return result.toArray(new Integer[result.size()]);
   }
 }
