@@ -23,4 +23,9 @@ package com.github.pedrovgs.app.problem11;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class IntToString {
+
+  public String transform(int number) {
+    return null;
+  }
+
 }
