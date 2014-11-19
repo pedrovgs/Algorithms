@@ -20,30 +20,30 @@ public class RemoveDuplicatesTest {
   }
 
   @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullArrays() {
-    removeDuplicates.remove(null);
+    removeDuplicates.removeUsingSet(null);
   }
 
   @Test public void shouldSupportEmptyArrays() {
     int[] array = new int[0];
 
-    int[] result = removeDuplicates.remove(array);
+    Integer[] result = removeDuplicates.removeUsingSet(array);
 
-    assertArrayEquals(new int[0], result);
+    assertArrayEquals(new Integer[0], result);
   }
 
   @Test public void shouldReturnAnArrayWithJustOneElementIfInputJustContainsOneElement() {
     int[] array = { 1 };
 
-    int[] result = removeDuplicates.remove(array);
+    Integer[] result = removeDuplicates.removeUsingSet(array);
 
-    int[] expected = { 1 };
+    Integer[] expected = { 1 };
     assertArrayEquals(expected, result);
   }
 
   @Test public void shouldSupportArraysWithoutDuplicatedElements() {
     int[] array = { 1, 2, 3 };
 
-    int[] result = removeDuplicates.remove(array);
+    Integer[] result = removeDuplicates.removeUsingSet(array);
 
     assertTrue(containsUniqueElements(result));
   }
@@ -51,7 +51,7 @@ public class RemoveDuplicatesTest {
   @Test public void shouldReturnAnArrayWithJustOneElementIfTheArrayIsFullOfTheSameElement() {
     int[] array = { 1, 1, 1, 1, 1 };
 
-    int[] result = removeDuplicates.remove(array);
+    Integer[] result = removeDuplicates.removeUsingSet(array);
 
     assertTrue(containsUniqueElements(result));
   }
@@ -59,7 +59,7 @@ public class RemoveDuplicatesTest {
   @Test public void shouldRemoveDuplicatesIfTheInputIsSorted() {
     int[] array = { 1, 2, 3, 3, 4, 4, 6, 6 };
 
-    int[] result = removeDuplicates.remove(array);
+    Integer[] result = removeDuplicates.removeUsingSet(array);
 
     assertTrue(containsUniqueElements(result));
   }
@@ -67,12 +67,12 @@ public class RemoveDuplicatesTest {
   @Test public void shouldRemoveDuplicatesIfTheInputIsNotSorted() {
     int[] array = { 1, 1, 5, 6, 2, 3 };
 
-    int[] result = removeDuplicates.remove(array);
+    Integer[] result = removeDuplicates.removeUsingSet(array);
 
     assertTrue(containsUniqueElements(result));
   }
 
-  private boolean containsUniqueElements(int[] result) {
+  private boolean containsUniqueElements(Integer[] result) {
     Set<Integer> elements = new HashSet<Integer>();
     for (int i : result) {
       if (elements.contains(i)) {

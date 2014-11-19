@@ -15,6 +15,9 @@
  */
 package com.github.pedrovgs.app.problem10;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Given an array full of integers, can you write a method returning other array without duplicated
  * elements? The elements order doesn't care. For example:
@@ -26,8 +29,19 @@ package com.github.pedrovgs.app.problem10;
  */
 public class RemoveDuplicates {
 
-  public int[] remove(int[] numbers) {
-
-    return numbers;
+  /**
+   * Implementation based on Java Sets. To solve this algorithm we have used a Java HashSet and the
+   * complexity order of this algorithm in time is O(N) where N is the number of elements in the
+   * input array. In space terms, the complexity order of this algorithm is also O(N).
+   */
+  public Integer[] removeUsingSet(int[] numbers) {
+    if (numbers == null) {
+      throw new IllegalArgumentException("You can't pass a null array");
+    }
+    Set<Integer> uniqueElements = new HashSet<Integer>();
+    for (int i : numbers) {
+      uniqueElements.add(i);
+    }
+    return uniqueElements.toArray(new Integer[uniqueElements.size()]);
   }
 }
