@@ -63,18 +63,18 @@ public class RemoveDuplicates {
    * elements in the input array. The complexity order in time terms is equals to the sorting
    * algorithm, O( N log(N)).
    */
-  public Integer[] removeUsingSorting(Integer[] array) {
-    if (array == null) {
+  public Integer[] removeUsingSorting(Integer[] numbers) {
+    if (numbers == null) {
       throw new IllegalArgumentException("You can't pass a null array");
     }
-    if (array.length == 1) {
-      return array;
+    if (numbers.length == 1) {
+      return numbers;
     }
 
-    Collections.sort(Arrays.asList(array));
+    Collections.sort(Arrays.asList(numbers));
     List<Integer> result = new LinkedList<Integer>();
-    for (int i = 0; i < array.length - 1; i++) {
-      if (!array[i].equals(array[i + 1])) {
+    for (int i = 0; i < numbers.length - 1; i++) {
+      if (!numbers[i].equals(numbers[i + 1])) {
         result.add(i);
       }
     }
