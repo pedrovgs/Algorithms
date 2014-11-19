@@ -25,4 +25,9 @@ package com.github.pedrovgs.app.problem10;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class RemoveDuplicates {
+
+  public int[] remove(int[] numbers) {
+
+    return numbers;
+  }
 }
