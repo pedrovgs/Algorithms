@@ -25,4 +25,6 @@ package com.github.pedrovgs.app.problem12;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class MoveZerosInArray {
+  public void move(int [] array) {
+  }
 }
