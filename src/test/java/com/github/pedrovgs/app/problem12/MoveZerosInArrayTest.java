@@ -32,48 +32,48 @@ public class MoveZerosInArrayTest {
     moveZeros = new MoveZerosInArray();
   }
 
-  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullArrays() {
-    moveZeros.move(null);
+  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullArraysSorting() {
+    moveZeros.moveSorting(null);
   }
 
-  @Test public void shouldWorkWithAnEmptyArray() {
+  @Test public void shouldWorkWithAnEmptyArraySorting() {
     int[] array = new int[0];
 
-    moveZeros.move(array);
+    moveZeros.moveSorting(array);
 
     assertArrayEquals(new int[0], array);
   }
 
-  @Test public void shouldOrganizeAnArrayFullOfZeros() {
+  @Test public void shouldOrganizeAnArrayFullOfZerosSorting() {
     int[] array = { 0, 0, 0, 0, 0 };
 
-    moveZeros.move(array);
+    moveZeros.moveSorting(array);
 
     int[] expected = { 0, 0, 0, 0, 0 };
     assertArrayEquals(expected, array);
   }
 
-  @Test public void shouldOrganizeAnArrayFullOfNonZeros() {
+  @Test public void shouldOrganizeAnArrayFullOfNonZerosSorting() {
     int[] array = { 1, 1, 1, 1, 1 };
 
-    moveZeros.move(array);
+    moveZeros.moveSorting(array);
 
     int[] expected = { 1, 1, 1, 1, 1 };
     assertArrayEquals(expected, array);
   }
 
-  @Test public void shouldOrganizeAnArrayWithZerosAndNonPositiveIntegers() {
+  @Test public void shouldOrganizeAnArrayWithZerosAndNonPositiveIntegersSorting() {
     int[] array = { 1, 0, 2, 3, 0 };
 
-    moveZeros.move(array);
+    moveZeros.moveSorting(array);
 
     assertZerosAtRight(array);
   }
 
-  @Test public void shouldOrganizeAnArrayWithZerosPositiveAndNegativeIntegers() {
+  @Test public void shouldOrganizeAnArrayWithZerosPositiveAndNegativeIntegersSorting() {
     int[] array = { 1, 0, 2, -3, 0, 0, 0, 0, -1 };
 
-    moveZeros.move(array);
+    moveZeros.moveSorting(array);
 
     assertZerosAtRight(array);
   }

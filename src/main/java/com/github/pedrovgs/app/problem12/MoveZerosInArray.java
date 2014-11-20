@@ -25,6 +25,33 @@ package com.github.pedrovgs.app.problem12;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class MoveZerosInArray {
-  public void move(int [] array) {
+
+  /**
+   * Algorithm implementation based on a sorting algorithm named "Bubble Sorting" modified to work
+   * with this problem requirements. Using this sorting algorithm we get a complexity order in time
+   * terms equals to O(N) where N is the number of elements in the array. In space terms, the
+   * complexity order of this algorithm is O(1).
+   */
+  public void moveSorting(int[] array) {
+    if (array == null) {
+      throw new IllegalArgumentException("You can't pass a null array as argument.");
+    }
+
+    boolean swap = true;
+    while (swap) {
+      swap = false;
+      for (int i = 0; i < array.length - 1; i++) {
+        if ((array[i] < array[i + 1] && array[i + 1] > 0) || (array[i] == 0 && array[i + 1] != 0)) {
+          swap(array, i, i + 1);
+          swap = true;
+        }
+      }
+    }
+  }
+
+  private void swap(int[] array, int a, int b) {
+    int temp = array[a];
+    array[a] = array[b];
+    array[b] = temp;
   }
 }
