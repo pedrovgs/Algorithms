@@ -29,7 +29,7 @@ public class MoveZerosInArray {
   /**
    * Algorithm implementation based on a sorting algorithm named "Bubble Sorting" modified to work
    * with this problem requirements. Using this sorting algorithm we get a complexity order in time
-   * terms equals to O(N) where N is the number of elements in the array. In space terms, the
+   * terms equals to O(N^2) where N is the number of elements in the array. In space terms, the
    * complexity order of this algorithm is O(1).
    */
   public void moveSorting(int[] array) {
@@ -41,10 +41,35 @@ public class MoveZerosInArray {
     while (swap) {
       swap = false;
       for (int i = 0; i < array.length - 1; i++) {
-        if ((array[i] < array[i + 1] && array[i + 1] > 0) || (array[i] == 0 && array[i + 1] != 0)) {
+        if ((array[i] < array[i + 1] && array[i + 1] > 0)) {
           swap(array, i, i + 1);
           swap = true;
         }
+      }
+    }
+  }
+
+  /**
+   * Second implementation for this problem. This implementation is better than the previous one
+   * because we have reduced the complexity order of this algorithm in time terms from O(N^2) to
+   * O(N). The complexity order in space terms is the same.
+   */
+  public void moveUsingTwoPointers(int[] array) {
+    if (array == null) {
+      throw new IllegalArgumentException("You can't pass a null array as argument.");
+    }
+
+    int left = 0;
+    int right = array.length - 1;
+    while (left < right) {
+      if (array[left] == 0 && array[right] != 0) {
+        swap(array, left, right);
+      }
+      if (array[left] != 0) {
+        left++;
+      }
+      if (array[right] == 0) {
+        right--;
       }
     }
   }

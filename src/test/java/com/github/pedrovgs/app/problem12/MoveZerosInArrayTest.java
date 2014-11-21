@@ -47,7 +47,7 @@ public class MoveZerosInArrayTest {
   @Test public void shouldOrganizeAnArrayFullOfZerosSorting() {
     int[] array = { 0, 0, 0, 0, 0 };
 
-    moveZeros.moveSorting(array);
+    moveZeros.moveUsingTwoPointers(array);
 
     int[] expected = { 0, 0, 0, 0, 0 };
     assertArrayEquals(expected, array);
@@ -56,7 +56,7 @@ public class MoveZerosInArrayTest {
   @Test public void shouldOrganizeAnArrayFullOfNonZerosSorting() {
     int[] array = { 1, 1, 1, 1, 1 };
 
-    moveZeros.moveSorting(array);
+    moveZeros.moveUsingTwoPointers(array);
 
     int[] expected = { 1, 1, 1, 1, 1 };
     assertArrayEquals(expected, array);
@@ -65,7 +65,7 @@ public class MoveZerosInArrayTest {
   @Test public void shouldOrganizeAnArrayWithZerosAndNonPositiveIntegersSorting() {
     int[] array = { 1, 0, 2, 3, 0 };
 
-    moveZeros.moveSorting(array);
+    moveZeros.moveUsingTwoPointers(array);
 
     assertZerosAtRight(array);
   }
@@ -73,7 +73,54 @@ public class MoveZerosInArrayTest {
   @Test public void shouldOrganizeAnArrayWithZerosPositiveAndNegativeIntegersSorting() {
     int[] array = { 1, 0, 2, -3, 0, 0, 0, 0, -1 };
 
-    moveZeros.moveSorting(array);
+    moveZeros.moveUsingTwoPointers(array);
+
+    assertZerosAtRight(array);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptNullArraysWithTwoPointers() {
+    moveZeros.moveUsingTwoPointers(null);
+  }
+
+  @Test public void shouldWorkWithAnEmptyArrayWithTwoPointers() {
+    int[] array = new int[0];
+
+    moveZeros.moveUsingTwoPointers(array);
+
+    assertArrayEquals(new int[0], array);
+  }
+
+  @Test public void shouldOrganizeAnArrayFullOfZerosWithTwoPointers() {
+    int[] array = { 0, 0, 0, 0, 0 };
+
+    moveZeros.moveUsingTwoPointers(array);
+
+    int[] expected = { 0, 0, 0, 0, 0 };
+    assertArrayEquals(expected, array);
+  }
+
+  @Test public void shouldOrganizeAnArrayFullOfNonZerosWithTwoPointers() {
+    int[] array = { 1, 1, 1, 1, 1 };
+
+    moveZeros.moveUsingTwoPointers(array);
+
+    int[] expected = { 1, 1, 1, 1, 1 };
+    assertArrayEquals(expected, array);
+  }
+
+  @Test public void shouldOrganizeAnArrayWithZerosAndNonPositiveIntegersWithTwoPointers() {
+    int[] array = { 1, 0, 2, 3, 0 };
+
+    moveZeros.moveUsingTwoPointers(array);
+
+    assertZerosAtRight(array);
+  }
+
+  @Test public void shouldOrganizeAnArrayWithZerosPositiveAndNegativeIntegersWithTwoPointers() {
+    int[] array = { 1, 0, 2, -3, 0, 0, 0, 0, -1 };
+
+    moveZeros.moveUsingTwoPointers(array);
 
     assertZerosAtRight(array);
   }
