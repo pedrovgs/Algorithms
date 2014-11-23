@@ -15,12 +15,18 @@
  */
 package com.github.pedrovgs.app.problem13;
 
+import com.github.pedrovgs.app.binarytree.BinaryNode;
+import java.util.List;
+
 /**
  * Given a binary tree, can you write a method to return a list of nodes by level?
  * And without any additional data structure?
  *
  * @author Pedro Vicente Gómez Sánchez.
  */
-public class PrintBinaryTreeByLevel {
+public class BinaryTreeByLevel {
 
+  public List<BinaryNode> get(BinaryNode root) {
+    return null;
+  }
 }
