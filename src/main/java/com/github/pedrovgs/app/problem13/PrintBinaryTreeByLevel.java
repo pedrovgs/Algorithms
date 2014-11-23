@@ -22,4 +22,5 @@ package com.github.pedrovgs.app.problem13;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class PrintBinaryTreeByLevel {
+
 }
