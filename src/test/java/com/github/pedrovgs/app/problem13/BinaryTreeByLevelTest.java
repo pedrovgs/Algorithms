@@ -34,33 +34,34 @@ public class BinaryTreeByLevelTest {
     binaryTreeByLevel = new BinaryTreeByLevel();
   }
 
-  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullBinaryNodes() {
-    binaryTreeByLevel.get(null);
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptNullBinaryNodesUsingQueue() {
+    binaryTreeByLevel.getUsingQueue(null);
   }
 
-  @Test public void shouldReturnTheSameNodeInTheListIfTheTreeJustContainsOneElement() {
+  @Test public void shouldReturnTheSameNodeInTheListIfTheTreeJustContainsOneElementUsingQueue() {
     BinaryNode<Integer> root = new BinaryNode<Integer>(0);
 
-    List<BinaryNode> result = binaryTreeByLevel.get(root);
+    List<BinaryNode> result = binaryTreeByLevel.getUsingQueue(root);
 
     List<BinaryNode<Integer>> expectedList = Arrays.asList(root);
     assertEquals(expectedList, result);
   }
 
-  @Test public void shouldWorkWithALittleBinaryTree() {
+  @Test public void shouldWorkWithALittleBinaryTreeUsingQueue() {
     BinaryNode<Integer> root = new BinaryNode<Integer>(0);
     BinaryNode<Integer> n1 = new BinaryNode<Integer>(1);
     BinaryNode<Integer> n2 = new BinaryNode<Integer>(2);
     root.setLeft(n1);
     root.setRight(n2);
 
-    List<BinaryNode> result = binaryTreeByLevel.get(root);
+    List<BinaryNode> result = binaryTreeByLevel.getUsingQueue(root);
 
     List<BinaryNode<Integer>> expectedList = Arrays.asList(root, n1, n2);
     assertEquals(expectedList, result);
   }
 
-  @Test public void shouldWorkWithABiggerBinaryTree() {
+  @Test public void shouldWorkWithABiggerBinaryTreeUsingQueue() {
     BinaryNode<Integer> root = new BinaryNode<Integer>(0);
     BinaryNode<Integer> n1 = new BinaryNode<Integer>(1);
     BinaryNode<Integer> n2 = new BinaryNode<Integer>(2);
@@ -73,7 +74,7 @@ public class BinaryTreeByLevelTest {
     n1.setRight(n4);
     n2.setLeft(n5);
 
-    List<BinaryNode> result = binaryTreeByLevel.get(root);
+    List<BinaryNode> result = binaryTreeByLevel.getUsingQueue(root);
 
     List<BinaryNode<Integer>> expectedList = Arrays.asList(root, n1, n2, n3, n4, n5);
     assertEquals(expectedList, result);

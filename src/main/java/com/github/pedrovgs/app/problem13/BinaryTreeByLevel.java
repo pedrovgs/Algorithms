@@ -16,7 +16,9 @@
 package com.github.pedrovgs.app.problem13;
 
 import com.github.pedrovgs.app.binarytree.BinaryNode;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * Given a binary tree, can you write a method to return a list of nodes by level?
@@ -26,7 +28,28 @@ import java.util.List;
  */
 public class BinaryTreeByLevel {
 
-  public List<BinaryNode> get(BinaryNode root) {
-    return null;
+  /**
+   * Add implementation based on an additional data structure, one queue which implementation is a
+   * LinkedList. We we are going to do is add elements of the tree to the queue and one by one
+   * evaluate it adding more binary nodes to the queue if exist. The complexity order in time terms
+   * is O(N) where N is the number of elements in the tree. The complexity order in space terms is
+   * O(N) where N is the number of elements in the tree because we are going to store every node in
+   * a queue.
+   */
+  public List<BinaryNode> getUsingQueue(BinaryNode root) {
+    if (root == null) {
+      throw new IllegalArgumentException("You can't use null BinaryNodes as argument.");
+    }
+
+    List<BinaryNode> result = new LinkedList<BinaryNode>();
+    Queue<BinaryNode> queue = new LinkedList<BinaryNode>();
+    queue.add(root);
+    while (!queue.isEmpty()) {
+      BinaryNode binaryNode = queue.remove();
+      result.add(binaryNode);
+      if (binaryNode.getLeft() != null) queue.add(binaryNode.getLeft());
+      if (binaryNode.getRight() != null) queue.add(binaryNode.getRight());
+    }
+    return result;
   }
 }
