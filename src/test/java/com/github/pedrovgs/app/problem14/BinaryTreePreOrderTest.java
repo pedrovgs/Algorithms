@@ -35,13 +35,13 @@ public class BinaryTreePreOrderTest {
   }
 
   @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullBinaryNodes() {
-    binaryTreePreOrder.get(null);
+    binaryTreePreOrder.getRecursive(null);
   }
 
   @Test public void shouldReturnJustOneElementIfTheTreeContainsJustOneElement() {
     BinaryNode<Integer> root = new BinaryNode<Integer>(0);
 
-    List<BinaryNode> result = binaryTreePreOrder.get(root);
+    List<BinaryNode> result = binaryTreePreOrder.getRecursive(root);
 
     List<BinaryNode<Integer>> expected = Arrays.asList(root);
     assertEquals(expected, result);
@@ -59,7 +59,7 @@ public class BinaryTreePreOrderTest {
     n1.setLeft(n3);
     n1.setRight(n4);
 
-    List<BinaryNode> result = binaryTreePreOrder.get(root);
+    List<BinaryNode> result = binaryTreePreOrder.getRecursive(root);
 
     List<BinaryNode<Integer>> expected = Arrays.asList(root, n1, n3, n4, n2);
     assertEquals(expected, result);
