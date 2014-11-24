@@ -15,6 +15,9 @@
  */
 package com.github.pedrovgs.app.problem14;
 
+import com.github.pedrovgs.app.binarytree.BinaryNode;
+import java.util.List;
+
 /**
  * Given a binary tree, can you write a method to get a List<BinaryNode> using a pre order
  * traversal?
@@ -22,4 +25,7 @@ package com.github.pedrovgs.app.problem14;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class BinaryTreePreOrder {
+  public List<BinaryNode> get(BinaryNode<Integer> root) {
+    return null;
+  }
 }
