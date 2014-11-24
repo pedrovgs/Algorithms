@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * Given a binary tree, can you write a method to getRecursive a List<BinaryNode> using a pre order
+ * Given a binary tree, can you write a method to get a List<BinaryNode> using a pre order
  * traversal?
  *
  * @author Pedro Vicente Gómez Sánchez.
