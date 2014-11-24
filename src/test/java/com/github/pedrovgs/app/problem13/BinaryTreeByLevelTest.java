@@ -82,14 +82,14 @@ public class BinaryTreeByLevelTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void shouldNotAcceptNullBinaryNodesWithoutExtraDataStructure() {
-    binaryTreeByLevel.getWihtoutAdditionalDataStructures(null);
+    binaryTreeByLevel.getWithoutAdditionalDataStructures(null);
   }
 
   @Test
   public void shouldReturnTheSameNodeInTheListIfTheTreeJustContainsOneElementWithoutExtraDataStructure() {
     BinaryNode<Integer> root = new BinaryNode<Integer>(0);
 
-    List<BinaryNode> result = binaryTreeByLevel.getWihtoutAdditionalDataStructures(root);
+    List<BinaryNode> result = binaryTreeByLevel.getWithoutAdditionalDataStructures(root);
 
     List<BinaryNode<Integer>> expectedList = Arrays.asList(root);
     assertEquals(expectedList, result);
@@ -102,7 +102,7 @@ public class BinaryTreeByLevelTest {
     root.setLeft(n1);
     root.setRight(n2);
 
-    List<BinaryNode> result = binaryTreeByLevel.getWihtoutAdditionalDataStructures(root);
+    List<BinaryNode> result = binaryTreeByLevel.getWithoutAdditionalDataStructures(root);
 
     List<BinaryNode<Integer>> expectedList = Arrays.asList(root, n1, n2);
     assertEquals(expectedList, result);
@@ -121,7 +121,7 @@ public class BinaryTreeByLevelTest {
     n1.setRight(n4);
     n2.setLeft(n5);
 
-    List<BinaryNode> result = binaryTreeByLevel.getWihtoutAdditionalDataStructures(root);
+    List<BinaryNode> result = binaryTreeByLevel.getWithoutAdditionalDataStructures(root);
 
     List<BinaryNode<Integer>> expectedList = Arrays.asList(root, n1, n2, n3, n4, n5);
     assertEquals(expectedList, result);

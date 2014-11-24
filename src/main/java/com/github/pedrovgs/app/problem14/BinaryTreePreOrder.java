@@ -18,6 +18,7 @@ package com.github.pedrovgs.app.problem14;
 import com.github.pedrovgs.app.binarytree.BinaryNode;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Given a binary tree, can you write a method to getRecursive a List<BinaryNode> using a pre order
@@ -46,6 +47,34 @@ public class BinaryTreePreOrder {
       result.addAll(getInner(root.getLeft()));
       result.addAll(getInner(root.getRight()));
     }
+    return result;
+  }
+
+  /**
+   * Iterative implementation of this binary tree traversal. The complexity order in time terms of
+   * this algorithm is O(N) where N is the number of nodes in the tree. In space terms the
+   * complexity order of this algorithm is also O(N) where N is the number of nodes we have to
+   * store in the auxiliary data structure, the stack.
+   */
+  public List<BinaryNode> getIterative(BinaryNode<Integer> root) {
+    if (root == null) {
+      throw new IllegalArgumentException("You can't pass a null BinaryNode.");
+    }
+    List<BinaryNode> result = new LinkedList<BinaryNode>();
+    Stack<BinaryNode> stack = new Stack<BinaryNode>();
+    stack.push(root);
+
+    while (!stack.isEmpty()) {
+      BinaryNode node = stack.pop();
+      result.add(node);
+      if (node.hasRight()) {
+        stack.add(node.getRight());
+      }
+      if (node.hasLeft()) {
+        stack.add(node.getLeft());
+      }
+    }
+
     return result;
   }
 }

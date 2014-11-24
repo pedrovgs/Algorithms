@@ -57,15 +57,15 @@ public class BinaryTreeByLevel {
   /**
    * Slower implementation created to resolve one of the questions of problem 13, print the binary
    * tree by level without use any additional data structure for the main algorithm.
-   * The complexity order in space terms is O(1) because we are not using any other data structure.
-   * The complexity order in time terms is O(N*M) where the N is the depth of the Binary Tree and M
-   * is the number of elements below one level.
+   * The complexity order in space terms is O(N) because we are using one structure to return the
+   * result. The complexity order in time terms is O(N*M) where the N is the depth of the Binary
+   * Tree and M is the number of elements below one level.
    *
    * To be able to implement this approach you need to know the depth of the tree before to start.
    * This approach is based on recursion and uses the level param as counter to go through the
    * binary tree.
    */
-  public List<BinaryNode> getWihtoutAdditionalDataStructures(BinaryNode root) {
+  public List<BinaryNode> getWithoutAdditionalDataStructures(BinaryNode root) {
     if (root == null) {
       throw new IllegalArgumentException("You can't use null BinaryNodes as argument.");
     }
@@ -80,7 +80,7 @@ public class BinaryTreeByLevel {
 
   /**
    * Calculate the Binary Tree depth based on recursion. The complexity order in space terms of
-   * this algorithm is O(1) and in time terms is O(N) where N is the number of nodes in the tree.
+   * this algorithm is O(N) and in time terms is O(N) where N is the number of nodes in the tree.
    */
   private int getDepth(BinaryNode root) {
     if (root == null) {
