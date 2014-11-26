@@ -76,7 +76,7 @@ public class BinaryTreeInOrder {
     }
     return result;
   }
-  
+
   private void validateBinaryNode(BinaryNode root) {
     if (root == null) {
       throw new IllegalArgumentException("You can't pass a null BinaryNode.");
