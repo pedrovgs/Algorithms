@@ -18,6 +18,7 @@ package com.github.pedrovgs.app.problem16;
 import com.github.pedrovgs.app.binarytree.BinaryNode;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Given a binary tree, can you write a method to getRecursive a List<BinaryNode> using a post
@@ -45,6 +46,53 @@ public class BinaryTreePostOrder {
       result.addAll(getInner(root.getLeft()));
       result.addAll(getInner(root.getRight()));
       result.add(root);
+    }
+    return result;
+  }
+
+  public List<BinaryNode> getIterative(BinaryNode<Integer> root) {
+    if (root == null) {
+      throw new IllegalArgumentException("You can't pass a null BinaryNode.");
+    }
+    List<BinaryNode> result = new LinkedList<BinaryNode>();
+    Stack<BinaryNode> stack = new Stack<BinaryNode>();
+    stack.push(root);
+
+    BinaryNode prev = null;
+    while (!stack.empty()) {
+      BinaryNode current = stack.peek();
+
+      //Go down the tree. check if current node is leaf, if so, process it and pop stack, otherwise,
+      //keep going down
+      if (prev == null || prev.getLeft() == current || prev.getRight() == current) {
+        //prev == null is the situation for the root node
+        if (current.getLeft() != null) {
+          stack.push(current.getLeft());
+        } else if (current.getRight() != null) {
+          stack.push(current.getRight());
+        } else {
+          stack.pop();
+          result.add(current);
+        }
+
+        //Go up the tree from left node need to check if there is a right child
+        //if yes, push it to stack otherwise, process parent and pop stack
+      } else if (current.getLeft() == prev) {
+        if (current.getRight() != null) {
+          stack.push(current.getRight());
+        } else {
+          stack.pop();
+          result.add(current);
+        }
+
+        //Go up the tree from right node after coming back from right node, process parent node
+        //and pop stack.
+      } else if (current.getRight() == prev) {
+        stack.pop();
+        result.add(current);
+      }
+
+      prev = current;
     }
     return result;
   }
