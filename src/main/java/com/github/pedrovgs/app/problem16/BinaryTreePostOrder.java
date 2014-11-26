@@ -16,17 +16,36 @@
 package com.github.pedrovgs.app.problem16;
 
 import com.github.pedrovgs.app.binarytree.BinaryNode;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Given a binary tree, can you write a method to get a List<BinaryNode> using a post order
- * traversal?
+ * Given a binary tree, can you write a method to getRecursive a List<BinaryNode> using a post
+ * order traversal?
  *
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class BinaryTreePostOrder {
 
-  public List<BinaryNode> get(BinaryNode<Integer> root) {
-    return null;
+  /**
+   * Recursive implementation of this binary tree traversal. The complexity order of this
+   * algorithms in time terms is O(N) and O(N) in space terms because we are using one additional
+   * data structure to return the result.
+   */
+  public List<BinaryNode> getRecursive(BinaryNode<Integer> root) {
+    if (root == null) {
+      throw new IllegalArgumentException("You can't pass a null BinaryNode.");
+    }
+    return getInner(root);
+  }
+
+  private List<BinaryNode> getInner(BinaryNode<Integer> root) {
+    List<BinaryNode> result = new LinkedList<BinaryNode>();
+    if (root != null) {
+      result.addAll(getInner(root.getLeft()));
+      result.addAll(getInner(root.getRight()));
+      result.add(root);
+    }
+    return result;
   }
 }
