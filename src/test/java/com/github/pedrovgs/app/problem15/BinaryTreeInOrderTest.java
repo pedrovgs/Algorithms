@@ -62,7 +62,7 @@ public class BinaryTreeInOrderTest {
 
     List<BinaryNode> result = binaryTreeInOrder.getRecursive(root);
 
-    List<BinaryNode<Integer>> expected = Arrays.asList(n3, n4, n1, n2, root);
+    List<BinaryNode<Integer>> expected = Arrays.asList(n3, n1, n4, root, n2);
     assertEquals(expected, result);
   }
 }

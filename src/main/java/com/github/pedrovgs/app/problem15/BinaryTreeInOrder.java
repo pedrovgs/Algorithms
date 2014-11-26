@@ -16,6 +16,7 @@
 package com.github.pedrovgs.app.problem15;
 
 import com.github.pedrovgs.app.binarytree.BinaryNode;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -25,8 +26,26 @@ import java.util.List;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class BinaryTreeInOrder {
-  public List<BinaryNode> getRecursive(BinaryNode root) {
 
-    return null;
+  /**
+   * Recursive implementation of this binary tree traversal. The complexity order of this
+   * algorithms in time terms is O(N) and O(N) in space terms because we are using one additional
+   * data structure to return the result.
+   */
+  public List<BinaryNode> getRecursive(BinaryNode<Integer> root) {
+    if (root == null) {
+      throw new IllegalArgumentException("You can't pass a null BinaryNode.");
+    }
+    return getInner(root);
+  }
+
+  private List<BinaryNode> getInner(BinaryNode<Integer> root) {
+    List<BinaryNode> result = new LinkedList<BinaryNode>();
+    if (root != null) {
+      result.addAll(getInner(root.getLeft()));
+      result.add(root);
+      result.addAll(getInner(root.getRight()));
+    }
+    return result;
   }
 }
