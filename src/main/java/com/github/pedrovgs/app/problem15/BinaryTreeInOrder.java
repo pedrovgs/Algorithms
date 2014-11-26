@@ -15,6 +15,9 @@
  */
 package com.github.pedrovgs.app.problem15;
 
+import com.github.pedrovgs.app.binarytree.BinaryNode;
+import java.util.List;
+
 /**
  * Given a binary tree, can you write a method to get a List<BinaryNode> using a in order
  * traversal?
@@ -22,4 +25,8 @@ package com.github.pedrovgs.app.problem15;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class BinaryTreeInOrder {
+  public List<BinaryNode> getRecursive(BinaryNode root) {
+
+    return null;
+  }
 }
