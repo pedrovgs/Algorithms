@@ -33,14 +33,13 @@ public class BinaryTreeInOrder {
    * algorithms in time terms is O(N) and O(N) in space terms because we are using one additional
    * data structure to return the result.
    */
-  public List<BinaryNode> getRecursive(BinaryNode<Integer> root) {
-    if (root == null) {
-      throw new IllegalArgumentException("You can't pass a null BinaryNode.");
-    }
+  public List<BinaryNode> getRecursive(BinaryNode root) {
+    validateBinaryNode(root);
+
     return getInner(root);
   }
 
-  private List<BinaryNode> getInner(BinaryNode<Integer> root) {
+  private List<BinaryNode> getInner(BinaryNode root) {
     List<BinaryNode> result = new LinkedList<BinaryNode>();
     if (root != null) {
       result.addAll(getInner(root.getLeft()));
@@ -56,10 +55,9 @@ public class BinaryTreeInOrder {
    * complexity order of this algorithm is also O(N) where N is the number of nodes we have to
    * store in the auxiliary data structure, the stack.
    */
-  public List<BinaryNode> getIterative(BinaryNode<Integer> root) {
-    if (root == null) {
-      throw new IllegalArgumentException("You can't pass a null BinaryNode.");
-    }
+  public List<BinaryNode> getIterative(BinaryNode root) {
+    validateBinaryNode(root);
+
     List<BinaryNode> result = new LinkedList<BinaryNode>();
     Stack<BinaryNode> stack = new Stack<BinaryNode>();
     //Define a pointer to track nodes
@@ -78,4 +76,11 @@ public class BinaryTreeInOrder {
     }
     return result;
   }
+  
+  private void validateBinaryNode(BinaryNode root) {
+    if (root == null) {
+      throw new IllegalArgumentException("You can't pass a null BinaryNode.");
+    }
+  }
+
 }
