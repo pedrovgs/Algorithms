@@ -38,9 +38,7 @@ public class BinaryTreeByLevel {
    * a queue.
    */
   public List<BinaryNode> getUsingQueue(BinaryNode root) {
-    if (root == null) {
-      throw new IllegalArgumentException("You can't use null BinaryNodes as argument.");
-    }
+    validateBinaryNode(root);
 
     List<BinaryNode> result = new LinkedList<BinaryNode>();
     Queue<BinaryNode> queue = new LinkedList<BinaryNode>();
@@ -66,9 +64,7 @@ public class BinaryTreeByLevel {
    * binary tree.
    */
   public List<BinaryNode> getWithoutAdditionalDataStructures(BinaryNode root) {
-    if (root == null) {
-      throw new IllegalArgumentException("You can't use null BinaryNodes as argument.");
-    }
+    validateBinaryNode(root);
 
     List<BinaryNode> result = new LinkedList<BinaryNode>();
     int depth = getDepth(root);
@@ -76,6 +72,12 @@ public class BinaryTreeByLevel {
       result.addAll(getNodesForLevel(root, i));
     }
     return result;
+  }
+
+  private void validateBinaryNode(BinaryNode root) {
+    if (root == null) {
+      throw new IllegalArgumentException("You can't use null BinaryNodes as argument.");
+    }
   }
 
   /**
