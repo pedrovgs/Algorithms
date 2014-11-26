@@ -33,14 +33,12 @@ public class BinaryTreePostOrder {
    * algorithms in time terms is O(N) and O(N) in space terms because we are using one additional
    * data structure to return the result.
    */
-  public List<BinaryNode> getRecursive(BinaryNode<Integer> root) {
-    if (root == null) {
-      throw new IllegalArgumentException("You can't pass a null BinaryNode.");
-    }
+  public List<BinaryNode> getRecursive(BinaryNode root) {
+    validateTree(root);
     return getInner(root);
   }
 
-  private List<BinaryNode> getInner(BinaryNode<Integer> root) {
+  private List<BinaryNode> getInner(BinaryNode root) {
     List<BinaryNode> result = new LinkedList<BinaryNode>();
     if (root != null) {
       result.addAll(getInner(root.getLeft()));
@@ -50,10 +48,8 @@ public class BinaryTreePostOrder {
     return result;
   }
 
-  public List<BinaryNode> getIterative(BinaryNode<Integer> root) {
-    if (root == null) {
-      throw new IllegalArgumentException("You can't pass a null BinaryNode.");
-    }
+  public List<BinaryNode> getIterative(BinaryNode root) {
+    validateTree(root);
     List<BinaryNode> result = new LinkedList<BinaryNode>();
     Stack<BinaryNode> stack = new Stack<BinaryNode>();
     stack.push(root);
@@ -95,5 +91,11 @@ public class BinaryTreePostOrder {
       prev = current;
     }
     return result;
+  }
+
+  private void validateTree(BinaryNode root) {
+    if (root == null) {
+      throw new IllegalArgumentException("You can't pass a null BinaryNode.");
+    }
   }
 }
