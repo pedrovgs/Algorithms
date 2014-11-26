@@ -42,9 +42,7 @@ public class FibonacciNumbers {
    * data structure to solve this problem.
    */
   public int getRecursive(int n) {
-    if (n < 0) {
-      throw new IllegalArgumentException("You can't use negative values as parameter.");
-    }
+    validateInput(n);
     if (n == 0 || n == 1) {
       return 1;
     } else {
@@ -57,9 +55,7 @@ public class FibonacciNumbers {
    * as parameter. In space terms, the complexity order of this algorithm is again O(1).
    */
   public int getIterative(int n) {
-    if (n < 0) {
-      throw new IllegalArgumentException("You can't use negative values as parameter.");
-    }
+    validateInput(n);
 
     if (n <= 1) {
       return 1;
@@ -90,10 +86,8 @@ public class FibonacciNumbers {
    * additional data structure to store partial results.
    */
   public int getRecursiveWithCatching(int n) {
-    if (n < 0) {
-      throw new IllegalArgumentException("You can't use negative values as parameter.");
-    }
-    
+    validateInput(n);
+
     if (n <= 1) {
       return 1;
     } else if (elements[n] != 0) {
@@ -101,5 +95,11 @@ public class FibonacciNumbers {
     }
     elements[n] = getRecursiveWithCatching(n - 1) + getRecursiveWithCatching(n - 2);
     return elements[n];
+  }
+
+  private void validateInput(int n) {
+    if (n < 0) {
+      throw new IllegalArgumentException("You can't use negative values as parameter.");
+    }
   }
 }

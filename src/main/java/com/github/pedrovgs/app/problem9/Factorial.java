@@ -37,9 +37,7 @@ public class Factorial {
    * as parameter.
    */
   public int getIterative(int n) {
-    if (n < 0) {
-      throw new IllegalArgumentException("Negative numbers factorial is not defined.");
-    }
+    validateInput(n);
 
     int result = 1;
     for (int i = n; i >= 2; i--) {
@@ -53,9 +51,7 @@ public class Factorial {
    * terms is the same. Take into account that this implementation is not tail recursive.
    */
   public int getRecursive(int n) {
-    if (n < 0) {
-      throw new IllegalArgumentException("Negative numbers factorial is not defined.");
-    }
+    validateInput(n);
 
     if (n == 0) {
       return 1;
@@ -70,9 +66,7 @@ public class Factorial {
    * because this implementation is tail recursive.
    */
   public int getTailRecursive(int n) {
-    if (n < 0) {
-      throw new IllegalArgumentException("Negative numbers factorial is not defined.");
-    }
+    validateInput(n);
     return getTailRecursiveInner(n, 1);
   }
 
@@ -81,6 +75,12 @@ public class Factorial {
       return acc;
     } else {
       return getTailRecursiveInner(n - 1, acc * n);
+    }
+  }
+
+  private void validateInput(int n) {
+    if (n < 0) {
+      throw new IllegalArgumentException("Negative numbers factorial is not defined.");
     }
   }
 }

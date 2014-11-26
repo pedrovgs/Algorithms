@@ -33,9 +33,7 @@ public class MoveZerosInArray {
    * complexity order of this algorithm is O(1).
    */
   public void moveSorting(int[] array) {
-    if (array == null) {
-      throw new IllegalArgumentException("You can't pass a null array as argument.");
-    }
+    validateArray(array);
 
     boolean swap = true;
     while (swap) {
@@ -55,9 +53,7 @@ public class MoveZerosInArray {
    * O(N). The complexity order in space terms is the same.
    */
   public void moveUsingTwoPointers(int[] array) {
-    if (array == null) {
-      throw new IllegalArgumentException("You can't pass a null array as argument.");
-    }
+    validateArray(array);
 
     int left = 0;
     int right = array.length - 1;
@@ -71,6 +67,12 @@ public class MoveZerosInArray {
       if (array[right] == 0) {
         right--;
       }
+    }
+  }
+
+  private void validateArray(int[] array) {
+    if (array == null) {
+      throw new IllegalArgumentException("You can't pass a null array as argument.");
     }
   }
 

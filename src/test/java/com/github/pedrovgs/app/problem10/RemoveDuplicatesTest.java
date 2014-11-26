@@ -25,7 +25,7 @@ public class RemoveDuplicatesTest {
   }
 
   @Test public void shouldSupportEmptyArraysBasedOnSet() {
-    int[] array = new int[0];
+    Integer[] array = new Integer[0];
 
     Integer[] result = removeDuplicates.removeUsingSet(array);
 
@@ -33,7 +33,7 @@ public class RemoveDuplicatesTest {
   }
 
   @Test public void shouldReturnAnArrayWithJustOneElementIfInputJustContainsOneElementBasedOnSet() {
-    int[] array = { 1 };
+    Integer[] array = { 1 };
 
     Integer[] result = removeDuplicates.removeUsingSet(array);
 
@@ -42,7 +42,7 @@ public class RemoveDuplicatesTest {
   }
 
   @Test public void shouldSupportArraysWithoutDuplicatedElementsBasedOnSet() {
-    int[] array = { 1, 2, 3 };
+    Integer[] array = { 1, 2, 3 };
 
     Integer[] result = removeDuplicates.removeUsingSet(array);
 
@@ -51,7 +51,7 @@ public class RemoveDuplicatesTest {
 
   @Test
   public void shouldReturnAnArrayWithJustOneElementIfTheArrayIsFullOfTheSameElementBasedOnSet() {
-    int[] array = { 1, 1, 1, 1, 1 };
+    Integer[] array = { 1, 1, 1, 1, 1 };
 
     Integer[] result = removeDuplicates.removeUsingSet(array);
 
@@ -59,7 +59,7 @@ public class RemoveDuplicatesTest {
   }
 
   @Test public void shouldRemoveDuplicatesIfTheInputIsSortedBasedOnSet() {
-    int[] array = { 1, 2, 3, 3, 4, 4, 6, 6 };
+    Integer[] array = { 1, 2, 3, 3, 4, 4, 6, 6 };
 
     Integer[] result = removeDuplicates.removeUsingSet(array);
 
@@ -67,7 +67,7 @@ public class RemoveDuplicatesTest {
   }
 
   @Test public void shouldRemoveDuplicatesIfTheInputIsNotSortedBasedOnSet() {
-    int[] array = { 1, 1, 5, 6, 2, 3 };
+    Integer[] array = { 1, 1, 5, 6, 2, 3 };
 
     Integer[] result = removeDuplicates.removeUsingSet(array);
 

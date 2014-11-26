@@ -29,9 +29,7 @@ public class MergeSortedArrays {
    * equivalent, because we are going to iterate over array1 and array2 to merge every element.
    */
   public int[] merge(int[] array1, int[] array2) {
-    if (array1 == null || array2 == null) {
-      throw new IllegalArgumentException("You can't use null arrays as parameters.");
-    }
+    validateArrays(array1, array2);
 
     int[] result = new int[array1.length + array2.length];
 
@@ -51,5 +49,11 @@ public class MergeSortedArrays {
       result[k++] = array2[j++];
     }
     return result;
+  }
+
+  private void validateArrays(int[] array1, int[] array2) {
+    if (array1 == null || array2 == null) {
+      throw new IllegalArgumentException("You can't use null arrays as parameters.");
+    }
   }
 }

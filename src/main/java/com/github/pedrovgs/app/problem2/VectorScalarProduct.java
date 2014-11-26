@@ -48,9 +48,7 @@ public class VectorScalarProduct {
    * parameter.
    */
   public int calculateScalarProduct(Vector v1, Vector v2) {
-    if (v1 == null || v2 == null) {
-      throw new IllegalArgumentException("This method doesn't accept null vectors");
-    }
+    validateInput(v1, v2);
 
     int v1Size = v1.size();
     int v2Size = v2.size();
@@ -63,5 +61,11 @@ public class VectorScalarProduct {
       result += v1.getAt(i) * v2.getAt(i);
     }
     return result;
+  }
+
+  private void validateInput(Vector v1, Vector v2) {
+    if (v1 == null || v2 == null) {
+      throw new IllegalArgumentException("This method doesn't accept null vectors");
+    }
   }
 }

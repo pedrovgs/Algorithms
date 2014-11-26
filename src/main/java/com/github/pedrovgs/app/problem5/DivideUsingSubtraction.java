@@ -32,10 +32,7 @@ public class DivideUsingSubtraction {
    * the number of times you can subtract the divider to the dividend.
    */
   public float divideIterative(int dividend, int divider) {
-    if (divider == 0) {
-      throw new IllegalArgumentException(
-          "You can't divide using 0 as divider. That operation is not defined");
-    }
+    validateInput(divider);
     float result = 0;
     while (dividend > divider) {
       dividend -= divider;
@@ -54,16 +51,20 @@ public class DivideUsingSubtraction {
    * recursive.
    */
   public float divideRecursive(int dividend, int divider) {
-    if (divider == 0) {
-      throw new IllegalArgumentException(
-          "You can't divide using 0 as divider. That operation is not defined");
-    }
+    validateInput(divider);
     if (dividend == 0) {
       return 0f;
     } else if (dividend < divider) {
       return (float) dividend / (float) divider;
     } else {
       return 1f + divideRecursive(dividend - divider, divider);
+    }
+  }
+
+  private void validateInput(int divider) {
+    if (divider == 0) {
+      throw new IllegalArgumentException(
+          "You can't divide using 0 as divider. That operation is not defined");
     }
   }
 }

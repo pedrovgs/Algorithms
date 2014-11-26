@@ -42,10 +42,8 @@ public class RemoveDuplicates {
    * This implementation is possible in O(N) because the complexity order of HashSets for
    * insertions is O(1).
    */
-  public Integer[] removeUsingSet(int[] numbers) {
-    if (numbers == null) {
-      throw new IllegalArgumentException("You can't pass a null array");
-    }
+  public Integer[] removeUsingSet(Integer[] numbers) {
+    validateArray(numbers);
 
     Set<Integer> uniqueElements = new HashSet<Integer>();
     for (int i : numbers) {
@@ -64,9 +62,7 @@ public class RemoveDuplicates {
    * algorithm, O( N log(N)).
    */
   public Integer[] removeUsingSorting(Integer[] numbers) {
-    if (numbers == null) {
-      throw new IllegalArgumentException("You can't pass a null array");
-    }
+    validateArray(numbers);
     if (numbers.length == 1) {
       return numbers;
     }
@@ -79,5 +75,11 @@ public class RemoveDuplicates {
       }
     }
     return result.toArray(new Integer[result.size()]);
+  }
+
+  private void validateArray(Integer[] numbers) {
+    if (numbers == null) {
+      throw new IllegalArgumentException("You can't pass a null array");
+    }
   }
 }

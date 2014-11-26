@@ -19,9 +19,7 @@ public class SumBinaryNumbers {
    * to calculate this sum.
    */
   public String sumBinaryNumbersCheating(String n1, String n2) {
-    if (n1 == null || n2 == null) {
-      throw new IllegalArgumentException("n1 and n2 parameters can't be null");
-    }
+    validateInput(n1, n2);
 
     int number1, number2;
     try {
@@ -49,9 +47,7 @@ public class SumBinaryNumbers {
    * representation.
    */
   public String sumBinaryNumbersBasedOnPowersOfTwo(String n1, String n2) {
-    if (n1 == null || n2 == null) {
-      throw new IllegalArgumentException("n1 and n2 parameters can't be null");
-    }
+    validateInput(n1, n2);
 
     int result = 0;
     int length = Math.max(n1.length(), n2.length());
@@ -86,9 +82,7 @@ public class SumBinaryNumbers {
    * into account the accumulated value of the sum.
    */
   public String sumBinaryNumbersBasedOnCount(String n1, String n2) {
-    if (n1 == null || n2 == null) {
-      throw new IllegalArgumentException("n1 and n2 parameters can't be null");
-    }
+    validateInput(n1, n2);
 
     StringBuilder result = new StringBuilder();
     int lengthVal1 = n1.length();
@@ -130,5 +124,11 @@ public class SumBinaryNumbers {
     }
     result.append(acc);
     return result.reverse().toString();
+  }
+
+  private void validateInput(String n1, String n2) {
+    if (n1 == null || n2 == null) {
+      throw new IllegalArgumentException("n1 and n2 parameters can't be null");
+    }
   }
 }
