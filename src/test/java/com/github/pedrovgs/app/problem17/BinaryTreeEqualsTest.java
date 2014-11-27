@@ -67,7 +67,7 @@ public class BinaryTreeEqualsTest {
     root.setLeft(n1);
     root.setRight(n2);
     n1.setLeft(n3);
-    
+
     BinaryNode<Integer> root1 = new BinaryNode<Integer>(0);
     BinaryNode<Integer> n11 = new BinaryNode<Integer>(1);
     BinaryNode<Integer> n21 = new BinaryNode<Integer>(2);
