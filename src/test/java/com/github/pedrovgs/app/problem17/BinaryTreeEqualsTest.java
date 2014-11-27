@@ -34,20 +34,20 @@ public class BinaryTreeEqualsTest {
   }
 
   @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptTwoNullTrees() {
-    binaryTreeEquals.areEquals(null, null);
+    binaryTreeEquals.areEqualsRecursive(null, null);
   }
 
   @Test public void shouldReturnFalseIfOneIsNull() {
     BinaryNode<Integer> root = new BinaryNode<Integer>(0);
 
-    assertFalse(binaryTreeEquals.areEquals(root, null));
+    assertFalse(binaryTreeEquals.areEqualsRecursive(root, null));
   }
 
   @Test public void shouldReturnTrueIfBothElementsAreEqualsEvenIfJustContainsOneElement() {
     BinaryNode<Integer> root = new BinaryNode<Integer>(0);
     BinaryNode<Integer> root1 = new BinaryNode<Integer>(0);
 
-    assertTrue(binaryTreeEquals.areEquals(root, root1));
+    assertTrue(binaryTreeEquals.areEqualsRecursive(root, root1));
   }
 
   @Test public void shouldReturnFalseIfTreesAreNotEquals() {
@@ -56,7 +56,7 @@ public class BinaryTreeEqualsTest {
     root.setLeft(n1);
     BinaryNode<Integer> root1 = new BinaryNode<Integer>(0);
 
-    assertFalse(binaryTreeEquals.areEquals(root, root1));
+    assertFalse(binaryTreeEquals.areEqualsRecursive(root, root1));
   }
 
   @Test public void shouldReturnTrueIfTreesAreEquals() {
@@ -76,6 +76,6 @@ public class BinaryTreeEqualsTest {
     root.setRight(n21);
     n1.setLeft(n31);
 
-    assertFalse(binaryTreeEquals.areEquals(root, root1));
+    assertFalse(binaryTreeEquals.areEqualsRecursive(root, root1));
   }
 }
