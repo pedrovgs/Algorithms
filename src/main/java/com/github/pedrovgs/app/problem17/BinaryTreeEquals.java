@@ -15,10 +15,15 @@
  */
 package com.github.pedrovgs.app.problem17;
 
+import com.github.pedrovgs.app.binarytree.BinaryNode;
+
 /**
  * Given two binary trees, can you write a method to check if this trees are equals?
  *
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class BinaryTreeEquals {
+  public boolean areEquals(BinaryNode tree1, BinaryNode tree2) {
+    return false;
+  }
 }
