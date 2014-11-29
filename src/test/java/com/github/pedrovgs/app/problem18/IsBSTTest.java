@@ -46,6 +46,6 @@ public class IsBSTTest {
     root.setRight(n2);
     root.setLeft(n1);
 
-    assertFalse(isBST.checkRecursive(root));
+    assertTrue(isBST.checkRecursive(root));
   }
 }

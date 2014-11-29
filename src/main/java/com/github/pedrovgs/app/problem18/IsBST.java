@@ -37,7 +37,27 @@ import com.github.pedrovgs.app.binarytree.BinaryNode;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class IsBST {
+
+  /**
+   * Recursive implementation to solve this problem. This algorithm has O(N) as complexity order in
+   * time terms and O(1) in space terms.
+   */
   public boolean checkRecursive(BinaryNode<Integer> root) {
-    return false;
+    if (root == null) {
+      throw new IllegalArgumentException("You can't pass null BinaryNode elements as paramenter.");
+    }
+    return checkRecursiveInner(root);
+  }
+
+  private boolean checkRecursiveInner(BinaryNode<Integer> root) {
+    if (root == null) {
+      return true;
+    } else {
+      int leftValue = root.getLeft() == null ? root.getData() - 1 : root.getLeft().getData();
+      int rightValue = root.getRight() == null ? root.getData() + 1 : root.getRight().getData();
+      boolean isCurrentNodeOrdered = leftValue < rightValue;
+      return isCurrentNodeOrdered && checkRecursiveInner(root.getLeft()) && checkRecursiveInner(
+          root.getRight());
+    }
   }
 }
