@@ -15,6 +15,8 @@
  */
 package com.github.pedrovgs.app.problem18;
 
+import com.github.pedrovgs.app.binarytree.BinaryNode;
+
 /**
  * Given a binary tree passed as argument, can you write a method to return true if the binary tree
  * is a Binary Search Tree?
@@ -35,4 +37,7 @@ package com.github.pedrovgs.app.problem18;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class IsBST {
+  public boolean checkRecursive(BinaryNode<Integer> root) {
+    return false;
+  }
 }
