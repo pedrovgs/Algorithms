@@ -16,6 +16,8 @@
 package com.github.pedrovgs.app.problem18;
 
 import com.github.pedrovgs.app.binarytree.BinaryNode;
+import com.github.pedrovgs.app.problem15.BinaryTreeInOrder;
+import java.util.List;
 
 /**
  * Given a binary tree passed as argument, can you write a method to return true if the binary tree
@@ -38,13 +40,15 @@ import com.github.pedrovgs.app.binarytree.BinaryNode;
  */
 public class IsBST {
 
+  private BinaryTreeInOrder binaryTreeInOrder = new BinaryTreeInOrder();
+
   /**
    * Recursive implementation to solve this problem. This algorithm has O(N) as complexity order in
    * time terms and O(1) in space terms.
    */
   public boolean checkRecursive(BinaryNode<Integer> root) {
     if (root == null) {
-      throw new IllegalArgumentException("You can't pass null BinaryNode elements as paramenter.");
+      throw new IllegalArgumentException("You can't pass null BinaryNode elements as parameter.");
     }
     return checkRecursiveInner(root);
   }
@@ -59,5 +63,32 @@ public class IsBST {
       return isCurrentNodeOrdered && checkRecursiveInner(root.getLeft()) && checkRecursiveInner(
           root.getRight());
     }
+  }
+
+  /**
+   * Iterative solution to this problem. This algorithm is based on BST properties. If one tree is
+   * BST an in order tour through the tree have to return an already sorted list of elements. The
+   * complexity of this algorithm is O(N) + O(N) = O(N) in time terms and O(N) in space terms. Is
+   * slower than the previous solution but it's an interesting solution based on a already resolved
+   * problem, BST in order = sorted list.
+   */
+  public boolean checkIterative(BinaryNode<Integer> root) {
+    if (root == null) {
+      throw new IllegalArgumentException("You can't pass null BinaryNode elements as parameter.");
+    }
+    List<BinaryNode<Integer>> nodesInOrder = binaryTreeInOrder.getRecursive(root);
+    return isListOrdered(nodesInOrder);
+  }
+
+  private boolean isListOrdered(List<BinaryNode<Integer>> nodes) {
+    if (nodes.size() == 1) {
+      return true;
+    }
+    for (int i = 0; i < nodes.size() - 1; i++) {
+      if (nodes.get(i).getData() > nodes.get(i + 1).getData()) {
+        return false;
+      }
+    }
+    return true;
   }
 }

@@ -33,14 +33,14 @@ public class BinaryTreeInOrder {
    * algorithms in time terms is O(N) and O(N) in space terms because we are using one additional
    * data structure to return the result.
    */
-  public List<BinaryNode> getRecursive(BinaryNode root) {
+  public List<BinaryNode<Integer>> getRecursive(BinaryNode root) {
     validateBinaryNode(root);
 
     return getInner(root);
   }
 
-  private List<BinaryNode> getInner(BinaryNode root) {
-    List<BinaryNode> result = new LinkedList<BinaryNode>();
+  private List<BinaryNode<Integer>> getInner(BinaryNode<Integer> root) {
+    List<BinaryNode<Integer>> result = new LinkedList<BinaryNode<Integer>>();
     if (root != null) {
       result.addAll(getInner(root.getLeft()));
       result.add(root);

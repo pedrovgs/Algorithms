@@ -43,9 +43,40 @@ public class IsBSTTest {
     BinaryNode<Integer> root = new BinaryNode<Integer>(0);
     BinaryNode<Integer> n1 = new BinaryNode<Integer>(1);
     BinaryNode<Integer> n2 = new BinaryNode<Integer>(2);
-    root.setRight(n2);
-    root.setLeft(n1);
+    n1.setLeft(root);
+    n1.setRight(n2);
 
-    assertTrue(isBST.checkRecursive(root));
+    assertTrue(isBST.checkRecursive(n1));
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptNullBinaryTreesIterative() {
+    isBST.checkIterative(null);
+  }
+
+  @Test public void shouldReturnTrueIfTheTreeContainsJustOneNodeIterative() {
+    BinaryNode<Integer> root = new BinaryNode<Integer>(0);
+
+    assertTrue(isBST.checkIterative(root));
+  }
+
+  @Test public void shouldReturnFalseIfLeftNodesAreGraterThanRightNodesIterative() {
+    BinaryNode<Integer> root = new BinaryNode<Integer>(0);
+    BinaryNode<Integer> n1 = new BinaryNode<Integer>(1);
+    BinaryNode<Integer> n2 = new BinaryNode<Integer>(2);
+    root.setLeft(n2);
+    root.setRight(n1);
+
+    assertFalse(isBST.checkIterative(root));
+  }
+
+  @Test public void shouldReturnTrueIfBinaryTreeIsBSTIterative() {
+    BinaryNode<Integer> root = new BinaryNode<Integer>(0);
+    BinaryNode<Integer> n1 = new BinaryNode<Integer>(1);
+    BinaryNode<Integer> n2 = new BinaryNode<Integer>(2);
+    n1.setLeft(root);
+    n1.setRight(n2);
+
+    assertTrue(isBST.checkIterative(n1));
   }
 }

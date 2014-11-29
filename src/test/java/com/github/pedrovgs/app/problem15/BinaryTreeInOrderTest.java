@@ -42,7 +42,7 @@ public class BinaryTreeInOrderTest {
   @Test public void shouldReturnJustOneElementIfTheTreeContainsJustOneElementRecursive() {
     BinaryNode<Integer> root = new BinaryNode<Integer>(0);
 
-    List<BinaryNode> result = binaryTreeInOrder.getRecursive(root);
+    List<BinaryNode<Integer>> result = binaryTreeInOrder.getRecursive(root);
 
     List<BinaryNode<Integer>> expected = Arrays.asList(root);
     assertEquals(expected, result);
@@ -60,7 +60,7 @@ public class BinaryTreeInOrderTest {
     n1.setLeft(n3);
     n1.setRight(n4);
 
-    List<BinaryNode> result = binaryTreeInOrder.getRecursive(root);
+    List<BinaryNode<Integer>> result = binaryTreeInOrder.getRecursive(root);
 
     List<BinaryNode<Integer>> expected = Arrays.asList(n3, n1, n4, root, n2);
     assertEquals(expected, result);
