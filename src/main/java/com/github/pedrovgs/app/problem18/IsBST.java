@@ -57,11 +57,10 @@ public class IsBST {
     if (root == null) {
       return true;
     } else {
-      int leftValue = root.getLeft() == null ? root.getData() - 1 : root.getLeft().getData();
-      int rightValue = root.getRight() == null ? root.getData() + 1 : root.getRight().getData();
-      boolean isCurrentNodeOrdered = leftValue < rightValue;
-      return isCurrentNodeOrdered && checkRecursiveInner(root.getLeft()) && checkRecursiveInner(
-          root.getRight());
+      return (root.getLeft() == null || root.getData() >= root.getLeft().getData())
+          && (root.getRight() == null || root.getData() <= root.getRight().getData())
+          && checkRecursiveInner(root.getLeft())
+          && checkRecursiveInner(root.getRight());
     }
   }
 
