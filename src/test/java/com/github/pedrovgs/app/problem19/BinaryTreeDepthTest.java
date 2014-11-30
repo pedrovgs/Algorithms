@@ -83,6 +83,6 @@ public class BinaryTreeDepthTest {
 
     int depth = binaryTreeDepth.get(root);
 
-    assertEquals(5, depth);
+    assertEquals(4, depth);
   }
 }
