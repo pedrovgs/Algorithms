@@ -22,4 +22,9 @@ package com.github.pedrovgs.app.problem20;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class MultiplicationWithoutMultiply {
+
+  public int calculate(int n1, int n2) {
+    return 0;
+  }
+
 }
