@@ -32,26 +32,31 @@ public class ReverseLinkedListTest {
     reverseLinkedList = new ReverseLinkedList();
   }
 
-  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullElements() {
-    reverseLinkedList.reverse(null);
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptNullElementsIterative() {
+    reverseLinkedList.reverseIterative(null);
   }
 
-  @Test public void shouldAcceptLinkedListWithJustOneElement() {
+  @Test public void shouldAcceptLinkedListWithJustOneElementIterative() {
     ListNode<Integer> head = new ListNode<Integer>(1);
 
-    assertEquals(head, reverseLinkedList.reverse(head));
+    assertEquals(head, reverseLinkedList.reverseIterative(head));
   }
 
-  @Test public void shouldReverseLinkedList() {
+  @Test public void shouldReverseLinkedListIterative() {
     ListNode<Integer> head = new ListNode<Integer>(1);
     ListNode<Integer> n2 = new ListNode<Integer>(2);
     ListNode<Integer> n3 = new ListNode<Integer>(3);
     ListNode<Integer> n4 = new ListNode<Integer>(4);
     head.setNext(n2);
     n2.setNext(n3);
+    n3.setNext(n4);
 
-    ListNode reversedList = reverseLinkedList.reverse(head);
-    
+    ListNode reversedList = reverseLinkedList.reverseIterative(head);
+
     assertEquals(n4, reversedList);
+    assertEquals(n3, reversedList.getNext());
+    assertEquals(n2, reversedList.getNext().getNext());
+    assertEquals(head, reversedList.getNext().getNext().getNext());
   }
 }
