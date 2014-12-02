@@ -15,6 +15,8 @@
  */
 package com.github.pedrovgs.problem21;
 
+import com.github.pedrovgs.binarytree.BinaryNode;
+
 /**
  * Given a BinaryTree and two nodes, can you write a method to find the lowest common ancestor of
  * this nodes?
@@ -22,4 +24,8 @@ package com.github.pedrovgs.problem21;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class LowestCommonAncestor {
+
+  public BinaryNode<Integer> get(BinaryNode root, BinaryNode n5, BinaryNode n2) {
+    return null;
+  }
 }
