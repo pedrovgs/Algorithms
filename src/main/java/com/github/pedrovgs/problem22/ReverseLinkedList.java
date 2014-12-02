@@ -30,9 +30,7 @@ public class ReverseLinkedList {
    * space terms is O(1) because we only use two additional pointers and we don't allocate memory.
    */
   public ListNode reverseIterative(ListNode list) {
-    if (list == null) {
-      throw new IllegalArgumentException("You can't pass a null list as parameter.");
-    }
+    validateInput(list);
 
     if (list.getNext() == null) {
       return list;
@@ -55,9 +53,7 @@ public class ReverseLinkedList {
    * space terms is O(1) because we only use two additional pointers and we don't allocate memory.
    */
   public ListNode<Integer> reverseRecursive(ListNode list) {
-    if (list == null) {
-      throw new IllegalArgumentException("You can't pass a null list as parameter.");
-    }
+    validateInput(list);
     return reverseRecursiveInner(list);
   }
 
@@ -69,6 +65,12 @@ public class ReverseLinkedList {
       head.getNext().setNext(head);
       head.setNext(null);
       return reversedList;
+    }
+  }
+
+  private void validateInput(ListNode list) {
+    if (list == null) {
+      throw new IllegalArgumentException("You can't pass a null list as parameter.");
     }
   }
 }

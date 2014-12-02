@@ -47,9 +47,7 @@ public class IsBST {
    * time terms and O(1) in space terms.
    */
   public boolean checkRecursive(BinaryNode<Integer> root) {
-    if (root == null) {
-      throw new IllegalArgumentException("You can't pass null BinaryNode elements as parameter.");
-    }
+    validateInput(root);
     return checkRecursiveInner(root);
   }
 
@@ -72,9 +70,7 @@ public class IsBST {
    * problem, BST in order = sorted list.
    */
   public boolean checkIterative(BinaryNode<Integer> root) {
-    if (root == null) {
-      throw new IllegalArgumentException("You can't pass null BinaryNode elements as parameter.");
-    }
+    validateInput(root);
     List<BinaryNode<Integer>> nodesInOrder = binaryTreeInOrder.getRecursive(root);
     return isListOrdered(nodesInOrder);
   }
@@ -89,5 +85,11 @@ public class IsBST {
       }
     }
     return true;
+  }
+
+  private void validateInput(BinaryNode<Integer> root) {
+    if (root == null) {
+      throw new IllegalArgumentException("You can't pass null BinaryNode elements as parameter.");
+    }
   }
 }

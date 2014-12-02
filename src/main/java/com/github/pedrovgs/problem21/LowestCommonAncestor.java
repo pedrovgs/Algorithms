@@ -34,9 +34,7 @@ public class LowestCommonAncestor {
    * resolve this problem.
    */
   public BinaryNode getRecursive(BinaryNode root, BinaryNode n1, BinaryNode n2) {
-    if (root == null || n1 == null || n2 == null) {
-      throw new IllegalArgumentException("You can't pass null elements as input.");
-    }
+    validateInput(root, n1, n2);
     return getRecursiveInner(root, n1, n2);
   }
 
@@ -65,9 +63,7 @@ public class LowestCommonAncestor {
    * to find the first non common element and return the previous node, the lowest common ancestor.
    */
   public BinaryNode getIterative(BinaryNode root, BinaryNode n1, BinaryNode n2) {
-    if (root == null || n1 == null || n2 == null) {
-      throw new IllegalArgumentException("You can't pass null elements as input.");
-    }
+    validateInput(root, n1, n2);
 
     List<BinaryNode> pathToA = getPathTo(root, n1);
     List<BinaryNode> pathToB = getPathTo(root, n2);
@@ -107,5 +103,11 @@ public class LowestCommonAncestor {
       }
     }
     return path;
+  }
+
+  private void validateInput(BinaryNode root, BinaryNode n1, BinaryNode n2) {
+    if (root == null || n1 == null || n2 == null) {
+      throw new IllegalArgumentException("You can't pass null elements as input.");
+    }
   }
 }

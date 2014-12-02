@@ -37,9 +37,7 @@ public class BinaryTreeEquals {
    * tree and stop comparing nodes once we find one different.
    */
   public boolean areEqualsRecursive(BinaryNode tree1, BinaryNode tree2) {
-    if (tree1 == null && tree2 == null) {
-      throw new IllegalArgumentException("You can't compare two null trees");
-    }
+    validateInput(tree1, tree2);
     return areEqualsInner(tree1, tree2);
   }
 
@@ -63,9 +61,7 @@ public class BinaryTreeEquals {
    * elements in the stack.
    */
   public boolean areEqualsIterative(BinaryNode<Integer> tree1, BinaryNode<Integer> tree2) {
-    if (tree1 == null && tree2 == null) {
-      throw new IllegalArgumentException("You can't compare two null trees");
-    }
+    validateInput(tree1, tree2);
 
     boolean equals = true;
     Stack<BinaryNode> stack1 = new Stack<BinaryNode>();
@@ -90,6 +86,12 @@ public class BinaryTreeEquals {
   private void addNodeToStack(Stack<BinaryNode> stack, BinaryNode node) {
     if (node != null) {
       stack.add(node);
+    }
+  }
+
+  private void validateInput(BinaryNode tree1, BinaryNode tree2) {
+    if (tree1 == null && tree2 == null) {
+      throw new IllegalArgumentException("You can't compare two null trees");
     }
   }
 }
