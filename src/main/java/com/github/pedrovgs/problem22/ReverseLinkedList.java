@@ -48,4 +48,27 @@ public class ReverseLinkedList {
     }
     return head;
   }
+
+  /**
+   * Recursive solution to this problem. The complexity order of this algorithm in time terms is
+   * O(N) where N is the number of elements in the list. The complexity order in this algorithm in
+   * space terms is O(1) because we only use two additional pointers and we don't allocate memory.
+   */
+  public ListNode<Integer> reverseRecursive(ListNode list) {
+    if (list == null) {
+      throw new IllegalArgumentException("You can't pass a null list as parameter.");
+    }
+    return reverseRecursiveInner(list);
+  }
+
+  private ListNode<Integer> reverseRecursiveInner(ListNode head) {
+    if (head == null || head.getNext() == null) {
+      return head;
+    } else {
+      ListNode reversedList = reverseRecursiveInner(head.getNext());
+      head.getNext().setNext(head);
+      head.setNext(null);
+      return reversedList;
+    }
+  }
 }
