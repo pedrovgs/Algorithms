@@ -15,8 +15,43 @@
  */
 package com.github.pedrovgs.problem22;
 
+import com.github.pedrovgs.linkedlist.ListNode;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 /**
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class ReverseLinkedListTest {
+
+  private ReverseLinkedList reverseLinkedList;
+
+  @Before public void setUp() {
+    reverseLinkedList = new ReverseLinkedList();
+  }
+
+  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullElements() {
+    reverseLinkedList.reverse(null);
+  }
+
+  @Test public void shouldAcceptLinkedListWithJustOneElement() {
+    ListNode<Integer> head = new ListNode<Integer>(1);
+
+    assertEquals(head, reverseLinkedList.reverse(head));
+  }
+
+  @Test public void shouldReverseLinkedList() {
+    ListNode<Integer> head = new ListNode<Integer>(1);
+    ListNode<Integer> n2 = new ListNode<Integer>(2);
+    ListNode<Integer> n3 = new ListNode<Integer>(3);
+    ListNode<Integer> n4 = new ListNode<Integer>(4);
+    head.setNext(n2);
+    n2.setNext(n3);
+
+    ListNode reversedList = reverseLinkedList.reverse(head);
+    
+    assertEquals(n4, reversedList);
+  }
 }
