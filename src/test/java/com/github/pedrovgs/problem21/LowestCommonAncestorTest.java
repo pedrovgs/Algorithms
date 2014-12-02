@@ -28,17 +28,15 @@ public class LowestCommonAncestorTest {
 
   private LowestCommonAncestor lca;
 
-  @Before
-  public void setUp(){
+  @Before public void setUp() {
     lca = new LowestCommonAncestor();
   }
 
-  @Test(expected = IllegalArgumentException.class)
-  public void shouldNotAcceptNullElements(){
-    lca.get(null,null,null);
+  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullElements() {
+    lca.getRecursive(null, null, null);
   }
-  @Test
-  public void shouldFindLCAWhenTheLCAIsOneOfTheNodesPassedAsInput(){
+
+  @Test public void shouldFindLCAWhenTheLCAIsOneOfTheNodesPassedAsInput() {
     BinaryNode<Integer> root = new BinaryNode<Integer>(1);
     BinaryNode<Integer> n2 = new BinaryNode<Integer>(2);
     BinaryNode<Integer> n3 = new BinaryNode<Integer>(3);
@@ -51,13 +49,12 @@ public class LowestCommonAncestorTest {
     n2.setRight(n5);
     n4.setLeft(n6);
 
-    BinaryNode<Integer> result = lca.get(root,root,n2);
+    BinaryNode result = lca.getRecursive(root, root, n2);
 
-    assertEquals(n4,result);
+    assertEquals(root, result);
   }
 
-  @Test
-  public void shouldFindLCAWhenIsAFatherOfBothNodes(){
+  @Test public void shouldFindLCAWhenIsAFatherOfBothNodes() {
     BinaryNode<Integer> root = new BinaryNode<Integer>(1);
     BinaryNode<Integer> n2 = new BinaryNode<Integer>(2);
     BinaryNode<Integer> n3 = new BinaryNode<Integer>(3);
@@ -70,8 +67,8 @@ public class LowestCommonAncestorTest {
     n2.setRight(n5);
     n4.setLeft(n6);
 
-    BinaryNode<Integer> result = lca.get(root,n5,n6);
-
-    assertEquals(n4,result);
+    BinaryNode result = lca.getRecursive(root, n5, n6);
+    
+    assertEquals(n2, result);
   }
 }
