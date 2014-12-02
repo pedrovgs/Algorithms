@@ -25,7 +25,32 @@ import com.github.pedrovgs.binarytree.BinaryNode;
  */
 public class LowestCommonAncestor {
 
-  public BinaryNode<Integer> get(BinaryNode root, BinaryNode n5, BinaryNode n2) {
-    return null;
+  /**
+   * Recursive implementation for this problem. The complexity order in time terms of this
+   * algorithm is O(N) where  N is the number of nodes in the tree. In space terms, the complexity
+   * order of this algorithm is O(1) because we are not using any auxiliary data structure to
+   * resolve this problem.
+   */
+  public BinaryNode getRecursive(BinaryNode root, BinaryNode n1, BinaryNode n2) {
+    if (root == null || n1 == null || n2 == null) {
+      throw new IllegalArgumentException("You can't pass null elements as input.");
+    }
+    return getRecursiveInner(root, n1, n2);
+  }
+
+  private BinaryNode getRecursiveInner(BinaryNode root, BinaryNode n1, BinaryNode n2) {
+    if (root == null) {
+      return null;
+    } else {
+      if (root == n1 || root == n2) {
+        return root;
+      }
+      BinaryNode leftBranch = getRecursiveInner(root.getLeft(), n1, n2);
+      BinaryNode rightBranch = getRecursiveInner(root.getRight(), n1, n2);
+      if (leftBranch != null && rightBranch != null) {
+        return root;
+      }
+      return leftBranch != null ? leftBranch : rightBranch;
+    }
   }
 }
