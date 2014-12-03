@@ -44,7 +44,7 @@ public class IntToString {
       sb.append(number % 10);
       number /= 10;
     }
-    
+
     if (isNegative) {
       sb.append("-");
     }

@@ -1,3 +1,5 @@
 language: java
 
 install: mvn clean install
+
+script: mvn checkstyle:checkstyle
