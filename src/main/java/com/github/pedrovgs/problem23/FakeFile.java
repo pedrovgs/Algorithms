@@ -26,7 +26,7 @@ class FakeFile {
   private int index;
 
   FakeFile(String... lines) {
-    this.lines = lines;
+    this.lines = lines != null ? lines : new String[0];
   }
 
   String getLine() {
