@@ -66,14 +66,15 @@ public class BinaryTreeInOrderTest {
     assertEquals(expected, result);
   }
 
-  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullBinaryNodesIterative() {
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptNullBinaryNodesIterative() {
     binaryTreeInOrder.getIterative(null);
   }
 
   @Test public void shouldReturnJustOneElementIfTheTreeContainsJustOneElementIterative() {
     BinaryNode<Integer> root = new BinaryNode<Integer>(0);
 
-    List<BinaryNode> result = binaryTreeInOrder.getIterative(root);
+    List<BinaryNode<Integer>> result = binaryTreeInOrder.getIterative(root);
 
     List<BinaryNode<Integer>> expected = Arrays.asList(root);
     assertEquals(expected, result);
@@ -91,7 +92,7 @@ public class BinaryTreeInOrderTest {
     n1.setLeft(n3);
     n1.setRight(n4);
 
-    List<BinaryNode> result = binaryTreeInOrder.getIterative(root);
+    List<BinaryNode<Integer>> result = binaryTreeInOrder.getIterative(root);
 
     List<BinaryNode<Integer>> expected = Arrays.asList(n3, n1, n4, root, n2);
     assertEquals(expected, result);

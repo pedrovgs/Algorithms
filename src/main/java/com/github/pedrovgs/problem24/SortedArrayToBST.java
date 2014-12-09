@@ -30,8 +30,30 @@ import com.github.pedrovgs.binarytree.BinaryNode;
  */
 public class SortedArrayToBST {
 
-  public BinaryNode<Integer> transform(Integer[] emptyArray) {
-    return null;
+  /**
+   * Recursive algorithm implemented using a binary search movements. The complexity order of this
+   * algorithm in time terms is O(N) where N is the number of elements in the array. In space
+   * terms, the complexity order is equivalent because we have to return a binary tree with every
+   * element.
+   */
+  public BinaryNode<Integer> transform(Integer[] sortedArray) {
+    if (sortedArray == null || sortedArray.length == 0) {
+      throw new IllegalArgumentException("You can't use a null or empty array.");
+    }
+    return transformToBST(sortedArray, 0, sortedArray.length - 1);
   }
 
+  private static BinaryNode<Integer> transformToBST(Integer[] sortedArray, int bottom, int top) {
+    int center = (top + bottom) / 2;
+    if (sortedArray.length == 1) {
+      return new BinaryNode<Integer>(sortedArray[0]);
+    } else if (bottom > top) {
+      return null;
+    } else {
+      BinaryNode node = new BinaryNode<Integer>(sortedArray[center]);
+      node.setLeft(transformToBST(sortedArray, bottom, center - 1));
+      node.setRight(transformToBST(sortedArray, center + 1, top));
+      return node;
+    }
+  }
 }

@@ -53,8 +53,8 @@ public class SortedArrayToBSTTest {
   }
 
   /**
-   * If you get an in order traversal of a BST you get a sorted collection of elements. We are going
-   * to use this property to assert the result.
+   * If you get an in order traversal of a BST you get a sorted collection of elements. We are
+   * going to use this property to assert the result.
    */
   @Test public void shouldReturnOneBinarySearchTree() {
     Integer[] array = { 1, 2, 3, 4, 5, 6, 7, 8 };
@@ -62,9 +62,11 @@ public class SortedArrayToBSTTest {
     BinaryNode<Integer> result = sortedArrayToBST.transform(array);
 
     BinaryTreeInOrder inOrder = new BinaryTreeInOrder();
-    List<BinaryNode> expectedList = inOrder.getIterative(result);
-    Integer[] inOrderArray = new Integer[expectedList.size()];
-    expectedList.toArray(inOrderArray);
-    assertArrayEquals(array, inOrderArray);
+    List<BinaryNode<Integer>> resultList = inOrder.getIterative(result);
+    Integer[] resultArray = new Integer[resultList.size()];
+    for (int i = 0; i < resultList.size(); i++) {
+      resultArray[i] = resultList.get(i).getData();
+    }
+    assertArrayEquals(array, resultArray);
   }
 }

@@ -55,10 +55,10 @@ public class BinaryTreeInOrder {
    * complexity order of this algorithm is also O(N) where N is the number of nodes we have to
    * store in the auxiliary data structure, the stack.
    */
-  public List<BinaryNode> getIterative(BinaryNode root) {
+  public List<BinaryNode<Integer>> getIterative(BinaryNode<Integer> root) {
     validateBinaryNode(root);
 
-    List<BinaryNode> result = new LinkedList<BinaryNode>();
+    List<BinaryNode<Integer>> result = new LinkedList<BinaryNode<Integer>>();
     Stack<BinaryNode> stack = new Stack<BinaryNode>();
     //Define a pointer to track nodes
     BinaryNode current = root;
