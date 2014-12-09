@@ -15,6 +15,8 @@
  */
 package com.github.pedrovgs.problem24;
 
+import com.github.pedrovgs.binarytree.BinaryNode;
+
 /**
  * Given a sorted array full of integers, can you write a method to return a BST?
  *
@@ -27,4 +29,9 @@ package com.github.pedrovgs.problem24;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class SortedArrayToBST {
+
+  public BinaryNode<Integer> transform(Integer[] emptyArray) {
+    return null;
+  }
+
 }
