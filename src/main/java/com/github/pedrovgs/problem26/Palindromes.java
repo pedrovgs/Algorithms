@@ -25,4 +25,10 @@ package com.github.pedrovgs.problem26;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class Palindromes {
+
+
+  public boolean evaluate(String word) {
+    return false;
+  }
+  
 }
