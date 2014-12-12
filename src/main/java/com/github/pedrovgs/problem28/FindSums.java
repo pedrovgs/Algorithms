@@ -15,6 +15,9 @@
  */
 package com.github.pedrovgs.problem28;
 
+import com.sun.tools.javac.util.Pair;
+import java.util.List;
+
 /**
  * Given an array of numbers and a Integer as input, can you return a list of pairs in the input
  * array that can sum the input value.
@@ -24,4 +27,7 @@ package com.github.pedrovgs.problem28;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class FindSums {
+  public List<Pair<Integer, Integer>> find(int[] inputArray, int inputValue) {
+    return null;
+  }
 }
