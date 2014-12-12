@@ -38,7 +38,9 @@ public class FindSumsTest {
   }
 
   @Test public void shouldReturnAnEmptyResultIfTheArrayIsEmpty() {
-    List<Pair<Integer, Integer>> result = findSums.find(new int[], 3);
+    int[] inputArray = { };
+
+    List<Pair<Integer, Integer>> result = findSums.find(inputArray, 3);
 
     assertTrue(result.isEmpty());
   }

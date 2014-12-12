@@ -16,6 +16,7 @@
 package com.github.pedrovgs.problem28;
 
 import com.sun.tools.javac.util.Pair;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -27,7 +28,24 @@ import java.util.List;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class FindSums {
-  public List<Pair<Integer, Integer>> find(int[] inputArray, int inputValue) {
-    return null;
+
+  /**
+   * Iterative solution to this problem. Based on find the number that matches with a given number
+   * in the array, the complexity order of this algorithm is O(N^2) in time terms and O(N) in space
+   * terms.
+   */
+  public List<Pair<Integer, Integer>> find(int[] numbers, int value) {
+    if (numbers == null) {
+      throw new IllegalArgumentException("You can't pass a null array of numbers.");
+    }
+    List<Pair<Integer, Integer>> sums = new LinkedList<Pair<Integer, Integer>>();
+    for (int i = 0; i < numbers.length; i++) {
+      for (int j = 0; j < numbers.length; j++) {
+        if (numbers[i] + numbers[j] == value) {
+          sums.add(new Pair(numbers[i], numbers[j]));
+        }
+      }
+    }
+    return sums;
   }
 }
