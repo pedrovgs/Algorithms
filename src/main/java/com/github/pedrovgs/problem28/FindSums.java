@@ -15,7 +15,7 @@
  */
 package com.github.pedrovgs.problem28;
 
-import com.sun.tools.javac.util.Pair;
+import com.github.pedrovgs.pair.Pair;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;

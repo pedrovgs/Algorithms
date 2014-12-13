@@ -15,7 +15,7 @@
  */
 package com.github.pedrovgs.problem28;
 
-import com.sun.tools.javac.util.Pair;
+import com.github.pedrovgs.pair.Pair;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
