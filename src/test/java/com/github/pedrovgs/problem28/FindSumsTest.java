@@ -63,4 +63,37 @@ public class FindSumsTest {
 
     assertTrue(result.contains(new Pair<Integer, Integer>(-17, 9)));
   }
+
+  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullArraysLinear() {
+    findSums.findLinearComplexityOrder(null, 2);
+  }
+
+  @Test public void shouldReturnAnEmptyResultIfTheArrayIsEmptyLinear() {
+    int[] inputArray = { };
+
+    List<Pair<Integer, Integer>> result = findSums.findLinearComplexityOrder(inputArray, 3);
+
+    assertTrue(result.isEmpty());
+  }
+
+  @Test public void shouldFindEveryPairLinear() {
+    int[] inputArray = { 5, 2, 6, 1, 9 };
+    int inputValue = 7;
+
+    List<Pair<Integer, Integer>> result =
+        findSums.findLinearComplexityOrder(inputArray, inputValue);
+
+    assertTrue(result.contains(new Pair<Integer, Integer>(2, 5)));
+    assertTrue(result.contains(new Pair<Integer, Integer>(1, 6)));
+  }
+
+  @Test public void shouldWorkWithNegativeIntegersAsInputLinear() {
+    int[] inputArray = { 5, 2, -17, 6, 1, 9 };
+    int inputValue = -8;
+
+    List<Pair<Integer, Integer>> result =
+        findSums.findLinearComplexityOrder(inputArray, inputValue);
+
+    assertTrue(result.contains(new Pair<Integer, Integer>(9, -17)));
+  }
 }

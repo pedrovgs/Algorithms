@@ -16,8 +16,10 @@
 package com.github.pedrovgs.problem28;
 
 import com.sun.tools.javac.util.Pair;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Given an array of numbers and a Integer as input, can you return a list of pairs in the input
@@ -35,9 +37,7 @@ public class FindSums {
    * terms.
    */
   public List<Pair<Integer, Integer>> find(int[] numbers, int value) {
-    if (numbers == null) {
-      throw new IllegalArgumentException("You can't pass a null array of numbers.");
-    }
+    validateInput(numbers);
     List<Pair<Integer, Integer>> sums = new LinkedList<Pair<Integer, Integer>>();
     for (int i = 0; i < numbers.length; i++) {
       for (int j = 0; j < numbers.length; j++) {
@@ -47,5 +47,32 @@ public class FindSums {
       }
     }
     return sums;
+  }
+
+  /**
+   * Another iterative solution with a much better performance. This algorithm has a complexity
+   * order in space terms of O(N) where N is the number of elements in the array and O(N) in time
+   * terms because we are going to iterate over the numbers array just one time instead of two. The
+   * base idea in this algorithm is to store in a map the number you need to complete the sum just
+   * in cause you can find it in the future.
+   */
+  public List<Pair<Integer, Integer>> findLinearComplexityOrder(int[] numbers, int n) {
+    validateInput(numbers);
+    List<Pair<Integer, Integer>> sums = new LinkedList<Pair<Integer, Integer>>();
+    Map<Integer, Integer> partialElements = new HashMap<Integer, Integer>();
+    for (int number : numbers) {
+      if (partialElements.containsKey(number)) {
+        sums.add(new Pair<Integer, Integer>(number, partialElements.get(number)));
+      } else {
+        partialElements.put(n - number, number);
+      }
+    }
+    return sums;
+  }
+
+  private void validateInput(int[] numbers) {
+    if (numbers == null) {
+      throw new IllegalArgumentException("You can't pass a null array of numbers.");
+    }
   }
 }
