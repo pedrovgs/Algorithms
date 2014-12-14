@@ -16,10 +16,15 @@
 package com.github.pedrovgs.problem30;
 
 /**
- * Given an String containing a number expressed using cientific notation, can you write a method to
+ * Given an String containing a number expressed using cientific notation, can you write a method
+ * to
  * return the value of that number?
  *
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class CientificNotation {
+
+  public long calculate(String number) {
+    return 0;
+  }
 }
