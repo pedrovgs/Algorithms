@@ -23,27 +23,27 @@ import static org.junit.Assert.assertEquals;
 /**
  * @author Pedro Vicente Gómez Sánchez.
  */
-public class CientificNotationTest {
+public class ScientificNotationTest {
 
-  private CientificNotation cientificNotation;
+  private ScientificNotation scientificNotation;
 
   @Before public void setUp() {
-    cientificNotation = new CientificNotation();
+    scientificNotation = new ScientificNotation();
   }
 
   @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullStringAsInput() {
-    cientificNotation.calculate(null);
+    scientificNotation.calculate(null);
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void shouldNotAcceptMalformedScientificNumbers() {
-    cientificNotation.calculate("9.18F+09");
+    scientificNotation.calculate("9.18F+09");
   }
 
   @Test public void shouldReturnTheValueOfTheNumber() {
     String number = "9.18E+09";
 
-    long result = cientificNotation.calculate(number);
+    long result = scientificNotation.calculate(number);
 
     assertEquals(9180000000L, result);
   }
@@ -51,7 +51,7 @@ public class CientificNotationTest {
   @Test public void shouldTakeIntoAccountNegativeNumbers() {
     String number = "-9.18E+09";
 
-    long result = cientificNotation.calculate(number);
+    long result = scientificNotation.calculate(number);
 
     assertEquals(-9180000000L, result);
   }
