@@ -22,4 +22,7 @@ package com.github.pedrovgs.problem31;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class FindLongestConsecutiveSequence {
+  public int find(int[] array) {
+    return 0;
+  }
 }
