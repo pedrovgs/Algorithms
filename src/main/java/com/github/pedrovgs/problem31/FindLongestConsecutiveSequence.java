@@ -58,4 +58,8 @@ public class FindLongestConsecutiveSequence {
       return result;
     }
   }
+
+  public int findRecursive(int[] array) {
+    return 0;
+  }
 }
