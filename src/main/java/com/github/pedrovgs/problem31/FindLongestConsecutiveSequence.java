@@ -22,7 +22,33 @@ package com.github.pedrovgs.problem31;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class FindLongestConsecutiveSequence {
-  public int find(int[] array) {
-    return 0;
+
+  /**
+   * Iterative solution for this algorithm. This algorithm is based on a double pointer at the
+   * start and end of the sequence and the complexity order in time terms is O(N) where N is the
+   * number of elements in the array. In space terms, the complexity order is O(1) because we are
+   * not using any additional data structure to keep the result.
+   */
+  public int find(int[] numbers) {
+    if (numbers == null) {
+      throw new IllegalArgumentException("You can't pass a null array as input.");
+    }
+    if (numbers.length == 0) {
+      return 0;
+    }
+
+    int result = 0;
+    int start = 0, end = 0;
+    for (int i = 1; i < numbers.length; i++) {
+      if (numbers[i - 1] < numbers[i]) {
+        end = i;
+      } else {
+        start = i;
+      }
+      if (end - start > result) {
+        result = end - start;
+      }
+    }
+    return result + 1;
   }
 }
