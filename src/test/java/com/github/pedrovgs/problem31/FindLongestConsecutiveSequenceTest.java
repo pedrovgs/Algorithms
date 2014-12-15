@@ -15,7 +15,6 @@
  */
 package com.github.pedrovgs.problem31;
 
-import com.github.pedrovgs.problem31.FindLongestConsecutiveSequence;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -33,13 +32,13 @@ public class FindLongestConsecutiveSequenceTest {
   }
 
   @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullArrays() {
-    lcs.find(null);
+    lcs.findIterative(null);
   }
 
   @Test public void shouldReturnZeroIfTheArrayIsEmpty() {
     int[] array = { };
 
-    int sequenceLength = lcs.find(array);
+    int sequenceLength = lcs.findIterative(array);
 
     assertEquals(0, sequenceLength);
   }
@@ -47,7 +46,7 @@ public class FindLongestConsecutiveSequenceTest {
   @Test public void shouldReturnZeroIfThereIsNoAnyConsecutiveSequence() {
     int[] array = { 1, 2, 3, 4, 5, 6 };
 
-    int sequenceLength = lcs.find(array);
+    int sequenceLength = lcs.findIterative(array);
 
     assertEquals(6, sequenceLength);
   }
@@ -55,7 +54,7 @@ public class FindLongestConsecutiveSequenceTest {
   @Test public void shouldReturnLengthArrayIfTheArrayIsOneConsecutiveSequence() {
     int[] array = { 1, 3, 4, 5, 64, 4, 5, 6, 7, 8, 9, 98, -1, -2 };
 
-    int sequenceLength = lcs.find(array);
+    int sequenceLength = lcs.findIterative(array);
 
     assertEquals(7, sequenceLength);
   }
