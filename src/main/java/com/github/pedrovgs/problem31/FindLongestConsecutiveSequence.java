@@ -16,7 +16,8 @@
 package com.github.pedrovgs.problem31;
 
 /**
- * Given an array full of integers, can you write a method to findIterative the length of the longest
+ * Given an array full of integers, can you write a method to findIterative the length of the
+ * longest
  * consecutive sequence inside the array?
  *
  * @author Pedro Vicente Gómez Sánchez.
@@ -37,6 +38,7 @@ public class FindLongestConsecutiveSequence {
       return 0;
     }
 
+    boolean consecutiveSequenceFound = false;
     int result = 0;
     int start = 0, end = 0;
     for (int i = 1; i < numbers.length; i++) {
@@ -46,9 +48,14 @@ public class FindLongestConsecutiveSequence {
         start = i;
       }
       if (end - start > result) {
+        consecutiveSequenceFound = true;
         result = end - start;
       }
     }
-    return result + 1;
+    if (consecutiveSequenceFound) {
+      return result + 1;
+    } else {
+      return result;
+    }
   }
 }

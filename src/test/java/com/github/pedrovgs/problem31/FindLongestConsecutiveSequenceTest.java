@@ -31,11 +31,12 @@ public class FindLongestConsecutiveSequenceTest {
     this.lcs = new FindLongestConsecutiveSequence();
   }
 
-  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullArrays() {
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptNullArraysIterative() {
     lcs.findIterative(null);
   }
 
-  @Test public void shouldReturnZeroIfTheArrayIsEmpty() {
+  @Test public void shouldReturnZeroIfTheArrayIsEmptyIterative() {
     int[] array = { };
 
     int sequenceLength = lcs.findIterative(array);
@@ -43,7 +44,15 @@ public class FindLongestConsecutiveSequenceTest {
     assertEquals(0, sequenceLength);
   }
 
-  @Test public void shouldReturnZeroIfThereIsNoAnyConsecutiveSequence() {
+  @Test public void shouldReturnZeroIfThereIsNoAnyConsecutiveSequenceIterative() {
+    int[] array = { 6, 5, 4, 3, 2, 1 };
+
+    int sequenceLength = lcs.findIterative(array);
+
+    assertEquals(0, sequenceLength);
+  }
+
+  @Test public void shouldReturnLengthArrayIfTheArrayIsOneConsecutiveSequenceIterative() {
     int[] array = { 1, 2, 3, 4, 5, 6 };
 
     int sequenceLength = lcs.findIterative(array);
@@ -51,15 +60,11 @@ public class FindLongestConsecutiveSequenceTest {
     assertEquals(6, sequenceLength);
   }
 
-  @Test public void shouldReturnLengthArrayIfTheArrayIsOneConsecutiveSequence() {
+  @Test public void shouldFindLongestConsecutiveSequenceIterative() {
     int[] array = { 1, 3, 4, 5, 64, 4, 5, 6, 7, 8, 9, 98, -1, -2 };
 
     int sequenceLength = lcs.findIterative(array);
 
     assertEquals(7, sequenceLength);
-  }
-
-  @Test public void shouldFindLongestConsecutiveSequence() {
-
   }
 }
