@@ -31,9 +31,7 @@ public class FindLongestConsecutiveSequence {
    * not using any additional data structure to keep the result.
    */
   public int findIterative(int[] numbers) {
-    if (numbers == null) {
-      throw new IllegalArgumentException("You can't pass a null array as input.");
-    }
+    validateInput(numbers);
     if (numbers.length == 0) {
       return 0;
     }
@@ -59,7 +57,37 @@ public class FindLongestConsecutiveSequence {
     }
   }
 
+  /**
+   * Tail recursive solution for this algorithm. The complexity order of this algorithm is similar
+   * to the previous implementation, O(N) in time terms and O(1) in space terms.
+   */
   public int findRecursive(int[] array) {
-    return 0;
+    validateInput(array);
+    return findRecursiveInner(array, 1, 0, 0);
+  }
+
+  private int findRecursiveInner(int[] array, int i, int acc, int maxLength) {
+    if (array.length == 0) {
+      return 0;
+    } else if (array.length == i) {
+      return maxLength == 0 ? 0 : 1 + maxLength;
+    } else {
+      int previous = array[i - 1];
+      int current = array[i];
+      if (previous >= current) {
+        maxLength = acc > maxLength ? acc : maxLength;
+        return findRecursiveInner(array, i + 1, 0, maxLength);
+      } else {
+        acc++;
+        maxLength = acc > maxLength ? acc : maxLength;
+        return findRecursiveInner(array, i + 1, acc, maxLength);
+      }
+    }
+  }
+
+  private void validateInput(int[] numbers) {
+    if (numbers == null) {
+      throw new IllegalArgumentException("You can't pass a null array as input.");
+    }
   }
 }
