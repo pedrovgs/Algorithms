@@ -67,6 +67,16 @@ public class FindLongestConsecutiveSequenceTest {
 
     assertEquals(7, sequenceLength);
   }
+
+  @Test
+  public void shouldFindLongestConsecutiveSequenceIterativeSupportingEqualsConsecutiveNumbers() {
+    int[] array = { 1, 1, 1, 1, 3, 4, 5, 64, 4, 5, 6, 7, 8, 9, 98, -1, -2 };
+
+    int sequenceLength = lcs.findIterative(array);
+
+    assertEquals(7, sequenceLength);
+  }
+
   @Test(expected = IllegalArgumentException.class)
   public void shouldNotAcceptNullArraysRecursive() {
     lcs.findRecursive(null);
@@ -98,6 +108,15 @@ public class FindLongestConsecutiveSequenceTest {
 
   @Test public void shouldFindLongestConsecutiveSequenceRecursive() {
     int[] array = { 1, 3, 4, 5, 64, 4, 5, 6, 7, 8, 9, 98, -1, -2 };
+
+    int sequenceLength = lcs.findRecursive(array);
+
+    assertEquals(7, sequenceLength);
+  }
+
+  @Test
+  public void shouldFindLongestConsecutiveSequenceRecursiveSupportingEqualsConsecutiveNumbers() {
+    int[] array = { 1, 1, 1, 1, 3, 4, 5, 64, 4, 5, 6, 7, 8, 9, 98, -1, -2 };
 
     int sequenceLength = lcs.findRecursive(array);
 
