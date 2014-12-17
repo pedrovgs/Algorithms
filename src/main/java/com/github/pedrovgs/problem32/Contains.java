@@ -22,5 +22,8 @@ package com.github.pedrovgs.problem32;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class Contains {
-  
+
+  public boolean evaluate(String word1, String word2) {
+    return false;
+  }
 }
