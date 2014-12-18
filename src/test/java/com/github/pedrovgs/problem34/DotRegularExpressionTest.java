@@ -57,11 +57,11 @@ public class DotRegularExpressionTest {
 
   @Test public void shouldReturnAnArrayWithMatches() {
     String pattern = "p.d";
-    String[] words = { "pod", "pid", "pat", "por", "pd" };
+    String[] words = { "pod", "pid", "pat", "por", "pwd" };
 
     String[] result = dotRegularExpression.evaluate(words, pattern);
 
-    String[] expectedResult = { "pod", "pid", "pd" };
+    String[] expectedResult = { "pod", "pid", "pwd" };
     assertArrayEquals(expectedResult, result);
   }
 }
