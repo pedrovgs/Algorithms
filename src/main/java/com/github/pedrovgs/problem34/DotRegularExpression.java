@@ -22,4 +22,7 @@ package com.github.pedrovgs.problem34;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class DotRegularExpression {
+  public String[] evaluate(String[] words, String pattern) {
+    return new String[0];
+  }
 }
