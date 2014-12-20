@@ -22,5 +22,8 @@ package com.github.pedrovgs.problem35;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class AsteriskRegularExpression {
-  
+
+  public String[] evaluate(String[] words, String pattern) {
+    return new String[0];
+  }
 }
