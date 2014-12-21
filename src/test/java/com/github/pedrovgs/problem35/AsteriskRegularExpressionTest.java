@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.pedrovgs;
+package com.github.pedrovgs.problem35;
 
 import com.github.pedrovgs.problem35.AsteriskRegularExpression;
 import org.junit.Before;
