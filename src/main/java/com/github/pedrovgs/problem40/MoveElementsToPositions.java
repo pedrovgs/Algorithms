@@ -25,7 +25,39 @@ package com.github.pedrovgs.problem40;
  */
 public class MoveElementsToPositions {
 
-  public void move(int[] input) {
+  /**
+   * Iterative solution to solve this problem. This is a bubble sort algorithm and the complexity
+   * order of this algorithm is O(N^2). In space terms, the complexity order is O(1). I've used
+   * this algorithm to resolve this problem because in the problem statement says you can't use any
+   * additional data structure.
+   */
+  public void move(int[] array) {
+    if (array == null) {
+      throw new IllegalArgumentException("You can't pass a null array as input.");
+    }
+    int size = array.length;
+    boolean swap = true;
+    while (swap) {
+      swap = false;
+      for (int i = 0; i < size - 1; i++) {
+        checkIfElementIsInsideTheValidInterval(array[i], size);
+        if (array[i] > array[i + 1]) {
+          swap = true;
+          swapElements(array, i, i + 1);
+        }
+      }
+    }
+  }
 
+  private void checkIfElementIsInsideTheValidInterval(int number, int length) {
+    if (number < 0 || number >= length) {
+      throw new IllegalArgumentException("Input array contains an invalid element: " + number);
+    }
+  }
+
+  private void swapElements(int[] array, int i, int j) {
+    int temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
   }
 }
