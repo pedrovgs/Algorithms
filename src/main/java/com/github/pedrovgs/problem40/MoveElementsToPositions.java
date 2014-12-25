@@ -24,4 +24,8 @@ package com.github.pedrovgs.problem40;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class MoveElementsToPositions {
+
+  public void move(int[] input) {
+
+  }
 }
