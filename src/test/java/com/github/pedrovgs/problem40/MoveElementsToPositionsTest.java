@@ -37,7 +37,7 @@ public class MoveElementsToPositionsTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void shouldNotAcceptAnyNumberGreaterThanArrayLengthOrMinorThanOne() {
-    int[] input = { 4, 1 };
+    int[] input = { 1, 4 };
 
     moveElementsToPosition.move(input);
   }

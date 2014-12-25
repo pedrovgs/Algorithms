@@ -32,20 +32,27 @@ public class MoveElementsToPositions {
    * additional data structure.
    */
   public void move(int[] array) {
-    if (array == null) {
-      throw new IllegalArgumentException("You can't pass a null array as input.");
-    }
+    validateInput(array);
     int size = array.length;
     boolean swap = true;
     while (swap) {
       swap = false;
       for (int i = 0; i < size - 1; i++) {
-        checkIfElementIsInsideTheValidInterval(array[i], size);
         if (array[i] > array[i + 1]) {
           swap = true;
           swapElements(array, i, i + 1);
         }
       }
+    }
+  }
+
+  private void validateInput(int[] array) {
+    if (array == null) {
+      throw new IllegalArgumentException("You can't pass a null array as input.");
+    }
+    int arraySize = array.length;
+    for (int i = 0; i < arraySize; i++) {
+      checkIfElementIsInsideTheValidInterval(array[i], arraySize);
     }
   }
 
