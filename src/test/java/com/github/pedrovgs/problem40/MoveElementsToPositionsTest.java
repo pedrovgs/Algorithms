@@ -37,13 +37,13 @@ public class MoveElementsToPositionsTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void shouldNotAcceptAnyNumberGreaterThanArrayLengthOrMinorThanOne() {
-    int[] input = { 1, 4 };
+    int[] input = { 4, 1 };
 
     moveElementsToPosition.move(input);
   }
 
   @Test public void shouldMoveElementsToTheCorrectPosition() {
-    int[] input = { 3, 4, 2, 1 };
+    int[] input = { 2, 3, 1, 0 };
 
     moveElementsToPosition.move(input);
 
@@ -52,7 +52,7 @@ public class MoveElementsToPositionsTest {
 
   private void assertNumbersAreInTheCorrectPosition(int[] input) {
     for (int i = 0; i < input.length; i++) {
-      assertEquals(i + 1, input[i]);
+      assertEquals(i, input[i]);
     }
   }
 }
