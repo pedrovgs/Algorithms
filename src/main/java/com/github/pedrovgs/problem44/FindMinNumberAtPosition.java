@@ -16,8 +16,7 @@
 package com.github.pedrovgs.problem44;
 
 import com.github.pedrovgs.binarytree.BinaryNode;
-import java.util.ArrayList;
-import java.util.LinkedList;
+import com.github.pedrovgs.problem15.BinaryTreeInOrder;
 import java.util.List;
 
 /**
@@ -26,6 +25,12 @@ import java.util.List;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class FindMinNumberAtPosition {
+
+  private final BinaryTreeInOrder inOrder;
+
+  public FindMinNumberAtPosition() {
+    this.inOrder = new BinaryTreeInOrder();
+  }
 
   /**
    * This algorithm has a complexity order in space and time terms of O(N) where N is the number of
@@ -39,16 +44,8 @@ public class FindMinNumberAtPosition {
     return orderedElements.get(position - 1).getData();
   }
 
-  private static List<BinaryNode<Integer>> getOrderedElements(BinaryNode root) {
-    if (root == null) {
-      return new ArrayList<BinaryNode<Integer>>();
-    } else {
-      List<BinaryNode<Integer>> nodes = new LinkedList<BinaryNode<Integer>>();
-      nodes.addAll(getOrderedElements(root.getLeft()));
-      nodes.add(root);
-      nodes.addAll(getOrderedElements(root.getRight()));
-      return nodes;
-    }
+  private List<BinaryNode<Integer>> getOrderedElements(BinaryNode root) {
+    return inOrder.getRecursive(root);
   }
 
   private void validatePosition(int position, List<BinaryNode<Integer>> orderedElements) {
