@@ -45,7 +45,7 @@ public class BinaryTreeSerializationTest {
     root.setRight(n2);
     n2.setLeft(n3);
 
-    String serializedTree = binaryTreeSerialization.serializeInner(root);
+    String serializedTree = binaryTreeSerialization.serialize(root);
     BinaryNode<Integer> deserializedTree = binaryTreeSerialization.deserialize(serializedTree);
 
     assertEquals(root, deserializedTree);
