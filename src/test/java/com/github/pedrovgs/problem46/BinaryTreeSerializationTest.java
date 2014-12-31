@@ -1,7 +1,6 @@
-package com.github.pedrovgs.problem47;
+package com.github.pedrovgs.problem46;
 
 import com.github.pedrovgs.binarytree.BinaryNode;
-import com.github.pedrovgs.problem46.BinaryTreeSerialization;
 import org.junit.Before;
 import org.junit.Test;
 
