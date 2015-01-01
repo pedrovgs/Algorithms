@@ -15,6 +15,8 @@
  */
 package com.github.pedrovgs.problem47;
 
+import java.util.List;
+
 /**
  * Given an array of available money and a value as input, can you write a method to return all
  * that change using the less money as possible.
@@ -22,4 +24,7 @@ package com.github.pedrovgs.problem47;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class ReturnChange {
+  public List<Integer> calculate(int[] moneys, int billAmount) {
+    return null;
+  }
 }
