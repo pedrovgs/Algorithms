@@ -32,6 +32,7 @@ public class ReturnChange {
    */
   public List<Integer> calculate(int[] moneys, int billAmount) {
     validateInputData(moneys, billAmount);
+    
     List<Integer> change = new LinkedList<Integer>();
     while (billAmount > 0 && moneys.length > 0) {
       for (int i = moneys.length - 1; i >= 0; i--) {
@@ -48,7 +49,8 @@ public class ReturnChange {
   private void validateInputData(int[] moneys, int billAmount) {
     if (moneys == null || moneys.length == 0 || billAmount <= 0) {
       throw new IllegalArgumentException(
-          "Review your parameters used as input, you can't use a null or empty array of moneys or a bill amount equals or less than zero.");
+          "Review your parameters used as input, you can't use a null or empty array of moneys or "
+              + "a bill amount equals or less than zero.");
     }
   }
 }
