@@ -32,7 +32,7 @@ public class ReturnChange {
    */
   public List<Integer> calculate(int[] moneys, int billAmount) {
     validateInputData(moneys, billAmount);
-    
+
     List<Integer> change = new LinkedList<Integer>();
     while (billAmount > 0 && moneys.length > 0) {
       for (int i = moneys.length - 1; i >= 0; i--) {
