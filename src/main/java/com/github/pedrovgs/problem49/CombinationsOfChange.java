@@ -15,6 +15,8 @@
  */
 package com.github.pedrovgs.problem49;
 
+import java.util.List;
+
 /**
  * Given a set of moneys and one amount to change, can you write a method to calculate every
  * possible return change using all possible combinations of moneys minimizing the number of moneys
@@ -23,4 +25,7 @@ package com.github.pedrovgs.problem49;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class CombinationsOfChange {
+  public List<List<Integer>> get(int[] moneys, int ammount) {
+    return null;
+  }
 }
