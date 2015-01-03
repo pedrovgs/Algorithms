@@ -22,4 +22,7 @@ package com.github.pedrovgs.problem50;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class UniqueChars {
+  public boolean evaluate(String input) {
+    return false;
+  }
 }
