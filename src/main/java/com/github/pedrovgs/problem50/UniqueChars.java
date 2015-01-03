@@ -15,6 +15,9 @@
  */
 package com.github.pedrovgs.problem50;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Implement an algorithm to determine if a string has all unique characters. What if you cannot
  * use additional data structures?
@@ -22,7 +25,45 @@ package com.github.pedrovgs.problem50;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class UniqueChars {
+
+  /**
+   * Iterative algorithm to solve this problem. The complexity order of this algorithm in space an
+   * time terms is equals to O(N) where N is the number of chars inside the input String passed as
+   * parameter.
+   */
   public boolean evaluate(String input) {
-    return false;
+    validateInput(input);
+    Map<String, Integer> chars = countCharAppearances(input);
+    return containsDuplicatedChars(chars);
+  }
+
+  private Map<String, Integer> countCharAppearances(String input) {
+    Map<String, Integer> chars = new HashMap<String, Integer>();
+    for (char c : input.toCharArray()) {
+      countChar(chars, String.valueOf(c));
+    }
+    return chars;
+  }
+
+  private void countChar(Map<String, Integer> chars, String c) {
+    Integer newCount = chars.containsKey(c) ? chars.get(c) + 1 : 1;
+    chars.put(c, newCount);
+  }
+
+  private boolean containsDuplicatedChars(Map<String, Integer> chars) {
+    boolean duplicatedChar = false;
+    for (Integer counter : chars.values()) {
+      if (counter > 1) {
+        duplicatedChar = true;
+        break;
+      }
+    }
+    return duplicatedChar;
+  }
+
+  private void validateInput(String input) {
+    if (input == null) {
+      throw new IllegalArgumentException("You can't pass a null instance as parameter.");
+    }
   }
 }
