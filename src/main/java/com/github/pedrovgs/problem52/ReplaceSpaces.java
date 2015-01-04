@@ -53,6 +53,37 @@ public class ReplaceSpaces {
     }
   }
 
+  /**
+   * Iterative solution with a better performance in spce terms. In time terms, the complexity
+   * order of this algorithm is still O(N), the execution time is 2N. In space terms, the
+   * complexity order of this algorithm is now O(1) because we are not using any additional data
+   * structure to keep a copy of the input array as we are doing in the previous solution.
+   */
+  public void replace2(char[] input) {
+    validateInput(input);
+
+    int i = getLastCharPosition(input);
+    for (int j = input.length - 1; i >= 0 && j >= 0; i--, j--) {
+      if (input[i] == ' ') {
+        input[j--] = '0';
+        input[j--] = '2';
+        input[j] = '%';
+      } else {
+        input[j] = input[i];
+      }
+    }
+  }
+
+  private int getLastCharPosition(char[] input) {
+    int lastCharPosition = 0;
+    for (int i = 0; i < input.length; i++) {
+      if (input[i] != '\0') {
+        lastCharPosition = i;
+      }
+    }
+    return lastCharPosition;
+  }
+
   private void validateInput(char[] input) {
     if (input == null) {
       throw new IllegalArgumentException("You can't pass a null array as input parameter.");
