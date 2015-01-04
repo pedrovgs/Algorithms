@@ -15,8 +15,8 @@
  */
 package com.github.pedrovgs.problem50;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Implement an algorithm to determine if a string has all unique characters. What if you cannot
@@ -33,10 +33,18 @@ public class UniqueChars {
    */
   public boolean evaluate(String input) {
     validateInput(input);
-    Map<String, Integer> chars = countCharAppearances(input);
-    return !containsDuplicatedChars(chars);
+
+    Set<Integer> charsCounter = new HashSet<Integer>();
+    for (char c : input.toCharArray()) {
+      if (charsCounter.contains((int) c)) {
+        return false;
+      } else {
+        charsCounter.add((int) c);
+      }
+    }
+    return true;
   }
-  
+
   /**
    * Faster solution to this problem. This solution is based on one important detail, we are
    * assuming ASCII as charset. This solution is also iterative and changes the HashMap
@@ -56,30 +64,6 @@ public class UniqueChars {
       }
     }
     return true;
-  }
-
-  private Map<String, Integer> countCharAppearances(String input) {
-    Map<String, Integer> chars = new HashMap<String, Integer>();
-    for (char c : input.toCharArray()) {
-      countChar(chars, String.valueOf(c));
-    }
-    return chars;
-  }
-
-  private void countChar(Map<String, Integer> chars, String c) {
-    Integer newCount = chars.containsKey(c) ? chars.get(c) + 1 : 1;
-    chars.put(c, newCount);
-  }
-
-  private boolean containsDuplicatedChars(Map<String, Integer> chars) {
-    boolean duplicatedChar = false;
-    for (Integer counter : chars.values()) {
-      if (counter > 1) {
-        duplicatedChar = true;
-        break;
-      }
-    }
-    return duplicatedChar;
   }
 
   private void validateInput(String input) {
