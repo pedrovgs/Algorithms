@@ -45,7 +45,7 @@ public class ReplaceSpacesTest {
     assertArrayEquals(new char[] { '%', '2', '0', '%', '2', '0' }, input);
   }
 
-  @Test public void shouldReplaceSpacesWithTheStatementChar() {
+  @Test public void shouldReplaceSpacesWithTheStatementCharWithJustOneSpace() {
     char[] input = new char[8];
     input[0] = 'p';
     input[1] = 'e';
@@ -57,5 +57,37 @@ public class ReplaceSpacesTest {
     replaceSpaces.replace(input);
 
     assertArrayEquals(new char[] { 'p', 'e', '%', '2', '0', 'd', 'r', 'o' }, input);
+  }
+
+  @Test public void shouldReplaceSpacesWithTheStatementCharWithJustOneSpaceAtTheEndOfTheContent() {
+    char[] input = new char[8];
+    input[0] = 'p';
+    input[1] = 'e';
+    input[2] = 'd';
+    input[3] = 'r';
+    input[4] = 'o';
+    input[5] = ' ';
+
+    replaceSpaces.replace(input);
+
+    assertArrayEquals(new char[] { 'p', 'e', 'd', 'r', 'o', '%', '2', '0' }, input);
+  }
+
+  @Test public void shouldReplaceSpacesWithTheStatementCharWithMoreThanOneSpace() {
+    char[] input = new char[13];
+    input[0] = 'p';
+    input[1] = 'e';
+    input[2] = ' ';
+    input[3] = 'd';
+    input[4] = 'r';
+    input[5] = 'o';
+    input[6] = ' ';
+    input[7] = 'g';
+    input[8] = 's';
+
+    replaceSpaces.replace(input);
+
+    assertArrayEquals(
+        new char[] { 'p', 'e', '%', '2', '0', 'd', 'r', 'o', '%', '2', '0', 'g', 's' }, input);
   }
 }
