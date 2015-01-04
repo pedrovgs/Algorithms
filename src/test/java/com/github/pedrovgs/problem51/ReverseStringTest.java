@@ -52,4 +52,27 @@ public class ReverseStringTest {
 
     assertEquals("ordeP", result);
   }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptNullStringsRecursive() {
+    reverseString.reverseRecursive(null);
+  }
+
+  @Test public void shouldReturnAnEmptyStringIfTheInputIsEmptyRecursive() {
+    String result = reverseString.reverseRecursive("");
+
+    assertEquals("", result);
+  }
+
+  @Test public void shouldReturnTheSameStringIfTheInputStringContainsJustOneCharRecursive() {
+    String result = reverseString.reverseRecursive("a");
+
+    assertEquals("a", result);
+  }
+
+  @Test public void shouldReverseStringRecursive() {
+    String result = reverseString.reverseRecursive("Pedro");
+
+    assertEquals("ordeP", result);
+  }
 }
