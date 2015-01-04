@@ -24,7 +24,38 @@ package com.github.pedrovgs.problem52;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class ReplaceSpaces {
+
+  /**
+   * Iterative solution to this problem. Using two pointer we are going to iterate over the input
+   * array using one of them and other to store the result in a temporal array. The complexity
+   * order of this algorithm in time and space terms is O(N) where N is the number of elements in
+   * the array.
+   */
   public void replace(char[] input) {
-    
+    validateInput(input);
+
+    char[] result = new char[input.length];
+    for (int i = 0, j = 0; i < input.length && j < input.length; i++, j++) {
+      if (input[i] == ' ') {
+        result[j++] = '%';
+        result[j++] = '2';
+        result[j] = '0';
+      } else {
+        result[j] = input[i];
+      }
+    }
+    copyArray(result, input);
+  }
+
+  private void copyArray(char[] src, char[] destiny) {
+    for (int i = 0; i < src.length; i++) {
+      destiny[i] = src[i];
+    }
+  }
+
+  private void validateInput(char[] input) {
+    if (input == null) {
+      throw new IllegalArgumentException("You can't pass a null array as input parameter.");
+    }
   }
 }
