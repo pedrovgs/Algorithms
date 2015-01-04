@@ -34,7 +34,28 @@ public class UniqueChars {
   public boolean evaluate(String input) {
     validateInput(input);
     Map<String, Integer> chars = countCharAppearances(input);
-    return containsDuplicatedChars(chars);
+    return !containsDuplicatedChars(chars);
+  }
+  
+  /**
+   * Faster solution to this problem. This solution is based on one important detail, we are
+   * assuming ASCII as charset. This solution is also iterative and changes the HashMap
+   * implementation with an array with a size equivalent to the maximum different chars you can
+   * find in ASCII. The complexity order of this algorithm in time terms is O(N), like the previous
+   * algorithm. In space terms, the complexity order of this algorithm is O(1).
+   */
+  public boolean evaluate2(String input) {
+    validateInput(input);
+
+    int[] chars = new int[256];
+    for (char c : input.toCharArray()) {
+      if (chars[c] >= 1) {
+        return false;
+      } else {
+        chars[c]++;
+      }
+    }
+    return true;
   }
 
   private Map<String, Integer> countCharAppearances(String input) {
