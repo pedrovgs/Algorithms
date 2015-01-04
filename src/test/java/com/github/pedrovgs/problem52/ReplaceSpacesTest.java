@@ -56,6 +56,6 @@ public class ReplaceSpacesTest {
 
     replaceSpaces.replace(input);
 
-    assertArrayEquals(new char[] { '%', '2', '0', '%', '2', '0' }, input);
+    assertArrayEquals(new char[] { 'p', 'e', '%', '2', '0', 'd', 'r', 'o' }, input);
   }
 }
