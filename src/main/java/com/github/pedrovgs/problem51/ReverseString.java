@@ -28,7 +28,7 @@ public class ReverseString {
    * possible to get O(N) because String class uses a char array internally and the complexity
    * order of charAt method is O(1).
    */
-  public String reverse(String input) {
+  public String reverseIterative(String input) {
     validateInput(input);
 
     StringBuilder stringBuilder = new StringBuilder();

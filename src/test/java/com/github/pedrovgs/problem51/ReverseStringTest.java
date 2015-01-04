@@ -31,24 +31,25 @@ public class ReverseStringTest {
     reverseString = new ReverseString();
   }
 
-  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullStrings() {
-    reverseString.reverse(null);
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptNullStringsIterative() {
+    reverseString.reverseIterative(null);
   }
 
-  @Test public void shouldReturnAnEmptyStringIfTheInputIsEmpty() {
-    String result = reverseString.reverse("");
+  @Test public void shouldReturnAnEmptyStringIfTheInputIsEmptyIterative() {
+    String result = reverseString.reverseIterative("");
 
     assertEquals("", result);
   }
 
-  @Test public void shouldReturnTheSameStringIfTheInputStringContainsJustOneChar() {
-    String result = reverseString.reverse("a");
+  @Test public void shouldReturnTheSameStringIfTheInputStringContainsJustOneCharIterative() {
+    String result = reverseString.reverseIterative("a");
 
     assertEquals("a", result);
   }
 
-  @Test public void shouldReverseString() {
-    String result = reverseString.reverse("Pedro");
+  @Test public void shouldReverseStringIterative() {
+    String result = reverseString.reverseIterative("Pedro");
 
     assertEquals("ordeP", result);
   }
