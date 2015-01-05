@@ -23,4 +23,7 @@ package com.github.pedrovgs.problem53;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class CompressString {
+  public String compress(String src) {
+    return null;
+  }
 }
