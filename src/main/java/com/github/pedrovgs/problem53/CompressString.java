@@ -48,7 +48,7 @@ public class CompressString {
       if (isCharRepeated(previousChar, currentChar)) {
         repeatedCharCounter++;
       } else {
-        stringBuilder.append(previousChar);
+        addChar(stringBuilder, previousChar);
         if (repeatedCharCounter > 1) {
           stringBuilder.append(repeatedCharCounter);
           repeatedCharCounter = 1;
@@ -69,9 +69,51 @@ public class CompressString {
   private void appendLastCharIfNeeded(StringBuilder stringBuilder, int repeatedCharCounter,
       char previousChar) {
     if (repeatedCharCounter > 1) {
-      stringBuilder.append(previousChar);
+      addChar(stringBuilder, previousChar);
       stringBuilder.append(repeatedCharCounter);
     }
+  }
+
+  /**
+   * Tail recursive solution to this problem. The complexity order in time and space terms of this
+   * recursive version is the same than te previous one.
+   */
+  public String compressRecursive(String src) {
+    validateInput(src);
+
+    if (src.length() <= 1) {
+      return src;
+    }
+
+    return compressRecursiveInner(src, new StringBuilder(), 1, src.charAt(0), 1);
+  }
+
+  private String compressRecursiveInner(String src, StringBuilder sb, int i, char previousChar,
+      int charCounter) {
+    boolean thereIsNoMoreWordToCompress = i == src.length();
+    if (thereIsNoMoreWordToCompress) {
+      addChar(sb, previousChar);
+      addCharCounterIfNeeded(sb, charCounter);
+      return sb.toString();
+    } else {
+      if (isCharRepeated(src.charAt(i), previousChar)) {
+        return compressRecursiveInner(src, sb, i + 1, previousChar, charCounter + 1);
+      } else {
+        addChar(sb, previousChar);
+        addCharCounterIfNeeded(sb, charCounter);
+        return compressRecursiveInner(src, sb, i + 1, src.charAt(i), 1);
+      }
+    }
+  }
+
+  private void addCharCounterIfNeeded(StringBuilder sb, int charCounter) {
+    if (charCounter > 1) {
+      sb.append(charCounter);
+    }
+  }
+
+  private void addChar(StringBuilder sb, char previousChar) {
+    sb.append(previousChar);
   }
 
   private void validateInput(String src) {

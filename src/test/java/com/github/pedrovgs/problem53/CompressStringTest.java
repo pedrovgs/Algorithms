@@ -66,4 +66,41 @@ public class CompressStringTest {
 
     assertEquals("a2bc5a3", result);
   }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptNullStringsAsInputRecursive() {
+    compressString.compressRecursive(null);
+  }
+
+  @Test public void shouldNotCompressEmptyWordsRecursive() {
+    String wordToCompress = "";
+
+    String result = compressString.compressRecursive(wordToCompress);
+
+    assertEquals("", result);
+  }
+
+  @Test public void shouldNotCompressWordsWithJustOneCharRecursive() {
+    String wordToCompress = "a";
+
+    String result = compressString.compressRecursive(wordToCompress);
+
+    assertEquals("a", result);
+  }
+
+  @Test public void shouldCompressWordsFullOfTheSameCharsRecursive() {
+    String wordToCompress = "aaa";
+
+    String result = compressString.compressRecursive(wordToCompress);
+
+    assertEquals("a3", result);
+  }
+
+  @Test public void shouldCompressWordsRecursive() {
+    String wordToCompress = "aabcccccaaa";
+
+    String result = compressString.compressRecursive(wordToCompress);
+
+    assertEquals("a2bc5a3", result);
+  }
 }
