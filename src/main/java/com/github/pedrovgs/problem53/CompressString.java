@@ -44,24 +44,34 @@ public class CompressString {
     char previousChar = src.charAt(0);
     for (int i = 1; i < src.length(); i++) {
       char currentChar = src.charAt(i);
-      if (currentChar != previousChar) {
+
+      if (isCharRepeated(previousChar, currentChar)) {
+        repeatedCharCounter++;
+      } else {
         stringBuilder.append(previousChar);
         if (repeatedCharCounter > 1) {
           stringBuilder.append(repeatedCharCounter);
           repeatedCharCounter = 1;
         }
         previousChar = currentChar;
-      } else {
-        repeatedCharCounter++;
       }
     }
 
+    appendLastCharIfNeeded(stringBuilder, repeatedCharCounter, previousChar);
+
+    return stringBuilder.toString();
+  }
+
+  private boolean isCharRepeated(char previousChar, char currentChar) {
+    return currentChar == previousChar;
+  }
+
+  private void appendLastCharIfNeeded(StringBuilder stringBuilder, int repeatedCharCounter,
+      char previousChar) {
     if (repeatedCharCounter > 1) {
       stringBuilder.append(previousChar);
       stringBuilder.append(repeatedCharCounter);
     }
-
-    return stringBuilder.toString();
   }
 
   private void validateInput(String src) {
