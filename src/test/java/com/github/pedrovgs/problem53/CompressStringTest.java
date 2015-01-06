@@ -64,6 +64,6 @@ public class CompressStringTest {
 
     String result = compressString.compress(wordToCompress);
 
-    assertEquals("a2blc5a3", result);
+    assertEquals("a2bc5a3", result);
   }
 }

@@ -23,7 +23,50 @@ package com.github.pedrovgs.problem53;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class CompressString {
+
+  /**
+   * Iterative algorithm to resolve this problem. This algorithm has a complexity order in time and
+   * space terms equals to O(N) where N is the number of chars in the input String. We've applied
+   * two guards, one for null strings and other for input data with 0 or 1 char. The algorithm is
+   * based on two pointers to the current and the previous char in the input string and one counter
+   * to take the count of how many times the char is inside the word. Whe the algorithm detects a
+   * char change, it writes in the StringBuilder the compressed partial result.
+   */
   public String compress(String src) {
-    return null;
+    validateInput(src);
+
+    if (src.isEmpty() || src.length() == 1) {
+      return src;
+    }
+
+    StringBuilder stringBuilder = new StringBuilder();
+    int repeatedCharCounter = 1;
+    char previousChar = src.charAt(0);
+    for (int i = 1; i < src.length(); i++) {
+      char currentChar = src.charAt(i);
+      if (currentChar != previousChar) {
+        stringBuilder.append(previousChar);
+        if (repeatedCharCounter > 1) {
+          stringBuilder.append(repeatedCharCounter);
+          repeatedCharCounter = 1;
+        }
+        previousChar = currentChar;
+      } else {
+        repeatedCharCounter++;
+      }
+    }
+
+    if (repeatedCharCounter > 1) {
+      stringBuilder.append(previousChar);
+      stringBuilder.append(repeatedCharCounter);
+    }
+
+    return stringBuilder.toString();
+  }
+
+  private void validateInput(String src) {
+    if (src == null) {
+      throw new IllegalArgumentException("You can't pass a null String as input parameter.");
+    }
   }
 }
