@@ -21,5 +21,15 @@ package com.github.pedrovgs.problem55;
  *
  * @author Pedro Vicente Gómez Sánchez.
  */
-public class RewriteRowAndColumsWithZeros {
+public class RewriteRowAndColumnsWithZeros {
+
+  public void rewrite(int[][] matrix) {
+    validateInput(matrix);
+  }
+
+  private void validateInput(int[][] matrix) {
+    if (matrix == null) {
+      throw new IllegalArgumentException("You can't pass a null insntace as input parameter.");
+    }
+  }
 }
