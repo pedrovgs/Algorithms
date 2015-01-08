@@ -53,6 +53,19 @@ public class RewriteRowAndColumnsWithZerosTest {
     assertArrayEquals(expectedMatrix, matrix);
   }
 
+  @Test public void hsouldRewriteJustCenterRowAndCoulmnWithZeros() {
+    int[][] matrix = {
+        { 1, 1, 1 }, { 1, 0, 1 }, { 1, 1, 1 }
+    };
+
+    rewriteMatrix.rewrite(matrix);
+
+    int[][] expectedMatrix = {
+        { 1, 0, 1 }, { 0, 0, 0 }, { 1, 0, 1 }
+    };
+    assertArrayEquals(expectedMatrix, matrix);
+  }
+
   @Test public void shouldRewriteRowAndColumnsWithZeros() {
     int[][] matrix = {
         { 1, 1, 0 }, { 1, 0, 1 }, { 1, 1, 1 }
@@ -61,7 +74,7 @@ public class RewriteRowAndColumnsWithZerosTest {
     rewriteMatrix.rewrite(matrix);
 
     int[][] expectedMatrix = {
-        { 0, 0, 0 }, { 1, 0, 0 }, { 1, 0, 0 }
+        { 0, 0, 0 }, { 0, 0, 0 }, { 1, 0, 0 }
     };
     assertArrayEquals(expectedMatrix, matrix);
   }
