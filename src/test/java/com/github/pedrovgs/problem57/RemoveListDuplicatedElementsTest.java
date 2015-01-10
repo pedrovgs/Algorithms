@@ -54,6 +54,27 @@ public class RemoveListDuplicatedElementsTest {
     assertListContainsElements(new Integer[] { 0, 1, 2, 3, 4 }, head);
   }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptNullInstancesAsParameter2() {
+    removeDuplicates.remove2(null);
+  }
+
+  @Test public void shouldNotModifyListIfThereAreNotDuplicatedElements2() {
+    ListNode<Integer> head = createList(new Integer[] { 0, 1, 2, 3, 4 });
+
+    removeDuplicates.remove2(head);
+
+    assertListContainsElements(new Integer[] { 0, 1, 2, 3, 4 }, head);
+  }
+
+  @Test public void shouldRemoveDuplicatedElements2() {
+    ListNode<Integer> head = createList(new Integer[] { 0, 1, 0, 2, 2, 3, 4, 4 });
+
+    removeDuplicates.remove2(head);
+
+    assertListContainsElements(new Integer[] { 0, 1, 2, 3, 4 }, head);
+  }
+
   private ListNode<Integer> createList(Integer[] integers) {
     ListNode<Integer> head = new ListNode<Integer>(integers[0]);
     if (integers.length > 1) {

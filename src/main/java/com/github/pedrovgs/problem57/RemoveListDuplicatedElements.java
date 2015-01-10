@@ -49,6 +49,21 @@ public class RemoveListDuplicatedElements {
     }
   }
 
+  /**
+   * Iterative algorithm to solve this problem without any auxiliary data structure. The complexity
+   * order of this algorithm in space terms is equals to O(1) but in time terms is equals to
+   * O(N^2).
+   */
+  public void remove2(ListNode<Integer> head) {
+    validateInput(head);
+
+    ListNode<Integer> node = head;
+    while (node != null) {
+      removeNextNodesWithValue(node);
+      node = node.getNext();
+    }
+  }
+
   private void validateInput(ListNode head) {
     if (head == null) {
       throw new IllegalArgumentException("You can't pass a null ListNode as instance.");
