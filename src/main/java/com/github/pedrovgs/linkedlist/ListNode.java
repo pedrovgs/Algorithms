@@ -26,7 +26,7 @@ package com.github.pedrovgs.linkedlist;
  */
 public class ListNode<T> {
 
-  private final T data;
+  private T data;
   private ListNode<T> next;
 
   public ListNode(T data) {
@@ -35,6 +35,10 @@ public class ListNode<T> {
 
   public T getData() {
     return data;
+  }
+
+  public void setData(T data) {
+    this.data = data;
   }
 
   public ListNode<T> getNext() {
