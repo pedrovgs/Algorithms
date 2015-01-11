@@ -76,6 +76,30 @@ public class FindKthElement {
     return result;
   }
 
+  /**
+   * Iterative algorithm to resolve this problem based on two pointers to avoid the usage of an
+   * auxiliary data structure. The complexity order of this algorithm is O(N) as in the previous
+   * implementations, but in space terms, the complexity order is equals to O(1).
+   */
+  public ListNode find3(ListNode listNode, int k) {
+    validateInput(listNode, k);
+
+    ListNode pointer2 = listNode;
+    for (int i = 0; i <= k; i++) {
+      if (pointer2 == null) {
+        throw new IndexOutOfBoundsException();
+      }
+      pointer2 = pointer2.getNext();
+    }
+
+    ListNode result = listNode;
+    while (pointer2 != null) {
+      result = result.getNext();
+      pointer2 = pointer2.getNext();
+    }
+    return result;
+  }
+
   private int calculateListSize(ListNode listNode) {
     int size = 0;
     while (listNode != null) {

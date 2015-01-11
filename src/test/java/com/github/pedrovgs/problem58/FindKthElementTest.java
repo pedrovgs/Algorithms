@@ -108,6 +108,44 @@ public class FindKthElementTest {
     assertEquals(expectedNode, result);
   }
 
+  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullListNodes3() {
+    findElement.find3(null, 4);
+  }
+
+  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNegativePositions3() {
+    findElement.find3(new ListNode<Integer>(3), -1);
+  }
+
+  @Test(expected = IndexOutOfBoundsException.class)
+  public void shouldNotAcceptPositionsGreaterThanListSize3() {
+    findElement.find3(new ListNode<Integer>(3), 2);
+  }
+
+  @Test public void shouldReturnLastNodeIfPositionIsZero3() {
+    ListNode result = findElement.find3(new ListNode<Integer>(1), 0);
+
+    ListNode<Integer> expectedNode = new ListNode<Integer>(1);
+    assertEquals(expectedNode, result);
+  }
+
+  @Test public void shouldReturnFirstElementIfPositionIsEqualsToListSizeMinusOne3() {
+    ListNode<Integer> list = createList(new int[] { 1, 2, 3 });
+
+    ListNode result = findElement.find3(list, 2);
+
+    ListNode<Integer> expectedNode = new ListNode<Integer>(1);
+    assertEquals(expectedNode, result);
+  }
+
+  @Test public void shouldReturnKthToLastElement3() {
+    ListNode<Integer> list = createList(new int[] { 1, 2, 3 });
+
+    ListNode result = findElement.find3(list, 1);
+
+    ListNode<Integer> expectedNode = new ListNode<Integer>(2);
+    assertEquals(expectedNode, result);
+  }
+
   private ListNode<Integer> createList(int[] integers) {
     ListNode<Integer> head = new ListNode<Integer>(integers[0]);
     if (integers.length > 1) {
