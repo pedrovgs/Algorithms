@@ -61,9 +61,6 @@ public class ListNode<T> {
   }
 
   @Override public String toString() {
-    return "ListNode{" +
-        "data=" + data +
-        ", next=" + next +
-        '}';
+    return "ListNode{" + "data=" + data + ", next=" + next + '}';
   }
 }
