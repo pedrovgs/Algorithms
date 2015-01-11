@@ -54,6 +54,37 @@ public class FindKthElement {
     return result;
   }
 
+  /**
+   * Another iterative approach based on calculate the list size before to start iterating over the
+   * list to find the Kth element. The complexity order in time and space terms is the same than
+   * the
+   * previous approach.
+   */
+  public ListNode find2(ListNode listNode, int k) {
+    validateInput(listNode, k);
+
+    int size = calculateListSize(listNode);
+    if (k > (size - 1)) {
+      throw new IndexOutOfBoundsException();
+    }
+    ListNode result = listNode;
+    int n = size - 1 - k;
+    while (n > 0) {
+      result = result.getNext();
+      n--;
+    }
+    return result;
+  }
+
+  private int calculateListSize(ListNode listNode) {
+    int size = 0;
+    while (listNode != null) {
+      size++;
+      listNode = listNode.getNext();
+    }
+    return size;
+  }
+
   private void validateInput(ListNode listNode, int k) {
     if (listNode == null) {
       throw new IllegalArgumentException("You can't pass a null ListNode as argument.");
