@@ -45,4 +45,25 @@ public class ListNode<T> {
     this.next = next;
   }
 
+  @Override public boolean equals(Object o) {
+    if (this == o) return true;
+    if (!(o instanceof ListNode)) return false;
+
+    ListNode listNode = (ListNode) o;
+
+    if (!data.equals(listNode.data)) return false;
+
+    return true;
+  }
+
+  @Override public int hashCode() {
+    return data.hashCode();
+  }
+
+  @Override public String toString() {
+    return "ListNode{" +
+        "data=" + data +
+        ", next=" + next +
+        '}';
+  }
 }
