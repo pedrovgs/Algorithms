@@ -69,6 +69,43 @@ public class SumListsTest {
     assertEquals(160, result);
   }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptNullListAsFirstParameter() {
+    sumLists.sum(null, new ListNode<Integer>(0));
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptNullListAsSecondParameter() {
+    sumLists.sum(new ListNode<Integer>(0), null);
+  }
+
+  @Test public void shouldSumNumbersWithJustOneDigit() {
+    ListNode<Integer> n1 = createList(new int[] { 3 });
+    ListNode<Integer> n2 = createList(new int[] { 8 });
+
+    int result = sumLists.sum(n1, n2);
+
+    assertEquals(11, result);
+  }
+
+  @Test public void shouldSumNumbersWithMoreThanOneDigit() {
+    ListNode<Integer> n1 = createList(new int[] { 1, 5, 5 });
+    ListNode<Integer> n2 = createList(new int[] { 3, 1, 4 });
+
+    int result = sumLists.sum(n1, n2);
+
+    assertEquals(469, result);
+  }
+
+  @Test public void shouldSumNumbersWithDifferentSizes() {
+    ListNode<Integer> n1 = createList(new int[] { 1, 5, 5 });
+    ListNode<Integer> n2 = createList(new int[] { 5 });
+
+    int result = sumLists.sum(n1, n2);
+
+    assertEquals(160, result);
+  }
+
   private ListNode<Integer> createList(int[] integers) {
     ListNode<Integer> head = new ListNode<Integer>(integers[0]);
     if (integers.length > 1) {
