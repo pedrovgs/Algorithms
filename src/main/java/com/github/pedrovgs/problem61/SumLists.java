@@ -15,6 +15,8 @@
  */
 package com.github.pedrovgs.problem61;
 
+import com.github.pedrovgs.linkedlist.ListNode;
+
 /**
  * You have two numbers represented by a linked list, where each node contains a single digit.The
  * digit are stored in reverse order,such that the 1's digit is at the head of the list. Write a
@@ -28,4 +30,37 @@ package com.github.pedrovgs.problem61;
  */
 public class SumLists {
 
+  /**
+   * Iterative solution to this problem. The complexity order of this algorithm in time terms is
+   * O(N) where N is the size of the largest list. In space terms, the complexity order of this
+   * algorithm is O(1) because we are not using any additional data structure.
+   *
+   * This solution could be faster if we iterate over n1 and n2 at the same time just taking care
+   * about null pointer exceptions, but the readability could be worst and the complexity order in
+   * time terms is the same.
+   */
+  public int sumReverse(ListNode<Integer> n1, ListNode<Integer> n2) {
+    validateInput(n1, n2);
+
+    int n1Value = calculateReverseNumber(n1);
+    int n2Value = calculateReverseNumber(n2);
+    return n1Value + n2Value;
+  }
+
+  private int calculateReverseNumber(ListNode<Integer> list) {
+    int value = 0;
+    int i = 0;
+    while (list != null) {
+      value += list.getData() * Math.pow(10, i);
+      list = list.getNext();
+      i++;
+    }
+    return value;
+  }
+  
+  private void validateInput(ListNode<Integer> n1, ListNode<Integer> n2) {
+    if (n1 == null || n2 == null) {
+      throw new IllegalArgumentException("You can't pass a null list as parameter.");
+    }
+  }
 }
