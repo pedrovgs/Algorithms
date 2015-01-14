@@ -15,6 +15,9 @@
  */
 package com.github.pedrovgs.problem62;
 
+import com.github.pedrovgs.linkedlist.ListNode;
+import com.github.pedrovgs.problem22.ReverseLinkedList;
+
 /**
  * Implement a function to check if a linked list is a palindrome,
  *
@@ -22,4 +25,40 @@ package com.github.pedrovgs.problem62;
  */
 public class PalindromeList {
 
+  private final ReverseLinkedList reverseLinkedList;
+
+  public PalindromeList() {
+    this.reverseLinkedList = new ReverseLinkedList();
+  }
+
+  /**
+   * Iterative algorithm to solve this problem. If a List is a palindrome the reverse list has to
+   * be equals to the original list. This is the base of this algorithm. The complexity order is
+   * the same than reverse list algorithm - O(N) in time terms - because
+   * this is the most expensive operation. In space terms, the complexity order of this algorithm
+   * is
+   * O(N).
+   */
+  public boolean checkReversing(ListNode list) {
+    validateInput(list);
+
+    ListNode<Integer> reversedList = reverseLinkedList.reverseIterative(list);
+
+    boolean isPalindrome = true;
+    while (list != null) {
+      isPalindrome = list.equals(reversedList);
+      if (!isPalindrome) {
+        break;
+      }
+      reversedList = reversedList.getNext();
+      list = list.getNext();
+    }
+    return isPalindrome;
+  }
+
+  private void validateInput(ListNode<Integer> list) {
+    if (list == null) {
+      throw new IllegalArgumentException("You can't pass a null list as parameter.");
+    }
+  }
 }
