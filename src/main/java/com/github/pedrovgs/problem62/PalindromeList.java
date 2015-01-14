@@ -17,6 +17,7 @@ package com.github.pedrovgs.problem62;
 
 import com.github.pedrovgs.linkedlist.ListNode;
 import com.github.pedrovgs.problem22.ReverseLinkedList;
+import java.util.Stack;
 
 /**
  * Implement a function to check if a linked list is a palindrome,
@@ -52,6 +53,40 @@ public class PalindromeList {
       }
       reversedList = reversedList.getNext();
       list = list.getNext();
+    }
+    return isPalindrome;
+  }
+
+  /**
+   * Iterative algorithm to solve this problem. The key of this algorithm is to use two pointers to
+   * go just through the fifty percent of the list. Using a fast pointer we can create an stack to
+   * generate a reversed list and then check if both lists are equals or not. The complexity order
+   * of this algorithm is the same than the previous one in time and space terms but the execution
+   * time is faster because we are just checking half of the list.
+   */
+  public boolean checkIterative(ListNode list) {
+    validateInput(list);
+
+    Stack<ListNode> stack = new Stack<ListNode>();
+    ListNode fastPointer = list;
+    ListNode slowPointer = list;
+    while (fastPointer != null && fastPointer.getNext() != null) {
+      stack.add(slowPointer);
+      slowPointer = slowPointer.getNext();
+      fastPointer = fastPointer.getNext().getNext();
+    }
+
+    if (fastPointer != null) {
+      slowPointer = slowPointer.getNext();
+    }
+
+    boolean isPalindrome = true;
+    while (slowPointer != null) {
+      if (!stack.pop().equals(slowPointer)) {
+        isPalindrome = false;
+        break;
+      }
+      slowPointer = slowPointer.getNext();
     }
     return isPalindrome;
   }
