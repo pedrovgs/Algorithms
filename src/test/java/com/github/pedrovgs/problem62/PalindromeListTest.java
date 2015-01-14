@@ -70,6 +70,43 @@ public class PalindromeListTest {
     assertFalse(result);
   }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptNullListAsInputIterative() {
+    palindromeList.checkIterative(null);
+  }
+
+  @Test public void shouldReturnTrueIfListContainsJustOneNodeIterative() {
+    ListNode<Integer> list = new ListNode<Integer>(1);
+
+    boolean result = palindromeList.checkIterative(list);
+
+    assertTrue(result);
+  }
+
+  @Test public void shouldRturnTrueIfListContainsTwoElementsWithTheSameValueIterative() {
+    ListNode<Integer> list = createList(new int[] { 1, 1 });
+
+    boolean result = palindromeList.checkIterative(list);
+
+    assertTrue(result);
+  }
+
+  @Test public void shouldReturnTrueIfListIsPalindromeIterative() {
+    ListNode<Integer> list = createList(new int[] { 1, 2, 1 });
+
+    boolean result = palindromeList.checkIterative(list);
+
+    assertTrue(result);
+  }
+
+  @Test public void shouldReturnFalseIfListIsNotPalindromeIterative() {
+    ListNode<Integer> list = createList(new int[] { 1, 1, 3 });
+
+    boolean result = palindromeList.checkIterative(list);
+
+    assertFalse(result);
+  }
+
   private ListNode<Integer> createList(int[] integers) {
     ListNode<Integer> head = new ListNode<Integer>(integers[0]);
     if (integers.length > 1) {
