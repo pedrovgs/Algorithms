@@ -56,4 +56,36 @@ public class ConstantComplexityOrderStack {
       this.minValue = minValue;
     }
   }
+
+  /**
+   * Approach based on keep a parallel data structure with the min elements. Doing this we can
+   * reduce the number of additional elements stored, but the complexity order is still O(N) in
+   * space terms for the worst case. In time terms, the complexity order is equals to O(1).
+   */
+  public static class Stack2 extends Stack<Integer> {
+    Stack<Integer> innerStack = new Stack<Integer>();
+
+    public void push(int item) {
+      if (item <= getMin()) {
+        innerStack.push(item);
+      }
+      super.push(item);
+    }
+
+    public Integer pop() {
+      int value = super.pop();
+      if (value == getMin()) {
+        innerStack.pop();
+      }
+      return value;
+    }
+
+    public int getMin() {
+      if (innerStack.isEmpty()) {
+        return Integer.MAX_VALUE;
+      } else {
+        return innerStack.peek();
+      }
+    }
+  }
 }
