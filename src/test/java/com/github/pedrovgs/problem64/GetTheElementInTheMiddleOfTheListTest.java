@@ -52,6 +52,26 @@ public class GetTheElementInTheMiddleOfTheListTest {
     assertEquals(Integer.valueOf(2), middleElement.getData());
   }
 
+  @Test(expected = IllegalArgumentException.class) public void shouldNotAcceptNullListInstances2() {
+    getTheElementInTheMiddleOfTheList.get2(null);
+  }
+
+  @Test public void shouldReturnTheElementInTheMiddleOfAListWithAnEvenNumberOfElements2() {
+    ListNode<Integer> list = createList(new int[] { 1, 2, 3 });
+
+    ListNode<Integer> middleElement = getTheElementInTheMiddleOfTheList.get2(list);
+
+    assertEquals(Integer.valueOf(2), middleElement.getData());
+  }
+
+  @Test public void shouldReturnTheElementInTheMiddleOfTheListWithAnOddNumberOfElements2() {
+    ListNode<Integer> list = createList(new int[] { 1, 2, 3, 4 });
+
+    ListNode<Integer> middleElement = getTheElementInTheMiddleOfTheList.get2(list);
+
+    assertEquals(Integer.valueOf(2), middleElement.getData());
+  }
+
   private ListNode<Integer> createList(int[] integers) {
     ListNode<Integer> head = new ListNode<Integer>(integers[0]);
     if (integers.length > 1) {
