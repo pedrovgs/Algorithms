@@ -12,6 +12,14 @@ Problems
 
 ### Trees
 
+* [Binary tree by level] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem13/BinaryTreeByLevel.java)
+* [Binary tree pre order] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem14/BinaryTreePreOrder.java)
+* [Binary tree in order] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem15/BinaryTreeInOrder.java)
+* [Binary tree in order] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem16/BinaryTreePostOrder.java)
+* [Binary tree equals] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem17/BinaryTreeEquals.java)
+* [Is binary search tree] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem18/IsBST.java)
+* [BinaryTreeDepth] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem19/BinaryTreeDepth.java)
+
 ### Linked List
 
 ### Bits
@@ -19,6 +27,8 @@ Problems
 * [Count the number of bits == 1] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem1/BitsCounter.java)
 
 ### Strings
+
+* [Int to String] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem11/IntToString.java)
 
 ### Vector
 
@@ -32,6 +42,7 @@ Problems
 
 * [Square root] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem4/SquareRoot.java)
 * [Divide using subtraction] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem5/DivideUsingSubtraction.java)
+* [Multiplication without multiply] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem20/MultiplicationWithoutMultiply.java)
 
 ### Sequences
 
@@ -43,8 +54,7 @@ Problems
 * [Merge sorted arrays] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem6/MergeSortedArrays.java)
 * [Split array in positive and negative numbers] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem8/SplitArray.java)
 * [Remove duplicated elements] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem10/RemoveDuplicates.java)
-
-### Data Transformation
+* [Move zeros in array] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem12/MoveZerosInArray.java)
 
 ### Misc
 
