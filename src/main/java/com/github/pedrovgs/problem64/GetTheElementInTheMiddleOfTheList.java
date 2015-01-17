@@ -54,6 +54,25 @@ public class GetTheElementInTheMiddleOfTheList {
     return size;
   }
 
+  /**
+   * Iterative solution to this problem. The complexity order of this algorithm in time and space
+   * terms is equivalent to the previous algorithm but the execution time is lower in this version.
+   * The key of this algorithm is based on use two pointers, going going two times faster trough
+   * the
+   * list during the iteration.
+   */
+  public ListNode<Integer> get2(ListNode<Integer> list) {
+    validateInput(list);
+
+    ListNode<Integer> currentNode = list;
+    ListNode<Integer> fastNode = list.getNext();
+    while (fastNode != null && fastNode.getNext() != null) {
+      currentNode = currentNode.getNext();
+      fastNode = fastNode.getNext().getNext();
+    }
+    return currentNode;
+  }
+
   private void validateInput(ListNode list) {
     if (list == null) {
       throw new IllegalArgumentException("You can't pass a null instance of list");
