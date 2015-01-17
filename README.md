@@ -15,15 +15,16 @@ Problems
 * [Binary tree by level] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem13/BinaryTreeByLevel.java)
 * [Binary tree pre order] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem14/BinaryTreePreOrder.java)
 * [Binary tree in order] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem15/BinaryTreeInOrder.java)
-* [Binary tree in order] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem16/BinaryTreePostOrder.java)
-* [Binary tree equals] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem17/BinaryTreeEquals.java)
+* [Binary tree post order] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem16/BinaryTreePostOrder.java)
+* [Are binary trees equals?] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem17/BinaryTreeEquals.java)
 * [Is binary search tree] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem18/IsBST.java)
-* [BinaryTreeDepth] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem19/BinaryTreeDepth.java)
+* [Binary tree depth] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem19/BinaryTreeDepth.java)
 * [Lowest common ancestor] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem21/LowestCommonAncestor.java)
 * [Sorted array to BST] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem24/SortedArrayToBST.java)
 * [AVL tree median] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem36/AvlTreeMedian.java)
 * [Path calculator] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem37/PathCalculator.java)
 * [Path to every leaf] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem38/PathToEveryLeaf.java)
+* [Is tree balanced] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem65/IsTreeBalanced.java)
 
 ### Linked List
 
@@ -34,7 +35,7 @@ Problems
 * [Partition list] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem60/PartitionList.java)
 * [Sum lists] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem61/SumLists.java)
 * [PalindromeList] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem62/PalindromeList.java)
-* [Get element in the middle of the list] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem64/GetElementInTheMiddleOfTheList.java)
+* [Get element in the middle of the list] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem64/GetTheElementInTheMiddleOfTheList.java)
 
 ### Strings
 
@@ -48,12 +49,12 @@ Problems
 * [Unique chars] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem50/UniqueChars.java)
 * [Reverse string] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem51/ReverseString.java)
 * [Compress string] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem53/CompressString.java)
-* [Is rotation using substring] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem56/IsRotationUsingSubstring.java)
+* [Is rotation using substring] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem56/IsRotationUsingIsSubstring.java)
 
 ### Binary Numbers and bits operators
 
 * [Sum binary numbers] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem3/SumBinaryNumbers.java)
-* [Count the number of bits == 1] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem1/BitsCounter.java)
+* [Count the number of bits equals to 1] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem1/BitsCounter.java)
 
 ### Math Operations
 
@@ -77,9 +78,9 @@ Problems
 * [Move zeros in array] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem12/MoveZerosInArray.java)
 * [Find longest consecutive sequence] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem31/FindLongestConsecutiveSequence.java)
 * [Multiply array elements] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem39/MultiplyArrayElements.java)
-* [Move elements to position] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem40/MoveElementsToPosition.java)
+* [Move elements to position] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem40/MoveElementsToPositions.java)
 * [Replace spaces] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem52/ReplaceSpaces.java)
-* [Rotate matrix] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem50/RotateMatrix.java)
+* [Rotate matrix] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem54/RotateMatrix.java)
 * [Rewrite row and columns with zero] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem55/RewriteRowAndColumnsWithZeros.java)
 
 ### Misc

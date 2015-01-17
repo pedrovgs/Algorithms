@@ -35,10 +35,8 @@ public class PalindromeList {
   /**
    * Iterative algorithm to solve this problem. If a List is a palindrome the reverse list has to
    * be equals to the original list. This is the base of this algorithm. The complexity order is
-   * the same than reverse list algorithm - O(N) in time terms - because
-   * this is the most expensive operation. In space terms, the complexity order of this algorithm
-   * is
-   * O(N).
+   * the same than reverse list algorithm - O(N) in time terms - because this is the most expensive
+   * operation. In space terms, the complexity order of this algorithm is O(N).
    */
   public boolean checkReversing(ListNode list) {
     validateInput(list);
