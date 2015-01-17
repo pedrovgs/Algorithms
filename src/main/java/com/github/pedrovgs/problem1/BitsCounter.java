@@ -17,8 +17,7 @@ package com.github.pedrovgs.problem1;
 
 /**
  * Given a positive integer passed as parameter return the number of bits that parameter contains
- * equals to
- * one in a binary representation. For example:
+ * equals to one in a binary representation. For example:
  *
  * Input: 1. Output: 1. Binary representation: 1.
  * Input: 2. Output: 1. Binary representation: 10.

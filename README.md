@@ -7,6 +7,31 @@ Each solved problem has a program written in Java. Every solution is tested and 
 
 You can check the solution executing tests inside tests directory. Some of this problems have been resolved using TDD.
 
+Problems
+--------
+
+### Trees
+
+### Linked List
+
+### Bits
+
+### Strings
+
+### Vector
+
+### Binary Numbers
+
+### Math Operations
+
+### Sequences
+
+### Arrays
+
+### Data Transformation
+
+### Misc
+
 
 Developed By
 ------------
