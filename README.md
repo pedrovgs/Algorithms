@@ -28,6 +28,10 @@ Problems
 ### Linked List
 
 * [Reverse linked list] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem22/ReverseLinkedList.java)
+* [Remove duplicates] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem57/RemoveListDuplicatedElements.java)
+* [Find kth element] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem58/FindKthElement.java)
+* [Delete list node] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem59/DeleteListNode.java)
+* [Partition list] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem60/PartitionList.java)
 
 ### Bits
 
@@ -42,10 +46,10 @@ Problems
 * [Simple regular expression] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem33/SimpleRegularExpression.java)
 * [Dot regular expression] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem34/DotRegularExpression.java)
 * [Asterisk regular expression] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem35/AsteriskRegularExpression.java)
-
-### Vector
-
-* [Vector scalar product] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem2/VectorScalarProduct.java)
+* [Unique chars] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem50/UniqueChars.java)
+* [Reverse string] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem51/ReverseString.java)
+* [Compress string] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem53/CompressString.java)
+* [Is rotation using substring] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem56/IsRotationUsingSubstring.java)
 
 ### Binary Numbers
 
@@ -58,6 +62,7 @@ Problems
 * [Multiplication without multiply] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem20/MultiplicationWithoutMultiply.java)
 * [Find sums] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem28/FindSums.java)
 * [ScientificNotation] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem30/ScientificNotation.java)
+* [Vector scalar product] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem2/VectorScalarProduct.java)
 
 ### Sequences
 
@@ -73,6 +78,9 @@ Problems
 * [Find longest consecutive sequence] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem31/FindLongestConsecutiveSequence.java)
 * [Multiply array elements] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem39/MultiplyArrayElements.java)
 * [Move elements to position] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem40/MoveElementsToPosition.java)
+* [Replace spaces] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem52/ReplaceSpaces.java)
+* [Rotate matrix] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem50/RotateMatrix.java)
+* [Rewrite row and columns with zero] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem55/RewriteRowAndColumnsWithZeros.java)
 
 ### Misc
 
