@@ -32,10 +32,9 @@ Problems
 * [Find kth element] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem58/FindKthElement.java)
 * [Delete list node] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem59/DeleteListNode.java)
 * [Partition list] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem60/PartitionList.java)
-
-### Bits
-
-* [Count the number of bits == 1] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem1/BitsCounter.java)
+* [Sum lists] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem61/SumLists.java)
+* [PalindromeList] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem62/PalindromeList.java)
+* [Get element in the middle of the list] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem64/GetElementInTheMiddleOfTheList.java)
 
 ### Strings
 
@@ -51,9 +50,10 @@ Problems
 * [Compress string] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem53/CompressString.java)
 * [Is rotation using substring] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem56/IsRotationUsingSubstring.java)
 
-### Binary Numbers
+### Binary Numbers and bits operators
 
 * [Sum binary numbers] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem3/SumBinaryNumbers.java)
+* [Count the number of bits == 1] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem1/BitsCounter.java)
 
 ### Math Operations
 
@@ -87,6 +87,7 @@ Problems
 * [Anagrams] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem25/Anagrams.java)
 * [Palindromes] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem26/Palindromes.java)
 * [Are anagrams?] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem29/AreAnagrams.java)
+* [Constant complexity order stack] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem63/ConstantComplexityOrderStack.java)
 
 
 Developed By
