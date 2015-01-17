@@ -16,17 +16,33 @@ Problems
 
 ### Bits
 
+* [Count the number of bits == 1] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem1/BitsCounter.java)
+
 ### Strings
 
 ### Vector
 
+* [Vector scalar product] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem2/VectorScalarProduct.java)
+
 ### Binary Numbers
+
+* [Sum binary numbers] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem3/SumBinaryNumbers.java)
 
 ### Math Operations
 
+* [Square root] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem4/SquareRoot.java)
+* [Divide using subtraction] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem5/DivideUsingSubtraction.java)
+
 ### Sequences
 
+* [Fibonacci numbers] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem7/FibonacciNumbers.java)
+* [Factorial] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem9/Factorial.java)
+
 ### Arrays
+
+* [Merge sorted arrays] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem6/MergeSortedArrays.java)
+* [Split array in positive and negative numbers] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem8/SplitArray.java)
+* [Remove duplicated elements] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem10/RemoveDuplicates.java)
 
 ### Data Transformation
 
