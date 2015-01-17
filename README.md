@@ -21,6 +21,9 @@ Problems
 * [BinaryTreeDepth] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem19/BinaryTreeDepth.java)
 * [Lowest common ancestor] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem21/LowestCommonAncestor.java)
 * [Sorted array to BST] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem24/SortedArrayToBST.java)
+* [AVL tree median] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem36/AvlTreeMedian.java)
+* [Path calculator] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem37/PathCalculator.java)
+* [Path to every leaf] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem38/PathToEveryLeaf.java)
 
 ### Linked List
 
@@ -35,6 +38,10 @@ Problems
 * [Int to String] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem11/IntToString.java)
 * [Remove comments from file] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem23/RemoveComments.java)
 * [Reverse sentence] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem27/ReverseSentence.java)
+* [Contains] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem32/Contains.java)
+* [Simple regular expression] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem33/SimpleRegularExpression.java)
+* [Dot regular expression] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem34/DotRegularExpression.java)
+* [Asterisk regular expression] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem35/AsteriskRegularExpression.java)
 
 ### Vector
 
@@ -63,6 +70,9 @@ Problems
 * [Split array in positive and negative numbers] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem8/SplitArray.java)
 * [Remove duplicated elements] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem10/RemoveDuplicates.java)
 * [Move zeros in array] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem12/MoveZerosInArray.java)
+* [Find longest consecutive sequence] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem31/FindLongestConsecutiveSequence.java)
+* [Multiply array elements] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem39/MultiplyArrayElements.java)
+* [Move elements to position] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem40/MoveElementsToPosition.java)
 
 ### Misc
 
