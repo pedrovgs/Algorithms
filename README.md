@@ -19,8 +19,12 @@ Problems
 * [Binary tree equals] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem17/BinaryTreeEquals.java)
 * [Is binary search tree] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem18/IsBST.java)
 * [BinaryTreeDepth] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem19/BinaryTreeDepth.java)
+* [Lowest common ancestor] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem21/LowestCommonAncestor.java)
+* [Sorted array to BST] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem24/SortedArrayToBST.java)
 
 ### Linked List
+
+* [Reverse linked list] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem22/ReverseLinkedList.java)
 
 ### Bits
 
@@ -29,6 +33,8 @@ Problems
 ### Strings
 
 * [Int to String] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem11/IntToString.java)
+* [Remove comments from file] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem23/RemoveComments.java)
+* [Reverse sentence] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem27/ReverseSentence.java)
 
 ### Vector
 
@@ -43,6 +49,8 @@ Problems
 * [Square root] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem4/SquareRoot.java)
 * [Divide using subtraction] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem5/DivideUsingSubtraction.java)
 * [Multiplication without multiply] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem20/MultiplicationWithoutMultiply.java)
+* [Find sums] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem28/FindSums.java)
+* [ScientificNotation] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem30/ScientificNotation.java)
 
 ### Sequences
 
@@ -57,6 +65,10 @@ Problems
 * [Move zeros in array] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem12/MoveZerosInArray.java)
 
 ### Misc
+
+* [Anagrams] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem25/Anagrams.java)
+* [Palindromes] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem26/Palindromes.java)
+* [Are anagrams?] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem29/AreAnagrams.java)
 
 
 Developed By
