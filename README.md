@@ -25,6 +25,7 @@ Problems
 * [Path calculator] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem37/PathCalculator.java)
 * [Path to every leaf] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem38/PathToEveryLeaf.java)
 * [Is tree balanced] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem65/IsTreeBalanced.java)
+* [Generate list with nodes by level] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem66/TreeToListByLevel.java)
 
 ### Linked List
 
