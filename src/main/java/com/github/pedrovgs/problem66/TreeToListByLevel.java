@@ -29,4 +29,28 @@ import java.util.Queue;
  */
 public class TreeToListByLevel {
 
+  /**
+   * Iterative algorithm to resolve this problem. Binary tree traversal by level implemented with a
+   * complexity order in time and space terms equivalent to O(N).
+   */
+  public List<BinaryNode> transform(BinaryNode tree) {
+    if (tree == null) {
+      return Collections.EMPTY_LIST;
+    }
+
+    List<BinaryNode> nodesByLevel = new LinkedList<BinaryNode>();
+    Queue<BinaryNode> stack = new LinkedList<BinaryNode>();
+    stack.add(tree);
+    while (!stack.isEmpty()) {
+      BinaryNode node = stack.remove();
+      nodesByLevel.add(node);
+      if (node.getLeft() != null) {
+        stack.add(node.getLeft());
+      }
+      if (node.getRight() != null) {
+        stack.add(node.getRight());
+      }
+    }
+    return nodesByLevel;
+  }
 }
