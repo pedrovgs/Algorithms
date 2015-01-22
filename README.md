@@ -56,6 +56,7 @@ Problems
 
 * [Sum binary numbers] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem3/SumBinaryNumbers.java)
 * [Count the number of bits equals to 1] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem1/BitsCounter.java)
+* [Merge binary numbers] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem67/MergeBinaryNumbers.java)
 
 ### Math Operations
 
