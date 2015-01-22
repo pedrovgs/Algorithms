@@ -30,4 +30,22 @@ package com.github.pedrovgs.problem67;
  */
 public class MergeBinaryNumbers {
 
+  /**
+   * Algorithm based on bits operator to generate different masks used to get the final result
+   * after apply the corresponding shift to the input value. In space and time terms the complexity
+   * order of this algorithm is O(1).
+   */
+  public int merge(int n, int m, int i, int j) {
+    int maskFullOfOnes = ~0;
+
+    int fullOfOnesBeforeJ = maskFullOfOnes << (j + 1);
+    int fullOfOnesAfterI = ((1 << i) - 1);
+
+    int allOnesExceptIandJ = fullOfOnesBeforeJ | fullOfOnesAfterI;
+
+    int clearBitsBetweenIandJ = n & allOnesExceptIandJ;
+    int moveMToTheCorrectPosition = m << i;
+
+    return clearBitsBetweenIandJ | moveMToTheCorrectPosition;
+  }
 }
