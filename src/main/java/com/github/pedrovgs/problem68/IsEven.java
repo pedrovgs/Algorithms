@@ -24,4 +24,15 @@ package com.github.pedrovgs.problem68;
  */
 public class IsEven {
 
+  /**
+   * Easy algorithm based on "and" binary operator and the simplest mask you are going to see, the
+   * number 1. In this method we are going to apply one mask with just one one inside and if the
+   * result is different of 1 we will return true. This algorithm is possible because every binary
+   * number with one one in the position zero is going to be odd. Review how to calculate an
+   * integer
+   * from a binary number if you don't understand how it works.
+   */
+  public boolean check(int n) {
+    return (n & 1) != 1;
+  }
 }
