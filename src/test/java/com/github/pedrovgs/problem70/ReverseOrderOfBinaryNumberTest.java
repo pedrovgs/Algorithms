@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package problem70;
+package com.github.pedrovgs.problem70;
 
 import com.github.pedrovgs.problem70.ReverseOrderOfBinaryNumber;
 import org.junit.Before;
