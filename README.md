@@ -53,11 +53,13 @@ Problems
 * [Is rotation using substring] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem56/IsRotationUsingIsSubstring.java)
 
 ### Binary Numbers and bits operators
+
 * [Is binary number even?] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem68/IsEven.java)
 * [Sum binary numbers] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem3/SumBinaryNumbers.java)
 * [Count the number of bits equals to 1] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem1/BitsCounter.java)
 * [Merge binary numbers] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem67/MergeBinaryNumbers.java)
 * [Count the number of different bits] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem69/BitsToTransform.java)
+* [Reverse binary number order] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem70/ReverseOrderOfBinaryNumber.java)
 
 ### Math Operations
 
