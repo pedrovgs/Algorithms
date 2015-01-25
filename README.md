@@ -60,7 +60,7 @@ Problems
 * [Merge binary numbers] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem67/MergeBinaryNumbers.java)
 * [Count the number of different bits] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem69/BitsToTransform.java)
 * [Reverse binary number order] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem70/ReverseOrderOfBinaryNumber.java)
-
+* [Reverse binary number] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem71/ReverseBinaryNumber.java)
 ### Math Operations
 
 * [Square root] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem4/SquareRoot.java)
