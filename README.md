@@ -88,6 +88,7 @@ Problems
 * [Replace spaces] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem52/ReplaceSpaces.java)
 * [Rotate matrix] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem54/RotateMatrix.java)
 * [Rewrite row and columns with zero] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem55/RewriteRowAndColumnsWithZeros.java)
+* [Find the missing number] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem72/FindTheMissingNumber.java)
 
 ### Misc
 
