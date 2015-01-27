@@ -70,6 +70,7 @@ Problems
 * [Find sums] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem28/FindSums.java)
 * [ScientificNotation] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem30/ScientificNotation.java)
 * [Vector scalar product] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem2/VectorScalarProduct.java)
+* [Subtract adding] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem73/SubtractAdding.java)
 
 ### Sequences
 
