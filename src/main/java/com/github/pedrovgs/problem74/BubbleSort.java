@@ -23,4 +23,47 @@ package com.github.pedrovgs.problem74;
  */
 public class BubbleSort {
 
+  /**
+   * Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that
+   * repeatedly steps through the list to be sorted, compares each pair of adjacent items and swaps
+   * them if they are in the wrong order. The pass through the list is repeated until no swaps are
+   * needed, which indicates that the list is sorted. The algorithm, which is a comparison sort, is
+   * named for the way smaller elements "bubble" to the top of the list. Although the algorithm is
+   * simple, it is too slow and impractical for most problems even when compared to insertion
+   * sort. It can be practical if the input is usually in sort order but may occasionally have
+   * some out-of-order elements nearly in position.
+   *
+   * The complexity order of this algorithm in time terms is O(N^2) where N is equals to the number
+   * of elements in the input array. In space terms, the complexity order is O(1) because to solve
+   * this problem we are not using any auxiliary data structure.
+   */
+  public void sort(int[] numbers) {
+    validateInput(numbers);
+
+    int length = numbers.length;
+    boolean swap = true;
+    while (swap) {
+      swap = false;
+      for (int i = 0; i < length - 1; i++) {
+        for (int j = i + 1; j < length; j++) {
+          if (numbers[i] > numbers[j]) {
+            swap(numbers, i, j);
+            swap = true;
+          }
+        }
+      }
+    }
+  }
+
+  private void swap(int[] numbers, int i, int j) {
+    int temp = numbers[i];
+    numbers[i] = numbers[j];
+    numbers[j] = temp;
+  }
+
+  private void validateInput(int[] numbers) {
+    if (numbers == null) {
+      throw new IllegalArgumentException("You can't pass a null instance as parameter.");
+    }
+  }
 }
