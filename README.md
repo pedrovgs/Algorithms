@@ -91,6 +91,10 @@ Problems
 * [Rewrite row and columns with zero] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem55/RewriteRowAndColumnsWithZeros.java)
 * [Find the missing number] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem72/FindTheMissingNumber.java)
 
+### Sorting Algorithms
+
+* [Bubble Sort] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem74/BubbleSort.java)
+
 ### Misc
 
 * [Anagrams] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem25/Anagrams.java)
