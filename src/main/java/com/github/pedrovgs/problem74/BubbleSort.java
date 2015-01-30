@@ -15,13 +15,15 @@
  */
 package com.github.pedrovgs.problem74;
 
+import com.github.pedrovgs.sortingalgorithm.SortingAlgorithm;
+
 /**
  * Given an array full of integers implement a bubble sort algorithm to sort the content inside the
  * array.
  *
  * @author Pedro Vicente Gómez Sánchez.
  */
-public class BubbleSort {
+public class BubbleSort implements SortingAlgorithm {
 
   /**
    * Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that
