@@ -23,7 +23,7 @@ import com.github.pedrovgs.sortingalgorithm.SortingAlgorithm;
  *
  * @author Pedro Vicente Gómez Sánchez.
  */
-public class BubbleSort implements SortingAlgorithm {
+public class BubbleSort extends SortingAlgorithm {
 
   /**
    * Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that
@@ -57,15 +57,4 @@ public class BubbleSort implements SortingAlgorithm {
     }
   }
 
-  private void swap(int[] numbers, int i, int j) {
-    int temp = numbers[i];
-    numbers[i] = numbers[j];
-    numbers[j] = temp;
-  }
-
-  private void validateInput(int[] numbers) {
-    if (numbers == null) {
-      throw new IllegalArgumentException("You can't pass a null instance as parameter.");
-    }
-  }
 }
