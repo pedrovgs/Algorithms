@@ -95,6 +95,7 @@ Problems
 
 * [Bubble Sort] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem74/BubbleSort.java)
 * [Selection Sort] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem75/SelectionSort.java)
+* [Insertion Sort] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem76/InsertionSort.java)
 
 ### Misc
 
