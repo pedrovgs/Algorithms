@@ -22,4 +22,13 @@ package com.github.pedrovgs.problem77;
  */
 public class HelloWorldWithoutSemicolon {
 
+  public void printHelloWorld() {
+    if ((System.out.append("Hello world")) != null) {
+    }
+  }
+
+  public static void main(String[] args) {
+    HelloWorldWithoutSemicolon helloWorldWithoutSemicolon = new HelloWorldWithoutSemicolon();
+    helloWorldWithoutSemicolon.printHelloWorld();
+  }
 }
