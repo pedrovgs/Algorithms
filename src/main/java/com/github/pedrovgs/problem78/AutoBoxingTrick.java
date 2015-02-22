@@ -23,4 +23,7 @@ package com.github.pedrovgs.problem78;
  */
 public class AutoBoxingTrick {
 
+  public boolean compare(Integer n1, Integer n2) {
+    return n1 == n2;
+  }
 }
