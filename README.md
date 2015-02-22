@@ -104,7 +104,7 @@ Problems
 * [Are anagrams?] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem29/AreAnagrams.java)
 * [Constant complexity order stack] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem63/ConstantComplexityOrderStack.java)
 * [Hello world without semicolon] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem77/HelloWorldWithoutSemicolon.java)
-
+* [Autoboxing trick] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem78/AutoBoxingTrick.java)
 
 Developed By
 ------------
