@@ -32,15 +32,16 @@ public class MultiplicationWithoutMultiply {
    */
   public int calculate(int n1, int n2) {
     int result = 0;
-    boolean negative = n1 < 0;
+    boolean negative = (n1 < 0 && n2 >= 0) || (n2 < 0 && n1 >= 0);
+    boolean positive = !negative;
     n1 = Math.abs(n1);
     for (int i = 0; i < n1; i++) {
-      result += n2;
+      if (negative && n2 > 0 || positive && n2 < 0)
+        result -= n2;
+      else
+        result += n2;
     }
 
-    if (negative) {
-      result *= -1;
-    }
     return result;
   }
 }
