@@ -51,4 +51,14 @@ public class RemoveCommentsTest {
 
     assertEquals("Hello world this is the content of a real file", result);
   }
+  
+  @Test public void testForSlashAfterCommentOpen() {
+    FakeFile file =
+	        new FakeFile("Hello world ", "this is the content /*/ of a fake file */", "of a real file");
+
+    String result = removeComments.remove(file);
+
+    assertEquals("Hello world this is the content of a real file", result);
+  }
+
 }
