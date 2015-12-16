@@ -47,9 +47,9 @@ public class BubbleSort extends SortingAlgorithm {
     while (swap) {
       swap = false;
       for (int i = 0; i < length - 1; i++) {
-        for (int j = i + 1; j < length; j++) {
-          if (numbers[i] > numbers[j]) {
-            swap(numbers, i, j);
+        for (int j = 0; j < length - i - 1; j++) {
+          if (numbers[j] > numbers[j + 1]) {
+            swap(numbers, j, j + 1);
             swap = true;
           }
         }
