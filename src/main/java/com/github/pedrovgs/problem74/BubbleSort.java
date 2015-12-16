@@ -58,10 +58,4 @@ public class BubbleSort extends SortingAlgorithm {
       }
     }
   }
-
-  public static void main(String[] args){
-    SortingAlgorithm sortAlgo = new BubbleSort();
-    int[] numbers = {4, 3, 2, 1 };
-    sortAlgo.sort(numbers);
-  }
 }
