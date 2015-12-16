@@ -56,5 +56,5 @@ public class BubbleSort extends SortingAlgorithm {
       }
     }
   }
-  
+
 }
