@@ -49,13 +49,12 @@ public class BubbleSort extends SortingAlgorithm {
       for (int i = 0; i < length - 1; i++) {
         for (int j = 0; j < length -i - 1; j++) {
           if (numbers[j] > numbers[j + 1]) {
-	        int tmp = numbers[j + 1];
-	        numbers[j + 1] = numbers[j];
-	        numbers[j] = tmp;
+	        swap(numbers, j, j+1);
 	        swap = true;
           }
         }
       }
     }
   }
+  
 }
