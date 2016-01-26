@@ -67,14 +67,14 @@ public class FibonacciNumbersTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void shouldNotAcceptNegativeValuesRecursiveWithCatching() {
-    fibonacciNumbers.getRecursiveWithCatching(-1);
+    fibonacciNumbers.getRecursiveWithCaching(-1);
   }
 
   @Test public void fourthNumberInFibonacciSequenceIsThreeRecursiveWithCatching() {
-    assertEquals(5, fibonacciNumbers.getRecursiveWithCatching(4));
+    assertEquals(5, fibonacciNumbers.getRecursiveWithCaching(4));
   }
 
   @Test public void eleventhNumberInFibonacciSequenceIsRecursiveWithCatching() {
-    assertEquals(144, fibonacciNumbers.getRecursiveWithCatching(11));
+    assertEquals(144, fibonacciNumbers.getRecursiveWithCaching(11));
   }
 }

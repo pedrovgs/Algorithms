@@ -85,7 +85,7 @@ public class FibonacciNumbers {
    * the one used for the previous algorithms. In this case, we have O(N) because we are using an
    * additional data structure to store partial results.
    */
-  public int getRecursiveWithCatching(int n) {
+  public int getRecursiveWithCaching(int n) {
     validateInput(n);
 
     if (n <= 1) {
@@ -93,7 +93,7 @@ public class FibonacciNumbers {
     } else if (elements[n] != 0) {
       return elements[n];
     }
-    elements[n] = getRecursiveWithCatching(n - 1) + getRecursiveWithCatching(n - 2);
+    elements[n] = getRecursiveWithCaching(n - 1) + getRecursiveWithCaching(n - 2);
     return elements[n];
   }
 
