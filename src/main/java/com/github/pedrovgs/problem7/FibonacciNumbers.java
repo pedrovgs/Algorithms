@@ -37,7 +37,7 @@ public class FibonacciNumbers {
   /**
    * Recursive solution based on Fibonacci sequence definition. F(N) = F(N-1) + F(N-2).
    *
-   * The complexity order of this algorithm is O(N) where N is integer used as parameter. In time
+   * The complexity order of this algorithm is O(2^N) where N is integer used as parameter. In space
    * terms, the complexity order of this algorithm is O(1) because we are not using any auxiliary
    * data structure to solve this problem.
    */
