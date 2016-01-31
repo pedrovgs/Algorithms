@@ -37,7 +37,7 @@ public class FibonacciNumbers {
   /**
    * Recursive solution based on Fibonacci sequence definition. F(N) = F(N-1) + F(N-2).
    *
-   * The complexity order of this algorithm is O(N) where N is integer used as parameter. In time
+   * The complexity order of this algorithm is O(2^N) where N is integer used as parameter. In space
    * terms, the complexity order of this algorithm is O(1) because we are not using any auxiliary
    * data structure to solve this problem.
    */
@@ -85,7 +85,7 @@ public class FibonacciNumbers {
    * the one used for the previous algorithms. In this case, we have O(N) because we are using an
    * additional data structure to store partial results.
    */
-  public int getRecursiveWithCatching(int n) {
+  public int getRecursiveWithCaching(int n) {
     validateInput(n);
 
     if (n <= 1) {
@@ -93,7 +93,7 @@ public class FibonacciNumbers {
     } else if (elements[n] != 0) {
       return elements[n];
     }
-    elements[n] = getRecursiveWithCatching(n - 1) + getRecursiveWithCatching(n - 2);
+    elements[n] = getRecursiveWithCaching(n - 1) + getRecursiveWithCaching(n - 2);
     return elements[n];
   }
 
