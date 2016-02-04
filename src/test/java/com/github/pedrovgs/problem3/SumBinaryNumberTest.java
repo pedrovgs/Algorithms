@@ -156,7 +156,7 @@ public class SumBinaryNumberTest {
 
     String result = sumBinaryNumbers.sumBinaryNumbersBasedOnCount(n1, n2);
 
-    assertEquals("010", result);
+    assertEquals("10", result);
   }
 
   @Test public void zeroPlusTwoEqualsTwoBasedOnCount() {

@@ -79,7 +79,7 @@ public class SumBinaryNumbers {
      * to integer and then from integer to binary.
      * <p/>
      * To solve this problem is needed go through the String from right to left, and take always
-     * into account the accumulated value of the sum.
+     * into account the accumulated value of the sum and carry.
      */
     public String sumBinaryNumbersBasedOnCount(String n1, String n2) {
         validateInput(n1, n2);
@@ -88,41 +88,26 @@ public class SumBinaryNumbers {
         int lengthVal1 = n1.length();
         int lengthVal2 = n2.length();
         int length = Math.max(lengthVal1, lengthVal2);
-        int acc = 0;
+        int carry = 0;
+        int sum = 0;
+        int remainder = 0;
         for (int i = 0; i < length; i++) {
             //This is a beautiful trick to avoid IndexOutOfBoundExceptions.
-            char c1 = i >= lengthVal1 ? '0' : n1.charAt(lengthVal1 - i - 1);
-            char c2 = i >= lengthVal2 ? '0' : n2.charAt(lengthVal2 - i - 1);
+            int digit1 = i >= lengthVal1 ? 0 : n1.charAt(lengthVal1 - i - 1) - '0';
+            int digit2 = i >= lengthVal2 ? 0 : n2.charAt(lengthVal2 - i - 1) - '0';
 
-            //Check every different combination taking into account the accumulated value.
-            if (c1 == '0' && c2 == '0') {
-                if (acc == 0) {
-                    result.append(0);
-                } else {
-                    result.append(1);
-                }
-                acc = 0;
-            } else if (c1 == '0' && c2 == '1' || c1 == '1' && c2 == '0') {
-                if (acc == 0) {
-                    result.append(1);
-                    acc = 0;
-                } else {
-                    result.append(0);
-                    acc = 1;
-                }
-            } else if (c1 == '1' && c2 == '1') {
-                if (acc == 0) {
-                    result.append(0);
-                } else {
-                    result.append(1);
-                }
-                acc = 1;
+            if (digit1 < 2 && digit2 < 2) {
+                sum = digit1 + digit2 + carry;
+                carry = sum / 2;
+                remainder = sum % 2;
+                result.append((char) (remainder + '0'));
             } else {
                 throw new IllegalArgumentException(
                         "Error parsing input data, review your parameters, should be a valid binary number!");
             }
         }
-        result.append(acc);
+        if (carry != 0)
+            result.append((char) (carry + '0'));
         return result.reverse().toString();
     }
 
