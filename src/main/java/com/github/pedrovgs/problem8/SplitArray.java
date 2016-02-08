@@ -33,7 +33,7 @@ public class SplitArray {
    *
    * The complexity order in this O(N^2) where N is number of elements in the array. Is even worst
    * than the bubble sorting algorithm because to check if we have to swap any element is really
-   * expensive. In time terms, the complexity order of this algorithm is O(1) because we are not
+   * expensive. In space terms, the complexity order of this algorithm is O(1) because we are not
    * using any additional data structure.
    */
   public void splitSorting(int[] array) {
