@@ -33,8 +33,11 @@ public class SquareRoot {
    *
    * The complexity order in space terms of this algorithm is O(1) because we are not using any
    * additional data structure. The complexity order in time terms is more difficult to calculate
-   * O(sqrt(N)) + O(binarySearch) = O(sqrt(N)) the binary search complexity order depends on the
-   * number of decimals the solution contains.
+   * T(N) = T(N/2) + c  where as N is step length. Which is 1 initially. 0.5 after that. 0.25 after that
+   * Stopping condition of this recurrence relation is dependant on delta. If delta is 0, then time complexity is infinite.
+   * So we won't be able to calculate the exact time complexity using master's theorem. As square root will be a irrational number
+   * But here, it will be function of delta and precision of the variables used. Which is difficult to calculate.
+   *
    */
   public float calculateSquareRootIterative(int number) {
     //Search first candidate
@@ -68,7 +71,7 @@ public class SquareRoot {
    * Tail recursive approach to resolve this problem. This algorithm is based on a binary search,
    * as
    * the previous one, but implemented using a tail recursive approach. In space terms, the
-   * complexity order of this solution is O(1) and in time terms is O(log(N)), similar to the other
+   * complexity order of this solution is O(1) and in time terms is similar to the other
    * implementation.
    *
    * This public method uses a private method to hide the algorithm implementation.
