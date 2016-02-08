@@ -14,7 +14,7 @@ public class SumBinaryNumbers {
      * order is linear O(N) two times. Then, we are going to calculate the sum of this parsed data
      * and use 'Integer.toBinaryString' which complexity order is also O(N). In both cases, N
      * represents the number of digits of input number in binary representation.
-     * <p/>
+     *
      * This implementation is working and is valid but we have to take into the execution time used
      * to calculate this sum.
      */
@@ -39,10 +39,10 @@ public class SumBinaryNumbers {
      * value and at the same time getting the result. This solution is based on the binary number
      * structure where 101 = 1*2^2 + 0*2^1 + 1*2^0 = 5. With this solution we are not going to use
      * Integer.parseInt(..) method to parse input data.
-     * <p/>
+     *
      * The complexity order of this solution is O(N) in time terms where N is the number of digits in
      * the binary number. Is the same complexity order we had, but the execution time is lower.
-     * <p/>
+     *
      * With this solution we are still using 'Integer.toBinaryString(result)' to get the binary
      * representation.
      */
@@ -73,11 +73,11 @@ public class SumBinaryNumbers {
 
     /**
      * This solution is the faster I've found. It's similar to how a human sum two binary numbers.
-     * <p/>
+     *
      * The complexity order of this algorithm is O(N) where N is the number of digits of the biggest
      * binary number. This is the faster implementation because we are not parsing data from binary
      * to integer and then from integer to binary.
-     * <p/>
+     *
      * To solve this problem is needed go through the String from right to left, and take always
      * into account the accumulated value of the sum and carry.
      */
