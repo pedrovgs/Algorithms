@@ -34,8 +34,9 @@ public class SquareRoot {
    * The complexity order in space terms of this algorithm is O(1) because we are not using any
    * additional data structure. The complexity order in time terms is more difficult to calculate
    * T(N) = T(N/2) + c  where as N is step length. Which is 1 initially. 0.5 after that. 0.25 after that
-   * Stopping condition of this recurrence relation is dependant on delta. If delta is 0, then time complexity is infinite.
-   * So we won't be able to calculate the exact time complexity using master's theorem. As square root will be a irrational number
+   * Stopping condition of this recurrence relation is dependant on delta. If it is 0, then time complexity is infinite
+   * So we won't be able to calculate the exact time complexity using master's theorem.
+   * As square root is an irrational number for non square numbers.
    * But here, it will be function of delta and precision of the variables used. Which is difficult to calculate.
    *
    */
