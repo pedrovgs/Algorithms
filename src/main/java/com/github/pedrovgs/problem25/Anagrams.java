@@ -32,7 +32,7 @@ public class Anagrams {
 
   /**
    * Combination of recursion and one iterative approach to resolve this problem. The complexity of
-   * this algorithm is O(N) where N is the size of the input. In space terms the complexity order
+   * this algorithm is O(N!) where N is the size of the input. In space terms the complexity order
    * is related to the number of permutations equals to O(N!) where N is the number of chars in the
    * input string.
    */
