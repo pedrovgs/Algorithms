@@ -122,6 +122,52 @@ public class SplitArrayTest {
   }
 
   @Test(expected = IllegalArgumentException.class)
+  public void shouldNotAcceptNullArraysWithPartition() {
+    splitArray.splitSwappingPartition(null);
+  }
+
+  @Test public void shouldSupportEmptyArraysWithPartition() {
+    int[] array = new int[0];
+
+    splitArray.splitSwappingPartition(array);
+
+    assertNegativeElementsAreBeforePositiveOnes(array);
+  }
+
+  @Test public void shouldWorkWithAnArrayFullOfPositiveNumbersWithPartition() {
+    int[] array = { 1, 2, 1, 3, 4, 6 };
+
+    splitArray.splitSwappingPartition(array);
+
+    assertNegativeElementsAreBeforePositiveOnes(array);
+  }
+
+  @Test public void shouldWorkWithAnArrayFullOfNegativeNumbersWithPartition() {
+    int[] array = { 1, 2, 1, 3, 4, 6 };
+
+    splitArray.splitSwappingPartition(array);
+
+    assertNegativeElementsAreBeforePositiveOnes(array);
+  }
+
+  @Test public void shouldMoveNegativeElementsToTheLeftWithPartition() {
+    int[] array = { 1, 2, -1, -3, 4, -6 };
+
+    splitArray.splitSwappingPartition(array);
+
+    assertNegativeElementsAreBeforePositiveOnes(array);
+  }
+
+  @Test
+  public void shouldMoveNegativeElementsToTheLeftWithWithMoreNegativeElementsWithPartition() {
+    int[] array = { 1, -2, -1, -3, 4, -6 };
+
+    splitArray.splitSwappingPartition(array);
+
+    assertNegativeElementsAreBeforePositiveOnes(array);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
   public void shouldNotAcceptNullArraysWithTwoPointersRecursive() {
     splitArray.splitSwappingRecursive(null);
   }
