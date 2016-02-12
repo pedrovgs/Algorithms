@@ -84,7 +84,8 @@ public class SplitArray {
   }
 
   /**
-   * Using partition Method of quicksort to split array
+   * Using partition Method of quicksort to split array.
+   * Its called Hoare's Partitioning Algorithm
    */
   public void splitSwappingPartition(int[] array) {
     if (array == null) {
