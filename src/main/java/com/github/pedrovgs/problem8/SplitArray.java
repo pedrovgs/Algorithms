@@ -16,12 +16,11 @@
 package com.github.pedrovgs.problem8;
 
 /**
- * Given an array full of integers positive or negative write a method to move every negative
- * number to the left and every positive number to the right. Take into account that the order of
- * this elements into the array doesn't care.
+ * Given an array full of integers positive or negative write a method to move every negative number
+ * to the left and every positive number to the right. Take into account that the order of this
+ * elements into the array doesn't care.
  *
- * Input: [1,2,3,-1-,2,-3]
- * Output: [-2,-1,-3,2,3,1]
+ * Input: [1,2,3,-1-,2,-3] Output: [-2,-1,-3,2,3,1]
  *
  * @author Pedro Vicente Gómez Sánchez.
  */
@@ -56,9 +55,9 @@ public class SplitArray {
   /**
    * This solution for the problem is much faster than the previous one. Instead of use a sorting
    * algorithm we are going to go over the array from left to right using two pointers and swapping
-   * elements if needed. The complexity order of this algorithm in time terms is O(N) where N is
-   * the number of elements in the array. In space terms is O(1) because we are not using any
-   * additional data structure.
+   * elements if needed. The complexity order of this algorithm in time terms is O(N) where N is the
+   * number of elements in the array. In space terms is O(1) because we are not using any additional
+   * data structure.
    */
   public void splitSwappingIterative(int[] array) {
     if (array == null) {
@@ -85,11 +84,37 @@ public class SplitArray {
   }
 
   /**
+   * Using partition Method of quicksort to split array.
+   * Its called Hoare's Partitioning Algorithm
+   */
+  public void splitSwappingPartition(int[] array) {
+    if (array == null) {
+      throw new IllegalArgumentException("Array passed as parameter can't be null.");
+    }
+
+    int left = 0;
+    int right = array.length - 1;
+    while (left < right) {
+      while (array[left] < 0 && left < right) {
+        left++;
+      }
+      while (array[right] >= 0 && left < right) {
+        right--;
+      }
+      if (left < right) {
+        swap(array, left, right);
+        left++;
+        right--;
+      }
+    }
+  }
+
+  /**
    * Tail recursive solution for this problem. This implementation has the same complexity order
    * O(N) and the only change is how we are going to iterate over the array, with the previous
    * implementation we are using a classic iterative approach and with this solution we are using
-   * recursion to iterate. In space terms is O(1) because we are not using any
-   * additional data structure.
+   * recursion to iterate. In space terms is O(1) because we are not using any additional data
+   * structure.
    */
   public void splitSwappingRecursive(int[] array) {
     if (array == null) {
