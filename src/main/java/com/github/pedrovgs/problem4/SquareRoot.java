@@ -36,6 +36,7 @@ public class SquareRoot {
    * T(N) = T(N/2) + c  where as N is step length. Which is 1 initially. 0.5 after that. 0.25 after that
    * Stopping condition of this recurrence relation is dependant on delta. If it is 0, then time complexity is infinite
    * So we won't be able to calculate the exact time complexity using master's theorem.
+   * Time complexity of this algorithm is inversly proportional to square root of Delta
    * As square root is an irrational number for non square numbers.
    * But here, it will be function of delta and precision of the variables used. Which is difficult to calculate.
    *

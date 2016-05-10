@@ -62,6 +62,50 @@ public class CompressString {
     return stringBuilder.toString();
   }
 
+  /**
+   * Time complexity O(n) Space complexity O(n)
+   * First while loop for finding repeat groups, and inner while loop is for finding same characters
+   */
+  public String compressAlternativeApproach(String src) {
+    validateInput(src);
+
+    if (src.isEmpty() || src.length() == 1) {
+      return src;
+    }
+    int index = 0;
+    int count = 1;
+    StringBuilder stringBuilder = new StringBuilder();
+    while (index < src.length()) {
+      while (index < src.length() - 1) {
+        if (src.charAt(index) == src.charAt(index + 1)) {
+          index++;
+          count++;
+        } else {
+          stringBuilder.append(src.charAt(index));
+          if (count > 1) {
+            stringBuilder.append(count);
+          }
+          count = 1;
+          index++;
+          break;
+        }
+      }
+      if (index == src.length() - 1) {
+        if (src.charAt(index) != src.charAt(index - 1)) {
+          stringBuilder.append(src.charAt(index));
+        } else {
+          stringBuilder.append(src.charAt(index));
+          if (count > 1) {
+            stringBuilder.append(count);
+          }
+        }
+        index++;
+        break;
+      }
+    }
+    return stringBuilder.toString();
+  }
+
   private boolean isCharRepeated(char previousChar, char currentChar) {
     return currentChar == previousChar;
   }
