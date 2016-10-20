@@ -55,20 +55,21 @@ public class DotRegularExpressionTest {
   }
 
   @Test public void shouldReturnAnArrayWithMatches() {
-    String pattern = "p.d";
-    String[] words = { "pod", "pid", "pat", "por", "pwd" };
+	    String pattern = "p.d";
+	    // a "pd" nem jo neki.
+	    String[] words = { "pod", "pid", "pat", "por", "pwd", "p¶d", "p\nd", "pd"};
 
-    String[] result = dotRegularExpression.evaluate(words, pattern);
-    //csak a kapott válasz hosszát teszteli, a tartalmát nem.
-    String[] expectedResult = { "pod", "pid", "pwd" };
-    assertArrayEquals(expectedResult, result);
-    assertTrue(expectedResult.equals(result));
-  }
-  //nem unicode karakter nem jo neki.
-  @Test public void testMatchDotRegExp(){
-	String[] str1={"dsd.asd"};
-	String str2="dsd¶asd";
-	String[] result = dotRegularExpression.evaluate(str1, str2);
-	assertTrue(result[0].equals(str2));
-  }
+	    String[] result = dotRegularExpression.evaluate(words, pattern);
+	    String[] expectedResult = { "pod", "pid", "pwd" , "p¶d", "p\nd", "pd"};
+	    assertArrayEquals(expectedResult, result);
+	  }
+  @Test public void shouldReturnAnArrayWithMatches2() {
+	    String pattern = "pe.d";
+	    String[] words = { "peod", "peid", "pat", "por", "pwd", "p¶d", "p\nd", "ped"};
+
+	    String[] result = dotRegularExpression.evaluate(words, pattern);
+	    String[] expectedResult = { "peod", "peid"};
+	    assertArrayEquals(expectedResult, result);
+	  }
+  
 }
