@@ -18,8 +18,7 @@ package com.github.pedrovgs.problem34;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 /**
  * @author Pedro Vicente GÃ³mez SÃ¡nchez.
@@ -60,8 +59,16 @@ public class DotRegularExpressionTest {
     String[] words = { "pod", "pid", "pat", "por", "pwd" };
 
     String[] result = dotRegularExpression.evaluate(words, pattern);
-
+    //csak a kapott válasz hosszát teszteli, a tartalmát nem.
     String[] expectedResult = { "pod", "pid", "pwd" };
     assertArrayEquals(expectedResult, result);
+    assertTrue(expectedResult.equals(result));
+  }
+  //nem unicode karakter nem jo neki.
+  @Test public void testMatchDotRegExp(){
+	String[] str1={"dsd.asd"};
+	String str2="dsd¶asd";
+	String[] result = dotRegularExpression.evaluate(str1, str2);
+	assertTrue(result[0].equals(str2));
   }
 }
