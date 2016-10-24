@@ -134,39 +134,4 @@ public class BinaryTreeEqualsTest {
 
     assertFalse(binaryTreeEquals.areEqualsIterative(root, root1));
   }
-  
-  
-  /////////////////////////////////////////////////////////////
-  ////////////////////reischlb tests///////////////////////////
-  /////////////////////////////////////////////////////////////
-  @Test public void shouldReturnFalseIfOtherIsNullRecursive(){
-
-	    BinaryNode<Integer> root = new BinaryNode<Integer>(0);
-
-	    assertFalse(binaryTreeEquals.areEqualsRecursive(null, root));
-  }
-  
- @Test public void TestRecursiveWithBigData(){
-	 BinaryNode<Integer> root1 = new BinaryNode<Integer>(0);
-	 BinaryNode<Integer> root2 = new BinaryNode<Integer>(0);
-	 for (int i=0;i<Integer.MAX_VALUE;i++){
-		 int z = (int)Math.random();
-		 BinaryNode<Integer> n = new BinaryNode<Integer>(z);
-		 root1.setRight(n);
-		 root2.setLeft(n);
-	 }
-	 assertTrue(binaryTreeEquals.areEqualsRecursive(root1, root2));
- }
- 
-@Test public void TestIterativeWithBigData(){
-	 BinaryNode<Integer> root1 = new BinaryNode<Integer>(0);
-	 BinaryNode<Integer> root2 = new BinaryNode<Integer>(0);
-	 for (int i=0;i<Integer.MAX_VALUE;i++){
-		 int z = (int)Math.random();
-		 BinaryNode<Integer> n = new BinaryNode<Integer>(z);
-		 root1.setLeft(n);
-		 root2.setLeft(n);
-	 }
-	 assertTrue(binaryTreeEquals.areEqualsIterative(root1, root2));
-}
 }
