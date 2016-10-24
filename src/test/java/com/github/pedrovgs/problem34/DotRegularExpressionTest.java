@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Pedro Vicente Gómez Sánchez.
+ * Copyright (C) 2014 Pedro Vicente GĂłmez SĂˇnchez.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * @author Pedro Vicente Gómez Sánchez.
+ * @author Pedro Vicente GĂłmez SĂˇnchez.
  */
 public class DotRegularExpressionTest {
 
@@ -57,19 +57,27 @@ public class DotRegularExpressionTest {
   @Test public void shouldReturnAnArrayWithMatches() {
 	    String pattern = "p.d";
 	    // a "pd" nem jo neki.
-	    String[] words = { "pod", "pid", "pat", "por", "pwd", "p�d", "p\nd", "pd"};
+	    String[] words = { "pod", "pid", "pat", "por", "pwd", "p¶d", "p\nd", "pd"};
 
 	    String[] result = dotRegularExpression.evaluate(words, pattern);
-	    String[] expectedResult = { "pod", "pid", "pwd" , "p�d", "p\nd", "pd"};
+	    String[] expectedResult = { "pod", "pid", "pwd" , "p¶d", "p\nd", "pd"};
 	    assertArrayEquals(expectedResult, result);
 	  }
   @Test public void shouldReturnAnArrayWithMatches2() {
-	    String pattern = "pe.d";
-	    String[] words = { "peod", "peid", "pat", "por", "pwd", "p�d", "p\nd", "ped"};
+	    String pattern = "p.d";
+	    String[] words = { "pd", "ped"};
 
 	    String[] result = dotRegularExpression.evaluate(words, pattern);
-	    String[] expectedResult = { "peod", "peid"};
+	    String[] expectedResult = { "ped"};
 	    assertArrayEquals(expectedResult, result);
 	  }
+ @Test public void testKoreanCharacter(){
+	 String pattern = "p.d";
+	 String[] words= {"p생d"};
+	 
+	 String []result=dotRegularExpression.evaluate(words, pattern);
+	 String [] expectedResult={"p생d"};
+	 assertArrayEquals(expectedResult, result);
+ }
   
 }
