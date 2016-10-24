@@ -55,15 +55,15 @@ public class DotRegularExpressionTest {
   }
 
   @Test public void shouldReturnAnArrayWithMatches() {
-	    String pattern = "p.d";
-	    // a "pd" nem jo neki.
-	    String[] words = { "pod", "pid", "pat", "por", "pwd", "p¶d", "p\nd", "pd"};
+	  String pattern = "p.d";
+	    String[] words = { "pod", "pid", "pat", "por", "pwd" };
 
 	    String[] result = dotRegularExpression.evaluate(words, pattern);
-	    String[] expectedResult = { "pod", "pid", "pwd" , "p¶d", "p\nd", "pd"};
+
+	    String[] expectedResult = { "pod", "pid", "pwd" };
 	    assertArrayEquals(expectedResult, result);
 	  }
-  @Test public void shouldReturnAnArrayWithMatches2() {
+  @Test public void testPaternJustWithoutDot1() {
 	    String pattern = "p.d";
 	    String[] words = { "pd", "ped"};
 
@@ -71,13 +71,37 @@ public class DotRegularExpressionTest {
 	    String[] expectedResult = { "ped"};
 	    assertArrayEquals(expectedResult, result);
 	  }
- @Test public void testKoreanCharacter(){
-	 String pattern = "p.d";
-	 String[] words= {"p생d"};
+  @Test public void testPaternJustWithoutDot2() {
+	    String pattern = "p.d";
+	    String[] words = { "pd", "ped"};
+
+	    String[] result = dotRegularExpression.evaluate(words, pattern);
+	    String[] expectedResult = { "pd", "ped"};
+	    assertArrayEquals(expectedResult, result);
+	  }
+  @Test public void testKoreanCharacter(){
+	  	String pattern = "p.d";
+	  	String[] words= {"p생d"};
 	 
-	 String []result=dotRegularExpression.evaluate(words, pattern);
-	 String [] expectedResult={"p생d"};
-	 assertArrayEquals(expectedResult, result);
- }
+	  	String []result=dotRegularExpression.evaluate(words, pattern);
+	  	String [] expectedResult={"p생d"};
+	  	assertArrayEquals(expectedResult, result);
+	  }
+  @Test public void testTwoPoints(){
+	  	String pattern = "p..d";
+	  	String[] words= {"perd"};
+	 
+	  	String []result=dotRegularExpression.evaluate(words, pattern);
+	  	String [] expectedResult={"perd"};
+	  	assertArrayEquals(expectedResult, result);
+	  }
+  @Test public void testPointsAtTheEnds(){
+	  	String pattern = ".p..d.";
+	  	String[] words= {"wperda"};
+	 
+	  	String []result=dotRegularExpression.evaluate(words, pattern);
+	  	String [] expectedResult={"wperda"};
+	  	assertArrayEquals(expectedResult, result);
+	  }
   
 }
