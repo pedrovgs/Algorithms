@@ -10,7 +10,7 @@ You can check the solution executing tests inside tests directory. Some of this 
 Problems
 --------
 
-### Trees
+## Trees
 
 * [Binary tree by level] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem13/BinaryTreeByLevel.java)
 * [Binary tree pre order] (https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem14/BinaryTreePreOrder.java)
