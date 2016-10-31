@@ -90,11 +90,11 @@ public class FibonacciNumbers {
 
     if (n <= 2) {
       return 1;
-    } else if (elements[n-3] != 0) {
-      return elements[n-3];
+    } else if (elements[n - 3] != 0) {
+      return elements[n - 3];
     }
-    elements[n-3] = getRecursiveWithCaching(n - 1) + getRecursiveWithCaching(n - 2);
-    return elements[n-3];
+    elements[n - 3] = getRecursiveWithCaching(n - 1) + getRecursiveWithCaching(n - 2);
+    return elements[n - 3];
   }
 
   private void validateInput(long n) {
