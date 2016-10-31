@@ -41,9 +41,9 @@ public class FibonacciNumbers {
    * terms, the complexity order of this algorithm is O(1) because we are not using any auxiliary
    * data structure to solve this problem.
    */
-  public int getRecursive(int n) {
+  public long getRecursive(long n) {
     validateInput(n);
-    if (n == 0 || n == 1) {
+    if (n == 1 || n == 2) {
       return 1;
     } else {
       return getRecursive(n - 1) + getRecursive(n - 2);
@@ -54,16 +54,16 @@ public class FibonacciNumbers {
    * Iterative approach. The complexity order in this algorithm is O(N) where N is the integer used
    * as parameter. In space terms, the complexity order of this algorithm is again O(1).
    */
-  public int getIterative(int n) {
+  public long getIterative(long n) {
     validateInput(n);
 
-    if (n <= 1) {
+    if (n <= 2) {
       return 1;
     }
-    int previous = 1;
-    int current = 1;
-    int element = 0;
-    for (int i = 2; i <= n; i++) {
+    long previous = 1;
+    long current = 1;
+    long element = 0;
+    for (long i = 3; i <= n; i++) {
       element = previous + current;
       previous = current;
       current = element;
@@ -71,7 +71,7 @@ public class FibonacciNumbers {
     return element;
   }
 
-  private static int[] elements = new int[1000];
+  private static long[] elements = new long[1000];
 
   /**
    * This version of the recursive algorithm is better in performance terms because we are caching
@@ -85,19 +85,19 @@ public class FibonacciNumbers {
    * the one used for the previous algorithms. In this case, we have O(N) because we are using an
    * additional data structure to store partial results.
    */
-  public int getRecursiveWithCaching(int n) {
+  public long getRecursiveWithCaching(int n) {
     validateInput(n);
 
-    if (n <= 1) {
+    if (n <= 2) {
       return 1;
-    } else if (elements[n] != 0) {
-      return elements[n];
+    } else if (elements[n-3] != 0) {
+      return elements[n-3];
     }
-    elements[n] = getRecursiveWithCaching(n - 1) + getRecursiveWithCaching(n - 2);
-    return elements[n];
+    elements[n-3] = getRecursiveWithCaching(n - 1) + getRecursiveWithCaching(n - 2);
+    return elements[n-3];
   }
 
-  private void validateInput(int n) {
+  private void validateInput(long n) {
     if (n < 0) {
       throw new IllegalArgumentException("You can't use negative values as parameter.");
     }
