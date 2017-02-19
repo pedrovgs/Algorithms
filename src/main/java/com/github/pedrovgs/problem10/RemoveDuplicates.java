@@ -74,7 +74,7 @@ public class RemoveDuplicates {
         result.add(numbers[i]);
       }
     }
-    result.add(numbers[numbers.length-1]);
+    result.add(numbers[numbers.length - 1]);
     return result.toArray(new Integer[result.size()]);
   }
 
