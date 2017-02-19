@@ -63,7 +63,7 @@ public class RemoveDuplicates {
    */
   public Integer[] removeUsingSorting(Integer[] numbers) {
     validateArray(numbers);
-    if (numbers.length == 1) {
+    if (numbers.length == 1 || numbers.length == 0) {
       return numbers;
     }
 
