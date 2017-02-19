@@ -71,9 +71,10 @@ public class RemoveDuplicates {
     List<Integer> result = new LinkedList<Integer>();
     for (int i = 0; i < numbers.length - 1; i++) {
       if (!numbers[i].equals(numbers[i + 1])) {
-        result.add(i);
+        result.add(numbers[i]);
       }
     }
+    result.add(numbers[numbers.length-1]);
     return result.toArray(new Integer[result.size()]);
   }
 
