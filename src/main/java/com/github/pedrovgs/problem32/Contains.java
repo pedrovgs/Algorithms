@@ -37,10 +37,12 @@ public class Contains {
     for (int i = 0; i < w2.length() - 1; i++) {
       if (w2.charAt(i) == w1.charAt(0)) {
         for (int j = 0; j < w1.length(); j++) {
-          if (w1.charAt(j) == w2.charAt(i + j) && j == w1.length() - 1) {
-            contains = true;
-            break;
-          }
+        if (w1.charAt(j) != w2.charAt(i + j)) {
+						break;
+					}
+					if (j == w1.length() - 1) {
+						contains = true;
+					}
         }
       }
     }
