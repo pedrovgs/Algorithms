@@ -21,7 +21,7 @@ import com.github.pedrovgs.sortingalgorithm.SortingAlgorithm;
  * Given an array full of integers implement a quick sort algorithm to sort the content inside
  * the array.
  *
- * @author jsroyal.
+ * @author jsroyal
  */
 
 /**
@@ -53,19 +53,11 @@ public class QuickSort {
         return l; //pivot index
     }
 
-    public static void quickSort(int[] a, int left, int right) {
+    @Override public static void quickSort(int[] a, int left, int right) {
         if (left < right) {
             int pi = partition(a, left, right);  //pi index of pivot
             quickSort(a, left, pi-1);  //sort left of pivot
             quickSort(a, pi, right);  //sort right of pivot               
-        }
-    }
-
-    public static void main(String[] args) {
-        int[] arr = new int[] {2, 4, 9, 6, 7, 8};
-        quickSort(arr, 0, arr.length - 1);
-        for (int element : arr) {
-            System.out.println(element);
         }
     }
 }
