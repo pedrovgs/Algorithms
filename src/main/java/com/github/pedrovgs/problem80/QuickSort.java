@@ -33,7 +33,7 @@ import com.github.pedrovgs.sortingalgorithm.SortingAlgorithm;
    * copies in simple implementations.
    */
 
-public class QuickSort {
+public class QuickSort extends SortingAlgorithm {
 
     private static int partition(int[] a, int l, int r) {
         int pivot = a[r];
