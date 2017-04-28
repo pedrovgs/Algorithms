@@ -44,7 +44,7 @@ public class QuickSort extends SortingAlgorithm {
 
     this.numbers = numbers;
     number = numbers.length;
-    QuickSort(numbers, 0, number - 1);
+    quickSort(numbers, 0, number - 1);
   }
 
   private static int partition(int[] a, int l, int r) {
@@ -65,7 +65,7 @@ public class QuickSort extends SortingAlgorithm {
     return l; //pivot index
   }
 
-  @Override public static void quickSort(int[] a, int left, int right) {
+  public static void quickSort(int[] a, int left, int right) {
     if (left < right) {
       int pi = partition(a, left, right);  //pi index of pivot
       quickSort(a, left, pi - 1);  //sort left of pivot
