@@ -35,6 +35,17 @@ import com.github.pedrovgs.sortingalgorithm.SortingAlgorithm;
 
 public class QuickSort extends SortingAlgorithm {
 
+    private int[] numbers;
+    private int number;
+
+  @Override public void sort(int[] numbers) {
+    validateInput(numbers);
+
+    this.numbers = numbers;
+    number = numbers.length;
+    QuickSort(numbers, 0, number - 1);
+  }
+
     private static int partition(int[] a, int l, int r) {
         int pivot = a[r];
         while (l < r) {
