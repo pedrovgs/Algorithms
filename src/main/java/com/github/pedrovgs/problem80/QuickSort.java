@@ -25,18 +25,19 @@ import com.github.pedrovgs.sortingalgorithm.SortingAlgorithm;
  */
 
 /**
-   * Quick sort takes advantage for avarage case which O(nlogn);
-   * It starts by comparing every two and so on.Final got sort list of the algorithms described here, this is the first that
-   * scales well to very large lists, because its worst-case running time is O(n^2). It is also
-   * easily applied to lists, not only arrays, as it only requires sequential access, not random
-   * access. However, it has additional O(n) space complexity, and involves a large number of
-   * copies in simple implementations.
-   */
+ * Quick sort takes advantage for avarage case which O(nlogn);
+ * It starts by comparing every two and so on.Final got sort list of the algorithms described here,
+ * this is the first that
+ * scales well to very large lists, because its worst-case running time is O(n^2). It is also
+ * easily applied to lists, not only arrays, as it only requires sequential access, not random
+ * access. However, it has additional O(n) space complexity, and involves a large number of
+ * copies in simple implementations.
+ */
 
 public class QuickSort extends SortingAlgorithm {
 
-    private int[] numbers;
-    private int number;
+  private int[] numbers;
+  private int number;
 
   @Override public void sort(int[] numbers) {
     validateInput(numbers);
@@ -46,29 +47,29 @@ public class QuickSort extends SortingAlgorithm {
     QuickSort(numbers, 0, number - 1);
   }
 
-    private static int partition(int[] a, int l, int r) {
-        int pivot = a[r];
-        while (l < r) {
-            while (a[l] < pivot) { //from left move
-                l++;               
-            }
-            while (a[r] > pivot) {  //from right move
-                r--;
-            }
-            if (l <= r) {
-                int temp = a[l];        
-                a[l] = a[r];
-                a[r] = temp;
-            }
-        }
-        return l; //pivot index
+  private static int partition(int[] a, int l, int r) {
+    int pivot = a[r];
+    while (l < r) {
+      while (a[l] < pivot) { //from left move
+        l++;
+      }
+      while (a[r] > pivot) {  //from right move
+        r--;
+      }
+      if (l <= r) {
+        int temp = a[l];
+        a[l] = a[r];
+        a[r] = temp;
+      }
     }
+    return l; //pivot index
+  }
 
-    @Override public static void quickSort(int[] a, int left, int right) {
-        if (left < right) {
-            int pi = partition(a, left, right);  //pi index of pivot
-            quickSort(a, left, pi-1);  //sort left of pivot
-            quickSort(a, pi, right);  //sort right of pivot               
-        }
+  @Override public static void quickSort(int[] a, int left, int right) {
+    if (left < right) {
+      int pi = partition(a, left, right);  //pi index of pivot
+      quickSort(a, left, pi - 1);  //sort left of pivot
+      quickSort(a, pi, right);  //sort right of pivot
     }
+  }
 }
