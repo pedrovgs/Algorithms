@@ -97,6 +97,8 @@ Problems
 * [Selection Sort](https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem75/SelectionSort.java)
 * [Insertion Sort](https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem76/InsertionSort.java)
 * [Merge Sort](https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem79/MergeSort.java)
+* [Quick Sort](https://github.com/pedrovgs/Algorithms/blob/master/src/main/java/com/github/pedrovgs/problem80/QuickSort.java)
+
 
 ### Misc
 
