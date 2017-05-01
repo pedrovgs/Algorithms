@@ -15,7 +15,6 @@
  */
 package com.github.pedrovgs.problem80;
 
-import com.github.pedrovgs.problem79.QuickSort;
 import com.github.pedrovgs.sortingalgorithm.SortingAlgorithm;
 import com.github.pedrovgs.sortingalgorithms.SortingAlgorithmTest;
 
