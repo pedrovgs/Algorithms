@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Pedro Vicente Gómez Sánchez.
+ * Copyright (C) 2014 Pedro Vicente GĂłmez SĂˇnchez.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,10 @@ package com.github.pedrovgs.problem34;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 /**
- * @author Pedro Vicente Gómez Sánchez.
+ * @author Pedro Vicente GĂłmez SĂˇnchez.
  */
 public class DotRegularExpressionTest {
 
@@ -56,12 +55,53 @@ public class DotRegularExpressionTest {
   }
 
   @Test public void shouldReturnAnArrayWithMatches() {
-    String pattern = "p.d";
-    String[] words = { "pod", "pid", "pat", "por", "pwd" };
+	  String pattern = "p.d";
+	    String[] words = { "pod", "pid", "pat", "por", "pwd" };
 
-    String[] result = dotRegularExpression.evaluate(words, pattern);
+	    String[] result = dotRegularExpression.evaluate(words, pattern);
 
-    String[] expectedResult = { "pod", "pid", "pwd" };
-    assertArrayEquals(expectedResult, result);
-  }
+	    String[] expectedResult = { "pod", "pid", "pwd" };
+	    assertArrayEquals(expectedResult, result);
+	  }
+  @Test public void testPaternJustWithoutDot1() {
+	    String pattern = "p.d";
+	    String[] words = { "pd", "ped"};
+
+	    String[] result = dotRegularExpression.evaluate(words, pattern);
+	    String[] expectedResult = { "ped"};
+	    assertArrayEquals(expectedResult, result);
+	  }
+  @Test public void testPaternJustWithoutDot2() {
+	    String pattern = "p.d";
+	    String[] words = { "pd", "ped"};
+
+	    String[] result = dotRegularExpression.evaluate(words, pattern);
+	    String[] expectedResult = { "pd", "ped"};
+	    assertArrayEquals(expectedResult, result);
+	  }
+  @Test public void testKoreanCharacter(){
+	  	String pattern = "p.d";
+	  	String[] words= {"p생d"};
+	 
+	  	String []result=dotRegularExpression.evaluate(words, pattern);
+	  	String [] expectedResult={"p생d"};
+	  	assertArrayEquals(expectedResult, result);
+	  }
+  @Test public void testTwoPoints(){
+	  	String pattern = "p..d";
+	  	String[] words= {"perd"};
+	 
+	  	String []result=dotRegularExpression.evaluate(words, pattern);
+	  	String [] expectedResult={"perd"};
+	  	assertArrayEquals(expectedResult, result);
+	  }
+  @Test public void testPointsAtTheEnds(){
+	  	String pattern = ".p..d.";
+	  	String[] words= {"wperda"};
+	 
+	  	String []result=dotRegularExpression.evaluate(words, pattern);
+	  	String [] expectedResult={"wperda"};
+	  	assertArrayEquals(expectedResult, result);
+	  }
+  
 }

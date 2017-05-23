@@ -176,4 +176,37 @@ public class SumBinaryNumberTest {
 
     assertEquals(Integer.parseInt("1100", 2), Integer.parseInt(result, 2));
   }
+  
+  @Test public void testWithLargeNumbersBasedOnCount(){
+	  String n1 ="1";
+	  String n0 = "0";
+	  for (int i=0;i<33;i++){
+		  n0+="0";
+		  n1+="1";
+	  }
+	  String result = sumBinaryNumbers.sumBinaryNumbersBasedOnCount(n1,n0);
+	  assertEquals(result, n1);
+  }
+  
+  @Test public void testWithLargeNumbersBasedOnCheating(){
+	  String n1 ="1";
+	  String n0 = "0";
+	  for (int i=0;i<33;i++){
+		  n0+="0";
+		  n1+="1";
+	  }
+	  String result=sumBinaryNumbers.sumBinaryNumbersCheating(n1, n0);
+	  assertEquals(result, n1);
+  }
+  
+  @Test public void testWithLargeNumbersBasedOnPowersOfTwo(){
+	  String n1 ="1";
+	  String n0 = "0";
+	  for (int i=0;i<33;i++){
+		  n0+="0";
+		  n1+="1";
+	  }
+	  String result=sumBinaryNumbers.sumBinaryNumbersBasedOnPowersOfTwo(n1, n0);
+	  assertEquals(result, n1);
+  }
 }
