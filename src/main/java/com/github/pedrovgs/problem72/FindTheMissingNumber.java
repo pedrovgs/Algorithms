@@ -39,7 +39,13 @@ public class FindTheMissingNumber {
     int sum = calculateSum(numbers);
 
     int missingNumber = idealSum - sum;
-    return missingNumber;
+    
+    if(errorHandling(idealSum,sum,missingNumber,numbers)){
+      return missingNumber;
+    else{
+      return -1;
+    }
+      
   }
 
   private int calculateSum(int[] numbers) {
@@ -50,6 +56,19 @@ public class FindTheMissingNumber {
     return sum;
   }
 
+  private boolean errorHandling(int idealSum, int sum, int missingNumber, int[] numbers){
+    /* Can also be handled by throwing exception, as of now just writing cases */
+    if(idealSum <= sum && missingNumber!=0){
+        return false;
+    }else if(missingNumber > numbers.length){
+        return false;
+    }else if(Arrays.asList(numbers).contains(missingNumber)){  /*Check if the missing number already contains in input array*/
+        return false;
+    }else{
+        return true
+    }
+  }
+    
   private void validateInput(int[] numbers) {
     if (numbers == null) {
       throw new IllegalArgumentException("You can't pass a null instance of numbers.");
