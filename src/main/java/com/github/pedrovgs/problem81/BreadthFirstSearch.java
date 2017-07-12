@@ -17,7 +17,7 @@ public class BreadthFirstSearch<T> {
             adj.put(source, list);
         } else {
             // init the adj-list
-            ArrayList<T> list = new ArrayList<>();
+            ArrayList<T> list = new ArrayList<T>();
             // adding destination node in list
             list.add(destination);
             // connect the edge and store into hash map adj
@@ -28,11 +28,11 @@ public class BreadthFirstSearch<T> {
     // BreadthFirstSearch search function with return path in a list
     public ArrayList<T> breadthFirstSearch (T source, T destination) {
         //init arraylist to store path
-        ArrayList<T> bfsPath = new ArrayList<>();
+        ArrayList<T> bfsPath = new ArrayList<T>();
         // Mark the current node as visited in a set
-        Set<T> visited = new HashSet<>();
+        Set<T> visited = new HashSet<T>();
         //init list of queue
-        ArrayList<T> queue = new ArrayList<>();
+        ArrayList<T> queue = new ArrayList<T>();
         // adding source in queue
         queue.add(source);
         //added init node of path into list
@@ -48,7 +48,7 @@ public class BreadthFirstSearch<T> {
             // reomve the front element from  queue
             queue.remove(0);
             // init a temp list
-            ArrayList<T> temp = new ArrayList<>();
+            ArrayList<T> temp = new ArrayList<T>();
             // check if key is present & adjancy list is not null
             if (adj.containsKey(source) && adj.get(source).size() > 0) {
                 // put all the node of adjancy into temp list
@@ -86,14 +86,14 @@ public class BreadthFirstSearch<T> {
 
     public static void main (String[] args) {
         // instace of class
-        BreadthFirstSearch<String> obj = new BreadthFirstSearch<>();
+        BreadthFirstSearch<String> obj = new BreadthFirstSearch<T>();
         // input edges of grapgh
         obj.addEdges("A", "B");
         obj.addEdges("A", "D");
         obj.addEdges("B", "C");
         obj.addEdges("C", "D");
         // init list of path
-        ArrayList<String> path = new ArrayList<>();
+        ArrayList<String> path = new ArrayList<T>();
         // find the path form source and destination
         path = obj.breadthFirstSearch("A", "D");
         // print the path
