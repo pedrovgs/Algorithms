@@ -47,29 +47,28 @@ public class QuickSort extends SortingAlgorithm {
     quickSort(numbers, 0, numbers.length - 1);
   }
 
-  private void quickSort(int[] numbers, int left, int right) {
-    if (left < right) {
-      int pivotIndex = partition(numbers, left, right);
-      quickSort(numbers, left, pivotIndex - 1);  //sort left of pivot
-      quickSort(numbers, pivotIndex, right);  //sort right of pivot
+   private static int partition(int[] arr, int start, int end) {
+        int pivot = arr[end];
+        int p_idx = start - 1;
+        int tmp;
+        for (int i = start; i < end; ++i) {
+            if (arr[i] <= pivot) {
+                p_idx++;
+                tmp = arr[i];
+                arr[i] = arr[p_idx];
+                arr[p_idx] = tmp;
+            }
+        }
+         swap(numbers, arr[p_idx + 1], arr[end]);        
+        return p_idx + 1;
     }
-  }
 
-  private int partition(int[] numbers, int left, int right) {
-    int pivot = numbers[right];
-    while (left < right) {
-      while (numbers[left] < pivot) {
-        left++;
-      }
-      while (numbers[right] > pivot) {
-        right--;
-      }
-      if (left <= right) {
-        int temp = numbers[left];
-        numbers[left] = numbers[right];
-        numbers[right] = temp;
-      }
+    public static void quickSort(int[] a, int left, int right) {
+        if (left < right) {
+            int pi = partition(a, left, right);  //pi index of pivot
+            quickSort(a, left, pi - 1);  //sort left of pivot
+            quickSort(a, pi + 1, right);  //sort right of pivot
+        }
     }
-    return left; //pivot index
-  }
+
 }
