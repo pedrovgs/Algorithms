@@ -106,7 +106,4 @@ public class BreadthFirstSearch<T> {
     }
 }
 // This code is contributed by Jitendra Singh (jsroyal)
-Output:
-        Following is Breadth First Search A to D
-        [A, B, D]
 
