@@ -51,4 +51,9 @@ public class AreAnagramsTest {
   @Test public void shouldReturnTrueIfWordsAreAnagrams() {
     assertTrue(areAnagrams.check("ana", "naa"));
   }
+
+  @Test
+  public void shouldReturnFalseEvenIfTheSumOfTheCharsIsEqual() throws Exception {
+    assertFalse(areAnagrams.check("abc", "efg"));
+  }
 }
