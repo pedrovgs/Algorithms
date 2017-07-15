@@ -12,7 +12,7 @@ public class BreadthFirstSearch<T> {
     public void addEdges (T source, T destination) {
         if (adj.containsKey(source)) {
             // update the adjancy-list
-            ArrayList<T> list = adj.get(source);            
+            ArrayList<T> list = adj.get(source);
             list.add(destination);
             adj.put(source, list);
         } else {
@@ -93,7 +93,7 @@ public class BreadthFirstSearch<T> {
         obj.addEdges("B", "C");
         obj.addEdges("C", "D");
         // init list of path
-        ArrayList<String> path = new ArrayList<T>();
+        ArrayList<String> path = new ArrayList<>();
         // find the path form source and destination
         path = obj.breadthFirstSearch("A", "D");
         // print the path
@@ -106,7 +106,4 @@ public class BreadthFirstSearch<T> {
     }
 }
 // This code is contributed by Jitendra Singh (jsroyal)
-Output:
-        Following is Breadth First Search A to D
-        [A, B, D]
 
