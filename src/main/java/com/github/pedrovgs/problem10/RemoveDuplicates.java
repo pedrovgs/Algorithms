@@ -26,7 +26,7 @@ import java.util.Set;
  * Given an array full of integers, can you write a method returning other array without duplicated
  * elements? The elements order doesn't care. For example:
  *
- * Input: [1,2,3,1] Output: [1,1,12]
+ * Input: [1,2,3,1] Output: [1,2,3]
  * Input: [1,1,1,1,1] Output: [1]
  *
  * @author Pedro Vicente Gómez Sánchez.
