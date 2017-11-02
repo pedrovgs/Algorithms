@@ -61,7 +61,7 @@ public class SquareRoot {
       if (result > number) {
         top -= 0.1f;
       } else {
-        bottom -= 0.1f;
+        bottom += 0.1f;
       }
       newCandidate = (top + bottom) / 2;
       result = newCandidate * newCandidate;

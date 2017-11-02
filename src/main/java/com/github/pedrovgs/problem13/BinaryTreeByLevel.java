@@ -31,7 +31,7 @@ public class BinaryTreeByLevel {
 
   /**
    * Add implementation based on an additional data structure, one queue which implementation is a
-   * LinkedList. We we are going to do is add elements of the tree to the queue and one by one
+   * LinkedList. What we are going to do is add elements of the tree to the queue and one by one
    * evaluate it adding more binary nodes to the queue if exist. The complexity order in time terms
    * is O(N) where N is the number of elements in the tree. The complexity order in space terms is
    * O(N) where N is the number of elements in the tree because we are going to store every node in

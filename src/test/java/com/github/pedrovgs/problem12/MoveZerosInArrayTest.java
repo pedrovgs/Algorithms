@@ -44,6 +44,14 @@ public class MoveZerosInArrayTest {
     assertArrayEquals(new int[0], array);
   }
 
+  @Test public void shouldWorkWithPositiveNegativeZerosArraySorting() {
+    int[] array = {-1, 0, 2, 4, 0, -3, -5, 0, 6, -3, 0};
+
+    moveZeros.moveSorting(array);
+
+    assertZerosAtRight(array);
+  }
+
   @Test public void shouldOrganizeAnArrayFullOfZerosSorting() {
     int[] array = { 0, 0, 0, 0, 0 };
 
