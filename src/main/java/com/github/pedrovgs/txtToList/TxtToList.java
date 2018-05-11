@@ -41,7 +41,7 @@ public class TxtToList {
 	
 	public List<String> readFileToList(String filepath) {
 		
-		filepath = Paths.get(".").toAbsolutePath().normalize().toString() + filepath;
+		filepath = Paths.get("").toAbsolutePath() + filepath;
 		List<String> datas = new ArrayList<String>();
 		BufferedReader br = null;
 		String line = null;
