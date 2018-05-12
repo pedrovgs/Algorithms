@@ -50,9 +50,9 @@ public class TxtToList {
 			line = br.readLine();
 		    while (line != null) {
 		        
-		        if (line != null) {
-		        	datas.add(line);
-		        }
+		       
+		        datas.add(line);
+		       
 		        line = br.readLine();
 		    }
 		    
