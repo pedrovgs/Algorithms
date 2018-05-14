@@ -21,7 +21,7 @@ import java.io.FileReader;
 import java.util.List;
 import java.util.ArrayList;
 import java.io.IOException;
-import java.nio.file.Paths;
+
 
 /**
  * This class contains and algorithm that reads txt files and turns them to Lists for further use.
@@ -41,7 +41,7 @@ public class TxtToList {
 	
 	public List<String> readFileToList(String filepath) {
 		
-		filepath = Paths.get("").toAbsolutePath() + filepath;
+	
 		List<String> datas = new ArrayList<String>();
 		BufferedReader br = null;
 		String line = null;

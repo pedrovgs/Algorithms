@@ -17,8 +17,8 @@ public class TxtToListTest {
 	
 	//Files we are going to use for the test
 	TxtToList ttl = new TxtToList();
-	String path = "\\src\\test\\resources\\grades.txt";
-	String empty ="\\src\\test\\resources\\empty.txt";
+	String path = "src/test/resources/grades.txt";
+	String empty ="src/test/resources/empty.txt";
 	
 	String[] a = {"1", "3", "4", "6", "2", "4", "7", "8", "10", "9", "5"}; //Expected outcome of the readFileToList test
 	List<String> b = Arrays.asList(a);
