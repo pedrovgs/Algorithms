@@ -18,24 +18,24 @@ package com.github.pedrovgs.txtToList;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.List;
-import java.util.ArrayList;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
- * This class contains and algorithm that reads txt files and turns them to Lists for further use.
+ * This class contains an algorithm that reads txt files and turns them to Lists for further use.
  * @author ShoeMaker
  *
  */
 
 public class TxtToList {
-	
+
 	/**
 	 * Method gets a txt file's path. It opens the file and reads it,
 	 * then tries to get the txt lines and return them as a List.
 	 * @param filepath  The file's path.
-	 * @return An List with the file's lines.
+	 * @return A List with the file's lines.
 	 * @throws IllegalArgumentException when an IOException occurs or the file is empty.
 	 */
 	
