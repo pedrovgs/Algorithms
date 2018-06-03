@@ -52,7 +52,7 @@ public class TxtToList {
       }
       br.close();
     } catch (IOException e) {
-      throw new IllegalArgumentException("Something went wrong while reading the file. Probably wrong path or file doesn't exist.");
+      throw new IllegalArgumentException("Something went wrong. Wrong path or file doesn't exist.");
     }
     if (datas.size() == 0) {
       throw new IllegalArgumentException("File was empty.");

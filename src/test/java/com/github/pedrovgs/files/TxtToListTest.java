@@ -37,16 +37,17 @@ public class TxtToListTest {
   TxtToList ttl = new TxtToList();
   String path = "src/test/resources/grades.txt";
   String empty = "src/test/resources/empty.txt";
-
-  String[] a = {"1", "3", "4", "6", "2", "4", "7", "8", "10", "9", "5"}; //Expected outcome of the readFileToList test
-  List<String> b = Arrays.asList(a);
+  
+  //Expected outcome of the readFileToList test
+  String[] outcome = {"1", "3", "4", "6", "2", "4", "7", "8", "10", "9", "5"}; 
+  List<String> expected = Arrays.asList(outcome);
   
   /**
    * This tests if the readFileToList method works correctly. 
    */
   @Test
   public void test_readFileToList() {
-    Assert.assertEquals(b, ttl.readFileToList(path));
+    Assert.assertEquals(expected, ttl.readFileToList(path));
   }
 
   @Rule
@@ -58,7 +59,7 @@ public class TxtToListTest {
   @Test
   public void test_readFile_IOexception() {
     thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("Something went wrong while reading the file. Probably wrong path or file doesn't exist.");
+    thrown.expectMessage("Something went wrong. Wrong path or file doesn't exist.");
     ttl.readFileToList("asfasdf");
   }
   

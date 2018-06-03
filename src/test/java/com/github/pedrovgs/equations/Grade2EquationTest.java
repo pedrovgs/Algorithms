@@ -31,14 +31,14 @@ import org.junit.rules.ExpectedException;
 public class Grade2EquationTest {
 
   Grade2Equation equation = new Grade2Equation();
-  Double[] x = {-1.0, -1.0};
+  Double[] xvalue = {-1.0, -1.0};
 
   /**
   * Tests a normal case of an equation. 
   */
   @Test
   public void test_solve() {
-    Assert.assertArrayEquals(x, equation.solve(1, 2, 1));    
+    Assert.assertArrayEquals(xvalue, equation.solve(1, 2, 1));    
   }
 
   @Rule
