@@ -31,39 +31,32 @@ import java.util.List;
 
 public class TxtToList {
 
-	/**
-	 * Method gets a txt file's path. It opens the file and reads it,
-	 * then tries to get the txt lines and return them as a List.
-	 * @param filepath  The file's path.
-	 * @return A List with the file's lines.
-	 * @throws IllegalArgumentException when an IOException occurs or the file is empty.
-	 */
-	
-	public List<String> readFileToList(String filepath) {
-		
-	
-		List<String> datas = new ArrayList<String>();
-		BufferedReader br = null;
-		String line = null;
-		try {
-			br = new BufferedReader(new FileReader(filepath));
-			line = br.readLine();
-		    while (line != null) {
-		        
-		       
-		        datas.add(line);
-		       
-		        line = br.readLine();
-		    }
-		    
-		    br.close();
-		}  catch (IOException e) {
-			 throw new IllegalArgumentException("Something went wrong while reading the file. Probably wrong path or file doesn't exist.");
-		} 
-		if (datas.size() == 0) {
-			throw new IllegalArgumentException("File was empty.");
-		}
-		
-		return datas;
-	}
+  /**
+   * Method gets a txt file's path. It opens the file and reads it,
+   * then tries to get the txt lines and return them as a List.
+   * @param filepath  The file's path.
+   * @return A List with the file's lines.
+   * @throws IllegalArgumentException when an IOException occurs or the file is empty.
+   */
+  public List<String> readFileToList(String filepath) {
+
+    List<String> datas = new ArrayList<String>();
+    BufferedReader br = null;
+    String line = null;
+    try {
+      br = new BufferedReader(new FileReader(filepath));
+      line = br.readLine();
+      while (line != null) {
+        datas.add(line);
+        line = br.readLine();
+      }
+      br.close();
+    } catch (IOException e) {
+      throw new IllegalArgumentException("Something went wrong while reading the file. Probably wrong path or file doesn't exist.");
+    }
+    if (datas.size() == 0) {
+      throw new IllegalArgumentException("File was empty.");
+    }
+    return datas;
+  }
 }

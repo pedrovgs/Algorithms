@@ -16,11 +16,11 @@
 
 package com.github.pedrovgs.grade2Equation;
 
-import org.junit.Test;
-
 import org.junit.Assert;
-import org.junit.rules.ExpectedException;
 import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
 
 /**
  * This class contains tests for Grade2Equation.solve method.
@@ -29,29 +29,29 @@ import org.junit.Rule;
  */
 
 public class Grade2EquationTest {
-	
-	Grade2Equation equation = new Grade2Equation();
-	Double x[] = {-1.0, -1.0};
-	
-	/**
-	 * Tests a normal case of an equation. 
-	 */
-	@Test
-	public void test_solve() {
-		Assert.assertArrayEquals(x, equation.solve(1, 2, 1));    
-	}
-	
-	@Rule
-	public ExpectedException thrown = ExpectedException.none();
-	
-	/**
-	 * Tests a case of an unsolvable equation. 
-	 */
-	@Test
-	public void test_solve_IllegalArgumentException() {
-	
-		thrown.expect(IllegalArgumentException.class);
-		thrown.expectMessage("There is no Real solution to this equation.");
-		equation.solve(2, 3, 4);
-	}
+
+  Grade2Equation equation = new Grade2Equation();
+  Double[] x = {-1.0, -1.0};
+
+  /**
+  * Tests a normal case of an equation. 
+  */
+  @Test
+  public void test_solve() {
+    Assert.assertArrayEquals(x, equation.solve(1, 2, 1));    
+  }
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+
+  /**
+  * Tests a case of an unsolvable equation. 
+  */
+  @Test
+  public void test_solve_IllegalArgumentException() {
+
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("There is no Real solution to this equation.");
+    equation.solve(2, 3, 4);
+  }
 }

@@ -23,26 +23,24 @@ package com.github.pedrovgs.grade2Equation;
  */
 
 public class Grade2Equation {
-	
-	/**
-	 * Method solves 2nd grade equations.
-	 * @param a
-	 * @param b
-	 * @param c
-	 * @return An array with the solution/solutions of the equation.
-	 * @throws IllegalArgumentException there is no Real solution to the equation.
-	 */
-	
-	public Double[] solve (double a, double b, double c) {
-		
-		double d = (b * b) - (4 * a * c);
-		if (d < 0) {
-			throw new IllegalArgumentException("There is no Real solution to this equation.");
-		}
-		Double[] x = new Double[2];
-		x[0] = (-b + Math.sqrt(d))/(2 * a);
-		x[1] = (-b - Math.sqrt(d))/(2 * a);
-		return x;
-		
-	}
+
+  /**
+   * Method solves 2nd grade equations.
+   * @param a from a*x^2
+   * @param b from b*x
+   * @param c the fixed number
+   * @return An array with the solution/solutions of the equation.
+   * @throws IllegalArgumentException there is no Real solution to the equation.
+   */
+  public Double[] solve(double a, double b, double c) {
+    
+    double d = (b * b) - (4 * a * c);
+    if (d < 0) {
+      throw new IllegalArgumentException("There is no Real solution to this equation.");
+    }
+    Double[] x = new Double[2];
+    x[0] = (-b + Math.sqrt(d)) / (2 * a);
+    x[1] = (-b - Math.sqrt(d)) / (2 * a);
+    return x;
+  }
 }
