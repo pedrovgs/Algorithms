@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.pedrovgs.txtToList;
+package com.github.pedrovgs.files;
 
 import java.util.Arrays;
 

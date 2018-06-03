@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.pedrovgs.grade2Equation;
+package com.github.pedrovgs.equations;
 
 import org.junit.Assert;
 import org.junit.Rule;

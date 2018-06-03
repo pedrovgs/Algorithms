@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.pedrovgs.grade2Equation;
+package com.github.pedrovgs.equations;
 
 /**
  * This class contains an algorithm that solves 2nd grade equations.
