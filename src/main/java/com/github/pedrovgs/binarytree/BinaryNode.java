@@ -76,7 +76,7 @@ public class BinaryNode<T> {
     if (!data.equals(that.data)) {
       return false;
     }
-    if (left != null ? !left.equals(that.left) : that.left != null) { 
+    if (left != null ? !left.equals(that.left) : that.left != null) {
       return false;
     }
     if (right != null ? !right.equals(that.right) : that.right != null) {

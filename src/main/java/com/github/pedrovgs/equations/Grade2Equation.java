@@ -33,7 +33,7 @@ public class Grade2Equation {
    * @throws IllegalArgumentException there is no Real solution to the equation.
    */
   public Double[] solve(double a, double b, double c) {
-    
+
     double d = (b * b) - (4 * a * c);
     if (d < 0) {
       throw new IllegalArgumentException("There is no Real solution to this equation.");

@@ -60,7 +60,7 @@ public class ListNode<T> {
 
     ListNode listNode = (ListNode) o;
 
-    if (!data.equals(listNode.data)) { 
+    if (!data.equals(listNode.data)) {
       return false;
     }
 

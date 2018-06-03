@@ -26,23 +26,23 @@ import java.util.Map;
 public class Sample {
 
   private List<Object> sample;
-  
+
   public Sample(List<Object> sample) {
     this.sample = sample;
   }
-  
+
   /**
    * Method calculates the frequencies of the Sample.
    * @return A Map of the frequencies of every object in the sample.
    * @throws IllegalArgumentException when the sample is empty.
    */
-  public Map<Object,Double> frequencies() {
+  public Map<Object, Double> frequencies() {
 
     if (sample.size() == 0) {
       throw new IllegalArgumentException("Sample is empty !");
     }
 
-    Map<Object,Double> freq = new HashMap<Object, Double>();
+    Map<Object, Double> freq = new HashMap<Object, Double>();
     double count;
     for (int i = 0; i < sample.size(); i++) {
 
@@ -52,7 +52,7 @@ public class Sample {
     }
     return freq;
   }
-  
+
   /**
    * Method calculates the avg of the Sample.
    * @return The avg.
@@ -74,7 +74,7 @@ public class Sample {
     }
     return avg / sample.size();
   }
-  
+
   /**
    * Method calculates the median of the Sample.
    * @return The median.
