@@ -45,7 +45,11 @@ public class VectorScalarProductTest {
     vectorScalarProduct.calculateScalarProduct(v1, null);
   }
 
-  @Test public void shoudlReturnZeroIfVectorsAreEmpty() {
+  @Test public void shouldReturnZeroIfVectorsAreEmpty() {
+    assertEquals(0, vectorScalarProduct.calculateScalarProduct(new Vector(), new Vector()));
+  }
+
+  @Test(expected = IllegalArgumentException.class) public void shouldThrowExceptionIfVectorsAreNull() {
     assertEquals(0, vectorScalarProduct.calculateScalarProduct(new Vector(null), new Vector(null)));
   }
 
