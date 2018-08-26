@@ -15,6 +15,8 @@
  */
 package com.github.pedrovgs.problem2;
 
+import java.util.Arrays;
+
 /**
  * Class created to represent a Vector of integers. This class uses an array as main data structure
  * because the number of elements inside a vector can't change and we can provide constant
@@ -30,9 +32,6 @@ public class Vector {
   private final int[] elements;
 
   public Vector(int... elements) {
-    if (elements == null) {
-      elements = new int[0];
-    }
     this.elements = elements;
   }
 
@@ -42,5 +41,10 @@ public class Vector {
 
   public int size() {
     return elements.length;
+  }
+
+  @Override
+  public String toString() {
+      return Arrays.toString(elements);
   }
 }
