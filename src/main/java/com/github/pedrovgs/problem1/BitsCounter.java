@@ -66,9 +66,9 @@ public class BitsCounter {
    */
   public int countBitsToOneBasedOnBinaryOperators(int n) {
     int result = 0;
-    while (n > 0) {
+    while (n != 0) {
       result += (n & 1) == 1 ? 1 : 0;
-      n = n >> 1;
+      n = n >>> 1;
     }
     return result;
   }
