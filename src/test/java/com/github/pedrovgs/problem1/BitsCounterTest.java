@@ -82,4 +82,18 @@ public class BitsCounterTest {
     assertEquals(0, bitsCounter.countBitsToOneBasedOnBinaryOperators(0));
   }
 
+  @Test
+  public void numberOfBitsInZeroKernighanMethod() {
+    assertEquals(0, bitsCounter.countNumberOfBitsLogN(0));
+  }
+
+  @Test
+  public void numberOfBitsInNegativeIntegerKernighanMethod() {
+    assertEquals(30, bitsCounter.countNumberOfBitsLogN(-7));
+  }
+
+  @Test public void numberOfBitsKernighanMethod() {
+    assertEquals(3, bitsCounter.countBitsToOneBasedOnBinaryOperators(7));
+  }
+
 }
