@@ -31,12 +31,12 @@ public class Vector {
 
   private final int[] elements;
 
-  public Vector(int... elements) {
-      if(elements == null) {
-          throw new IllegalArgumentException("Vector constructor should not receive null values.");
-      }
-    this.elements = elements;
-  }
+    public Vector(int... elements) {
+        if (elements == null) {
+            throw new IllegalArgumentException("Vector constructor should not receive null values.");
+        }
+        this.elements = elements;
+    }
 
   public int getAt(int index) {
     return elements[index];
