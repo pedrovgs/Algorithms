@@ -25,7 +25,7 @@ public class TrieTest {
         s.add("dolor");
         s.add("sit");
         s.add("amet");
-        trie root = new trie();
+        Trie root = new Trie();
         for (int i = 0; i < s.size(); i++) {
             root.insertIntoTrie(root, s.get(i));
         }
@@ -34,7 +34,7 @@ public class TrieTest {
     @Test public void shouldReturnTrueIfStringIsFound1() {
         String s = "Kashish Kashisk Lorem ipsum dolor dolo sit si amrt amet";
         String[] arr = s.split(" ");
-        trie root = new trie();
+        Trie root = new Trie();
         for (int i = 0; i < arr.length; i++) {
             root.insertIntoTrie(root, arr[i]);
         }
