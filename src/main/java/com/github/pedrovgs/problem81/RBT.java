@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright (C) 2014 Pedro Vicente Gómez Sánchez.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
