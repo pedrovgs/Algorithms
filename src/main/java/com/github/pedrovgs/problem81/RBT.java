@@ -1,5 +1,50 @@
+/*
+ * Copyright (C) 2014 Pedro Vicente Gómez Sánchez.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.github.pedrovgs.problem81;
+
+import com.github.pedrovgs.sortingalgorithm.SortingAlgorithm;
+
+/**
+ * Given an array full of integers implement a quick sort algorithm to sort the content inside
+ * the array.
+ *
+ * @author jsroyal
+ */
+
+  /**
+   * Quicksort (sometimes called partition-exchange sort) is an efficient sorting algorithm, serving
+   * as a systematic method for placing the elements of an array in order. Developed by Tony Hoare
+   * in 1959 and published in 1961, it is still a commonly used algorithm for sorting. When
+   * implemented well, it can be about two or three times faster than its main competitors, merge
+   * sort and heapsort.
+   *
+   * Quicksort is a comparison sort, meaning that it can sort items of any type for which a
+   * "less-than" relation (formally, a total order) is defined. In efficient implementations it is
+   * not a stable sort, meaning that the relative order of equal sort items is not preserved.
+   * Quicksort can operate in-place on an array, requiring small additional amounts of memory to
+   * perform the sorting.
+   *
+   * Mathematical analysis of quicksort shows that, on average, the algorithm takes O(n log n)
+   * comparisons to sort n items. In the worst case, it makes O(n2) comparisons, though this
+   * behavior is rare.
+   */
+
 import java.util.ArrayList;
- public class RBT {
+
+public class RBT{
 	
 	int count=0;
     private final boolean RED = false;
@@ -13,14 +58,16 @@ import java.util.ArrayList;
         int data;
         boolean color=BLACK;
         Node left, right, parent;
-         Node(int data) {
+
+        Node(int data) {
             this.data = data;
             this.left=NIL;
             this.right=NIL;
             this.parent=NIL;
         } 
     }
-     public void insert(int n) {
+
+    public void insert(int n) {
     	Node node = new Node(n);
         Node temp = root;
         if (root == NIL) {
@@ -51,7 +98,8 @@ import java.util.ArrayList;
             makeRBT(node);
         }
     }
-     private void makeRBT(Node node) {
+
+    private void makeRBT(Node node) {
         while (node.parent.color == RED) {
             Node s = NIL;
             if (node.parent == node.parent.parent.right) {
@@ -90,7 +138,8 @@ import java.util.ArrayList;
         }
         root.color = BLACK;//root always black
     }
-     private void rotateLeft(Node node) {
+
+    private void rotateLeft(Node node) {
         if (node.parent == NIL) {
             Node right = root.right;
             root.right = right.left;
@@ -114,7 +163,8 @@ import java.util.ArrayList;
             node.parent.left = node;
         }
     }
-    private void rotateRight(Node node) {
+
+   private void rotateRight(Node node) {
         if (node.parent == NIL) {
             Node left = root.left;
             root.left = root.left.right;
@@ -139,7 +189,7 @@ import java.util.ArrayList;
         }
     }
     
-	public Node Search(Node x,int k) {//Àç±ÍÅ½»ö
+	public Node Search(Node x,int k) {
 		count++;
 		if(x==null || x.data==k) {
 			return x;
@@ -155,7 +205,7 @@ import java.util.ArrayList;
 		return count;
 	}
     
-    public void inorder(Node n) {//ÁßÀ§¼øÈ¸
+    public void inorder(Node n) {
         if (n == NIL) {
             return;
         }
@@ -173,4 +223,4 @@ import java.util.ArrayList;
 			get_Sorted_List(n.right,arr);
 	}
  
-} 
+}
