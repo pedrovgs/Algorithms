@@ -66,10 +66,27 @@ public class BitsCounter {
    */
   public int countBitsToOneBasedOnBinaryOperators(int n) {
     int result = 0;
-    while (n > 0) {
+    while (n != 0) {
       result += (n & 1) == 1 ? 1 : 0;
-      n = n >> 1;
+      n = n >>> 1;
     }
     return result;
   }
+
+    /**
+     * Brian Kernighan's method goes through as many iterations as there are set bits.
+     * So if we have a 32-bit word with only the high bit set,
+     * then it will only go once through the loop.
+     *
+     * @param x
+     * @return
+     */
+    public static int countNumberOfBitsLogN(int x) {
+        int result = 0;
+        while (x != 0) {
+            x &= (x - 1);
+            result++;
+        }
+        return result;
+    }
 }
