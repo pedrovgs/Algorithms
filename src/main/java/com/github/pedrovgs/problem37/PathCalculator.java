@@ -27,7 +27,7 @@ import java.util.List;
  */
 public class PathCalculator {
 
-  public static final String DIR_SEPARATOR = "/";
+  private static final String DIR_SEPARATOR = "/";
 
   /**
    * Iterative algorithm to solve this problem. The complexity order of this algorithm is O(N+M+Ñ)
