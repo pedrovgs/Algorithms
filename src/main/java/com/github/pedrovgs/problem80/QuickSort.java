@@ -65,9 +65,7 @@ public class QuickSort extends SortingAlgorithm {
         right--;
       }
       if (left <= right) {
-        int temp = numbers[left];
-        numbers[left] = numbers[right];
-        numbers[right] = temp;
+        swap(numbers, left, right);
       }
     }
     return left; //pivot index

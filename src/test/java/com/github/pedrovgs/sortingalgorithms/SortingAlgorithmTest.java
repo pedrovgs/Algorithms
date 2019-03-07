@@ -72,11 +72,11 @@ public abstract class SortingAlgorithmTest {
   }
 
   @Test public void shouldSortArray() {
-    int[] input = { 3, 4, 1, 2 };
+    int[] input = { 3, 4, 1, 2, 3 };
 
     sortingAlgorithm.sort(input);
 
-    int[] expectedArray = { 1, 2, 3, 4 };
+    int[] expectedArray = { 1, 2, 3, 3, 4 };
     assertArrayEquals(expectedArray, input);
   }
 }
