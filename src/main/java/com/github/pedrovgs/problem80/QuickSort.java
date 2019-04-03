@@ -57,19 +57,13 @@ public class QuickSort extends SortingAlgorithm {
 
   private int partition(int[] numbers, int left, int right) {
     int pivot = numbers[right];
-    while (left < right) {
-      while (numbers[left] < pivot) {
-        left++;
-      }
-      while (numbers[right] > pivot) {
-        right--;
-      }
-      if (left <= right) {
-        int temp = numbers[left];
-        numbers[left] = numbers[right];
-        numbers[right] = temp;
+    int i = left - 1;
+    for (int j = left; j < right; ++j) {
+      if (numbers[j] <= pivot) {
+        swap(numbers, ++i, j);
       }
     }
-    return left; //pivot index
+    swap(numbers, ++i, right);
+    return i;
   }
 }
