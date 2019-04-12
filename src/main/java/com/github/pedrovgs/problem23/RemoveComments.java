@@ -46,14 +46,18 @@ public class RemoveComments {
     String line = file.getLine();
     while (line != null) {
       char previous = ANY_CHAR;
+      int openIndex = -1;
 
-      for (char c : line.toCharArray()) {
+      char[] arr = line.toCharArray();
+      for (int i = 0; i < arr.length; i++) {
+        char c = arr[i];
         if (openComment) {
-          if (c == SLASH && previous == ASTERISK) {
+          if (c == SLASH && previous == ASTERISK && openIndex < (i - 2)) {
             openComment = false;
           }
         } else {
           if (c == ASTERISK && previous == SLASH) {
+            openIndex = i - 1;
             openComment = true;
             result.deleteCharAt(result.length() - 1);
           } else {

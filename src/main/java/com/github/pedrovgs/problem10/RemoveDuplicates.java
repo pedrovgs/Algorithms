@@ -26,7 +26,7 @@ import java.util.Set;
  * Given an array full of integers, can you write a method returning other array without duplicated
  * elements? The elements order doesn't care. For example:
  *
- * Input: [1,2,3,1] Output: [1,1,12]
+ * Input: [1,2,3,1] Output: [1,2,3]
  * Input: [1,1,1,1,1] Output: [1]
  *
  * @author Pedro Vicente Gómez Sánchez.
@@ -63,7 +63,7 @@ public class RemoveDuplicates {
    */
   public Integer[] removeUsingSorting(Integer[] numbers) {
     validateArray(numbers);
-    if (numbers.length == 1) {
+    if (numbers.length == 1 || numbers.length == 0) {
       return numbers;
     }
 
@@ -71,9 +71,10 @@ public class RemoveDuplicates {
     List<Integer> result = new LinkedList<Integer>();
     for (int i = 0; i < numbers.length - 1; i++) {
       if (!numbers[i].equals(numbers[i + 1])) {
-        result.add(i);
+        result.add(numbers[i]);
       }
     }
+    result.add(numbers[numbers.length - 1]);
     return result.toArray(new Integer[result.size()]);
   }
 

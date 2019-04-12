@@ -25,6 +25,8 @@ import com.github.pedrovgs.binarytree.BinaryNode;
  */
 public class BinaryTreeSerialization {
 
+  private int index;
+
   public BinaryTreeSerialization() {
     index = 0;
   }
@@ -50,8 +52,6 @@ public class BinaryTreeSerialization {
     }
     return stringBuilder.toString();
   }
-
-  static int index = 0;
 
   /**
    * Recursive algorithm based a static index to recreate the original tree properly. The

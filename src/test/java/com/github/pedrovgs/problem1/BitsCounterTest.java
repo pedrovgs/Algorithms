@@ -67,7 +67,33 @@ public class BitsCounterTest {
     assertEquals(3, bitsCounter.countBitsToOneBasedOnBinaryOperators(7));
   }
 
-  @Test public void numberOfBitsIn1990IsSevenBasedOnBinaryOperator() {
-    assertEquals(7, bitsCounter.countBitsToOneBasedOnBinaryOperators(1990));
+  /**
+   * A negative number is represented by calculating its complement and adding 1 to
+   * the result (Two's complement).
+   * eg. ~7 + 1
+   */
+  @Test
+  public void numberOfBitsInNegativeSevenIsThreeBasedOnBinaryOperator() {
+    assertEquals(30, bitsCounter.countBitsToOneBasedOnBinaryOperators(-7));
   }
+
+  @Test
+  public void numberOfBitsInZero() {
+    assertEquals(0, bitsCounter.countBitsToOneBasedOnBinaryOperators(0));
+  }
+
+  @Test
+  public void numberOfBitsInZeroKernighanMethod() {
+    assertEquals(0, bitsCounter.countNumberOfBitsLogN(0));
+  }
+
+  @Test
+  public void numberOfBitsInNegativeIntegerKernighanMethod() {
+    assertEquals(30, bitsCounter.countNumberOfBitsLogN(-7));
+  }
+
+  @Test public void numberOfBitsKernighanMethod() {
+    assertEquals(3, bitsCounter.countBitsToOneBasedOnBinaryOperators(7));
+  }
+
 }

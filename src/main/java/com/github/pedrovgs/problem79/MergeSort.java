@@ -88,5 +88,12 @@ public class MergeSort extends SortingAlgorithm {
       k++;
       i++;
     }
+     //Add
+     // Copy the rest of the right side of the array into the target array
+    while (j <= high) {
+      numbers[k] = helper[j];
+      k++;
+      j++;
+    }
   }
 }

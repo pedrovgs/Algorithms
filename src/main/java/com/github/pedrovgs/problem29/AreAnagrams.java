@@ -15,6 +15,8 @@
  */
 package com.github.pedrovgs.problem29;
 
+import java.util.Arrays;
+
 /**
  * Given two Strings passed as parameter, can you write a method to return true if this words are
  * anagrams?
@@ -30,13 +32,9 @@ public class AreAnagrams {
 
   /**
    * Iterative algorithm to solve this problem. Two words are anagrams just if contains the same
-   * number of letters. Using this property, we are going to calculate the number of letters per
-   * word and check if the sum is the same. We have used an array of int to represent the letters
-   * counter. The complexity order of this algorithm is O(N) where N is the number of letters in
-   * the largest word. In space terms, the complexity order of this algorithm is O(M), where M is
-   * the number of different letters in the alphabet (we assume ascii, 128 different letters),
-   * because we need an additional data structure to store information related to the letters
-   * counter.
+   * number of letters. Using this property, we are going to sort and compare the letters inside
+   * the array.  The complexity order of this algorithm is O(N*Log(N)) where N is the number of
+   * letters in the largest word. In space terms, the complexity order of this algorithm is O(N).
    */
   public boolean check(String a, String b) {
     if (a == null || b == null) {
@@ -45,28 +43,12 @@ public class AreAnagrams {
     if (a.length() != b.length()) {
       return false;
     }
-    int[] lettersA = getLettersAsArray(a);
-    int[] lettersB = getLettersAsArray(b);
-
-    int valuesA = getSumOfArray(lettersA);
-    int valuesB = getSumOfArray(lettersB);
-
-    return valuesA == valuesB;
+    char[] charsA = a.toCharArray();
+    Arrays.sort(charsA);
+    char[] charsB = b.toCharArray();
+    Arrays.sort(charsB);
+    return Arrays.equals(charsA, charsB);
   }
 
-  private static int getSumOfArray(int[] array) {
-    int count = 0;
-    for (int n : array) {
-      count += n;
-    }
-    return count;
-  }
 
-  private static int[] getLettersAsArray(String word) {
-    int[] letters = new int[128];
-    for (char c : word.toCharArray()) {
-      letters[c] = letters[c] + 1;
-    }
-    return letters;
-  }
 }
