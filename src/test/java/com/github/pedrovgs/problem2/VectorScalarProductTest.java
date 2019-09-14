@@ -79,4 +79,17 @@ public class VectorScalarProductTest {
 
     assertEquals(-4, result);
   }
+  @Test public void shouldReturnTrueValueIfHasProductOfMaxIntegerAndZero() {
+    int max = Integer.MAX_VALUE;
+    Vector v1 = new Vector(max, max, max, max);
+    Vector v2 = new Vector(0, 0, 0, 0);
+    assertEquals(0, vectorScalarProduct.calculateScalarProduct(v1, v2));
+  }
+  
+  @Test public void shouldReturnTrueValueIfHasProductOfMinIntegerAndZero() {
+    int min = Integer.MIN_VALUE;
+    Vector v1 = new Vector(min, min, min, min);
+    Vector v2 = new Vector(0, 0, 0, 0);
+    assertEquals(0, vectorScalarProduct.calculateScalarProduct(v1, v2));
+  }
 }
