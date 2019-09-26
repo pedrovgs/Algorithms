@@ -50,58 +50,26 @@ public class MultiplicationWithoutMultiplyTest {
   /**
    * This tests for Testing HomeWord - Dinh The Hiep - 17020731
    */
+
+  //Testing with both negative n1,n2 (n1 < 0, n2 < 0)
   @Test
   public void test1() {
-    assertEquals(-2147483648, multiply.calculate(18092019, Integer.MIN_VALUE));
+    assertEquals(5600, multiply.calculate(-70,-80));
   }
-
+  //Testing with n1 > 0, n2 >0
   @Test
   public void test2() {
-    assertEquals(-1823452685, multiply.calculate(18092019, -999999999));
+    assertEquals(484, multiply.calculate(44, 11));
   }
-
+  //Testing with n1 > 0, n2 < 0
   @Test
   public void test3() {
-    assertEquals(919590144, multiply.calculate(18092019, -900000000));
+    assertEquals(-1500, multiply.calculate(500, -3));
   }
+  //Testing with n2 > 0, n1 < 0
   @Test
   public void test4() {
-    assertEquals(-919590144, multiply.calculate(18092019, 900000000));
+    assertEquals(-4500, multiply.calculate(3, -1500));
   }
-  @Test
-  public void test5() {
-    assertEquals(1823452685, multiply.calculate(18092019, 999999999));
-  }
-  @Test
-  public void test6() {
-    assertEquals(2129391629, multiply.calculate(18092019, Integer.MAX_VALUE));
-  }
-  @Test
-  public void test7() {
-    assertEquals(0, multiply.calculate(Integer.MIN_VALUE, 18092019));
-  }
-  @Test
-  public void test8() {
-    assertEquals(-1823452685, multiply.calculate(-999999999, 18092019));
-  }
-  @Test
-  public void test9() {
-    assertEquals(919590144, multiply.calculate(-900000000, 18092019));
-  }
-  @Test
-  public void test10() {
-    assertEquals(-919590144, multiply.calculate(900000000, 18092019));
-  }
-  @Test
-  public void test11() {
-    assertEquals(1823452685, multiply.calculate(999999999, 18092019));
-  }
-  @Test
-  public void test12() {
-    assertEquals(2129391629, multiply.calculate(Integer.MAX_VALUE, 18092019));
-  }
-  @Test
-  public void test13() {
-    assertEquals(1693868201,multiply.calculate(18092019, 18092019));
-  }
+
 }
