@@ -1,11 +1,11 @@
 Algorithms [![Build Status](https://travis-ci.org/pedrovgs/Algorithms.svg?branch=master)](https://travis-ci.org/pedrovgs/Algorithms)
 ==========
 
-This repository contains my solution for some common algorithms. I've created this repository to learn about algorithms and improve solving different common computer science problems. I'll try to add more solutions if I have time :)
+This repository contains my solution for common algorithms. I've created this repository to learn about algorithms and improve solutions to common computer science problems. I'll try to add more solutions if I have time. :)
 
-Each solved problem has a program written in Java. Every solution is tested and some problems contains more than one solution with different implementations.
+Each solution has a Java program and is tested. Some problems contain mulitple solutions with different implementations.
 
-You can check the solution executing tests inside tests directory. Some of this problems have been resolved using TDD.
+You can check the solution executing tests inside tests directory. Some problems were resolved using TDD.
 
 Problems
 --------
