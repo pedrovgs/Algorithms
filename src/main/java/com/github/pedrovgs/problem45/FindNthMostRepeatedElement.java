@@ -15,7 +15,7 @@
  */
 package com.github.pedrovgs.problem45;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -33,7 +33,7 @@ public class FindNthMostRepeatedElement {
   public int find(int[] numbers, int position) {
     validateInput(numbers, position);
     Integer result = null;
-    Map<Integer, Integer> counter = new HashMap<Integer, Integer>();
+    Map<Integer, Integer> counter = new LinkedHashMap<Integer, Integer>();
     for (int i : numbers) {
       if (counter.get(i) == null) {
         counter.put(i, 1);
