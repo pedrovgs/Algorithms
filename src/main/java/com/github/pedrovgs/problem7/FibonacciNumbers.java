@@ -102,4 +102,10 @@ public class FibonacciNumbers {
       throw new IllegalArgumentException("You can't use negative values as parameter.");
     }
   }
+  
+  public long getGoldenRatio(long n) { 
+    validateInput(n);
+    double phi = (1 + Math.sqrt(5)) / 2.f;
+    return Math.round((Math.pow(phi, n) - Math.pow(-phi, -n)) / (2 * phi - 1));
+  }
 }
