@@ -38,11 +38,11 @@ public class Anagrams {
    */
   public List<String> get(String input) {
     List<String> result = null;
-    if (input == null) {
+    if (input == null) { //checks if there is an input entered
       throw new IllegalArgumentException("You can't pass a null String as input.");
-    } else if (input.isEmpty()) {
+    } else if (input.isEmpty()) { //checks if the input is empty
       result = new LinkedList<String>();
-    } else {
+    } else { //if input is entered, the result changes
       result = getAnagramsInner("", input);
     }
     return result;
@@ -51,10 +51,10 @@ public class Anagrams {
   private List<String> getAnagramsInner(String prefix, String word) {
     List<String> anagrams = new LinkedList<String>();
     int n = word.length();
-    if (n == 0) {
+    if (n == 0) { //if checks if n is 0
       anagrams.add(prefix);
     } else {
-      for (int i = 0; i < n; i++) {
+      for (int i = 0; i < n; i++) { //i increases as long as it is less than n
         //Add the old prefix the new letter
         String newPrefix = prefix + word.charAt(i);
         //Skip the current letter for the next word
