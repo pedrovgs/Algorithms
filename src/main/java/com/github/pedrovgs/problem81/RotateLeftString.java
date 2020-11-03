@@ -2,7 +2,7 @@ package com.github.pedrovgs.problem81;
 
 import java.util.Arrays;
 
-public class RotateStringLeft {
+public class RotateLeftString {
     public static String rotateLeft(String str, int d){
         char[] result = new char[str.length()];
         char[] data = str.toCharArray();
