@@ -18,6 +18,8 @@ package com.github.pedrovgs.problem77;
 /**
  * Can you write a method to print a hello world without use a semicolon?.
  *
+ *你能写一个不使用分号打印 hello world 的方法吗？ 
+ *
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class HelloWorldWithoutSemicolon {
