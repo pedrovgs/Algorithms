@@ -22,6 +22,10 @@ package com.github.pedrovgs.binarytree;
  * (L, S, R), where L and R are binary trees or the empty set and S is a singleton set. Some
  * authors allow the binary tree to be the empty set as well.
  *
+ * 二叉树数据结构的主类。 二叉树是一种树数据结构，其中每个节点最多有两个孩子，分别称为左孩子和右孩子。
+ * 仅使用集合论概念的递归定义是（非空）二叉树是三元组 (L, S, R)，其中 L 和 R 是二叉树或空集，S 是单例集。
+ * 一些作者也允许二叉树是空集。
+ *
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class BinaryNode<T> {
