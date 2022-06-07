@@ -1,6 +1,0 @@
-language: java
-jdk: openjdk8
-
-install: mvn clean install
-
-script: mvn checkstyle:checkstyle
