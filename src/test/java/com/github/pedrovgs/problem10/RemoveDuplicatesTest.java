@@ -126,6 +126,13 @@ public class RemoveDuplicatesTest {
 
     assertTrue(containsUniqueElements(result));
   }
+  @Test public void shouldRemoveDuplicatesIfTheInputIsNotSortedSorting() {
+    Integer[] array = { 1, 5, 5, 6, 7, 7 };
+
+    Integer[] result = removeDuplicates.removeUsingSorting(array);
+
+    assertTrue(containsUniqueElements(result));
+  }
 
   private boolean containsUniqueElements(Integer[] result) {
     Set<Integer> elements = new HashSet<Integer>();
