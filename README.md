@@ -1,4 +1,4 @@
-Algorithms [![Build Status](https://travis-ci.org/pedrovgs/Algorithms.svg?branch=master)](https://travis-ci.org/pedrovgs/Algorithms)
+Algorithms [![QA check](https://github.com/pedrovgs/Algorithms/actions/workflows/check.yml/badge.svg)](https://github.com/pedrovgs/Algorithms/actions/workflows/check.yml)
 ==========
 
 This repository contains my solution for common algorithms. I've created this repository to learn about algorithms and improve solutions to common computer science problems. I'll try to add more solutions if I have time. :)
