@@ -13,8 +13,7 @@ public class CountAlphabet
 			}
 		}
 		return count;
-	}
-     
+	}     
 }
 
 
