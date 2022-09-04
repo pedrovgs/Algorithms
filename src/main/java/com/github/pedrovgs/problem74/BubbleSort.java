@@ -43,18 +43,20 @@ public class BubbleSort extends SortingAlgorithm {
     validateInput(numbers);
 
     int length = numbers.length;
-    boolean swap = true;
-    while (swap) {
-      swap = false;
-      for (int i = 0; i < length - 1; i++) {
-        for (int j = 0; j < length - i - 1; j++) {
-          if (numbers[j] > numbers[j + 1]) {
-            swap(numbers, j, j + 1);
-            swap = true;
+    int temp=0;
+      for (int i = 0; i < length ; i++) 
+      {
+        for (int j = 1; j < (length  - 1); j++) 
+        {
+          if (numbers[j-1] > numbers[j ])
+          {
+            temp=numbers[j-1];
+            numbers[j-1]=arr[j];
+            arr[j]=temp;
           }
         }
       }
-    }
+    
   }
 
-}
+
