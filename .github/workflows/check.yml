@@ -17,4 +17,4 @@ jobs:
         run: mvn checkstyle:checkstyle
 
       - name: Test
-        run: mvn install
+        run: mvn install -DdisableXmlReport=true
