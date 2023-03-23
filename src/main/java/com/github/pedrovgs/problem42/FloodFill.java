@@ -59,7 +59,7 @@ public class FloodFill {
    * an invalid position.
    */
   private static int getValueAt(int[][] picture, int x, int y) {
-    if (x < 0 || y < 0 || x > picture.length || y > picture[x].length) {
+    if (x < 0 || y < 0 || x >= picture.length || y >= picture[x].length) {
       return -1;
     } else {
       return picture[x][y];
