@@ -20,7 +20,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * @author Pedro Vicente Gómez Sánchez.
@@ -95,5 +95,71 @@ public class FindSumsTest {
         findSums.findLinearComplexityOrder(inputArray, inputValue);
 
     assertTrue(result.contains(new Pair<Integer, Integer>(9, -17)));
+  }
+
+  @Test public void shouldWorkWithBoundaryInputValues() {
+    int[][] inputArray = {
+            {Integer.MAX_VALUE, -2, -3, -4},
+            {Integer.MIN_VALUE, 2, 3, 4},
+            {Integer.MAX_VALUE - 1, -2, -3, -4},
+            {Integer.MIN_VALUE + 1, 2, 3, 4},
+            {(Integer.MIN_VALUE + Integer.MAX_VALUE) / 2, 0, 1, 2}
+    };
+    int[] sumValues = { Integer.MAX_VALUE - 2, Integer.MIN_VALUE + 2, Integer.MAX_VALUE - 3, Integer.MIN_VALUE + 3, 0};
+
+    for (int i = 0; i < inputArray.length; i++) {
+      List<Pair<Integer, Integer>> result =
+              findSums.findLinearComplexityOrder(inputArray[i], sumValues[i]);
+
+      if (!result.contains(new Pair<Integer, Integer>(inputArray[i][1], inputArray[i][0]))) {
+        fail("Fail test number " + i + 1);
+      }
+    }
+
+    assertTrue(true);
+  }
+
+  @Test public void shouldNotWorkWithBadInputValues() {
+    int[][] inputArray = {
+            {Integer.MAX_VALUE, 2, 3, 4},
+            {Integer.MIN_VALUE, -2, 3, 4},
+            {Integer.MAX_VALUE - 1, 2, 3, 4},
+            {Integer.MIN_VALUE + 1, -2, -3, 4},
+            {(Integer.MIN_VALUE + Integer.MAX_VALUE) / 2, 0, 1, 2}
+    };
+    int[] sumValues = { Integer.MIN_VALUE + 1, Integer.MAX_VALUE - 1, Integer.MIN_VALUE, Integer.MAX_VALUE, 0};
+
+    for (int i = 0; i < inputArray.length; i++) {
+      List<Pair<Integer, Integer>> result =
+              findSums.findLinearComplexityOrder(inputArray[i], sumValues[i]);
+
+      if (result.contains(new Pair<Integer, Integer>(inputArray[i][1], inputArray[i][0]))) {
+        fail("Fail test number " + i + 1);
+      }
+    }
+
+    assertTrue(true);
+  }
+
+  @Test public void shouldNotWorkWithOverflowNegativeSumValue() {
+    int[] inputArray = { Integer.MIN_VALUE, -1, 0, 1, 9 };
+    int sumValue = Integer.MIN_VALUE - 1;
+
+    List<Pair<Integer, Integer>> result =
+            findSums.findLinearComplexityOrder(inputArray, sumValue);
+
+    assertFalse("Should not allow overflow negative sum input",
+            result.contains(new Pair<Integer, Integer>(-1, Integer.MIN_VALUE)));
+  }
+
+  @Test public void shouldNotWorkWithOverflowPositiveSumValue() {
+    int[] inputArray = { Integer.MAX_VALUE, 1, 0, 1, 9 };
+    int sumValue = Integer.MAX_VALUE + 1;
+
+    List<Pair<Integer, Integer>> result =
+            findSums.findLinearComplexityOrder(inputArray, sumValue);
+
+    assertFalse("Should not allow overflow positive sum input",
+            result.contains(new Pair<Integer, Integer>(1, Integer.MAX_VALUE)));
   }
 }
