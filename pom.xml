@@ -30,6 +30,8 @@
             <failsOnError>true</failsOnError>
             <consoleOutput>true</consoleOutput>
             <configLocation>checkstyle.xml</configLocation>
+            <source>1.6</source>
+            <target>1.6</target>
           </configuration>
           <executions>
             <execution>
