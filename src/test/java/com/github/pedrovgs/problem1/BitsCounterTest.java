@@ -66,7 +66,18 @@ public class BitsCounterTest {
   @Test public void numberOfBitsInSevenIsThreeBasedOnBinaryOperator() {
     assertEquals(3, bitsCounter.countBitsToOneBasedOnBinaryOperators(7));
   }
-
+  @Test public void numberOfBitsInTenIsFourBasedOnBinaryOperator() {
+    assertEquals(4, bitsCounter.countBitsToOneBasedOnBinaryOperators(10));
+  }
+  @Test public void numberOfBitsInTwentyIsFiveBasedOnBinaryOperator() {
+    assertEquals(5, bitsCounter.countBitsToOneBasedOnBinaryOperators(20));
+  }
+  @Test public void numberOfBitsInFortyIsSixBasedOnBinaryOperator() {
+    assertEquals(6, bitsCounter.countBitsToOneBasedOnBinaryOperators(40));
+  }
+  @Test public void numberOfBitsInThirtyIsFiveBasedOnBinaryOperator() {
+    assertEquals(5, bitsCounter.countBitsToOneBasedOnBinaryOperators(30));
+  }
   /**
    * A negative number is represented by calculating its complement and adding 1 to
    * the result (Two's complement).
