@@ -24,7 +24,8 @@ import static org.junit.Assert.assertEquals;
  * @author Pedro Vicente Gómez Sánchez.
  */
 public class SubtractAddingTest {
-
+  private final static int MAX_INT = Integer.MAX_VALUE;
+  private final static int MIN_INT = -MAX_INT;
   private SubtractAdding subtractAdding;
 
   @Before public void setUp() {
@@ -84,4 +85,16 @@ public class SubtractAddingTest {
 
     assertEquals(5, result);
   }
+  @Test public void boundaryTest_subtractAdding(){
+     assertEquals(0, subtractAdding.subtract(MAX_INT, MAX_INT));
+     assertEquals(0, subtractAdding.subtract(MIN_INT, MIN_INT));
+     assertEquals(MAX_INT, subtractAdding.subtract(0, MIN_INT));
+     assertEquals(MIN_INT, subtractAdding.subtract(0, MAX_INT));
+   @Test public void strongBoundaryTest_subtractAdding(){
+     assertEquals(0, subtractAdding.subtract(MAX_INT - 1, MAX_INT - 1));
+     assertEquals(0, subtractAdding.subtract(MAX_INT + 1, MAX_INT + 1));
+     assertEquals(-2, subtractAdding.subtract(MIN_INT - 1, MIN_INT + 1));
+     assertEquals(2, subtractAdding.subtract(MIN_INT + 1, MIN_INT - 1)); 
+     assertEquals(MIN_INT + 1, subtractAdding.subtract(0, MAX_INT - 1));
+     assertEquals(MIN_INT + 2, subtractAdding.subtract(1, MAX_INT - 1));
 }
