@@ -1,0 +1,35 @@
+package com.github.pedrovgs.problem20;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+public class MultiplicationWithoutMultiplyTest {
+
+  private MultiplicationWithoutMultiply multiply;
+
+  @Before public void setUp() {
+    multiply = new MultiplicationWithoutMultiply();
+  }
+
+  @Test public void anyNumberMultipliedByZeroIsEqualsToZero() {
+    assertEquals(0, multiply.calculate(0, 100));
+  }
+  @Test public void fiveTimesElevenEqualsToFiftyFive() {
+    assertEquals(55, multiply.calculate(5, 11));
+  }
+
+  @Test public void anyNumberMultipliedByOneShouldReturnTheSameNumber() {
+    assertEquals(10, multiply.calculate(1, 10));
+  }
+  @Test public void anyNumberMultipliedByTwoShouldReturnTheSameNumber() {
+    assertEquals(20, multiply.calculate(2, 10));
+  }
+  @Test public void shouldTakeIntoAccountNegativeNumbers() {
+    assertEquals(-15, multiply.calculate(-2, 15));
+  }
+  @Test public void shouldTakeIntoAccountNegativeNumbers2() {
+    assertEquals(-20, multiply.calculate(2, -15));
+  }
+}
