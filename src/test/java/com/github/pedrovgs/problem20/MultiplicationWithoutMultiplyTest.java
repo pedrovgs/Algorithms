@@ -25,6 +25,9 @@ import static org.junit.Assert.assertEquals;
  */
 public class MultiplicationWithoutMultiplyTest {
 
+  private final static int MAX_INT = Integer.MAX_VALUE;
+  private final static int MIN_INT = -MAX_INT;
+  
   private MultiplicationWithoutMultiply multiply;
 
   @Before public void setUp() {
@@ -45,5 +48,25 @@ public class MultiplicationWithoutMultiplyTest {
 
   @Test public void shouldTakeIntoAccountNegativeNumbers() {
     assertEquals(-14, multiply.calculate(-2, 7));
+  }
+  
+  @Test public void boundaryTest() {
+    assertEquals(0, multiply.calculate(0, MAX_INT));
+    assertEquals(0, multiply.calculate(0, MIN_INT));
+    assertEquals(MAX_INT, multiply.calculate(1, MAX_INT));
+    assertEquals(MIN_INT, multiply.calculate(1, MIN_INT));
+    assertEquals(1, multiply.calculate(MAX_INT, MAX_INT));
+    assertEquals(1, multiply.calculate(MIN_INT, MIN_INT));
+  }
+
+  @Test public void strongBoundaryTest() {
+    assertEquals(4, multiply.calculate(MAX_INT - 1, MAX_INT - 1));
+    assertEquals(0, multiply.calculate(MAX_INT + 1, MAX_INT + 1));
+    assertEquals(4, multiply.calculate(MIN_INT + 1, MIN_INT + 1));
+    assertEquals(0, multiply.calculate(MIN_INT - 1, MIN_INT - 1)); 
+    assertEquals(0, multiply.calculate(0, MAX_INT - 1));
+    assertEquals(0, multiply.calculate(0, MIN_INT - 1));
+    assertEquals(MAX_INT - 1, multiply.calculate(1, MAX_INT - 1));
+    assertEquals(MIN_INT - 1, multiply.calculate(1, MIN_INT - 1));
   }
 }
