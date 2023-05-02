@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.github.pedrovgs.binarytree;
 
 /**
@@ -63,14 +64,24 @@ public class BinaryNode<T> {
   }
 
   @Override public boolean equals(Object o) {
-    if (this == o) return true;
-    if (!(o instanceof BinaryNode)) return false;
+    if (this == o) {
+      return true;
+    }
+    if (!(o instanceof BinaryNode)) {
+      return false;
+    }
 
     BinaryNode that = (BinaryNode) o;
 
-    if (!data.equals(that.data)) return false;
-    if (left != null ? !left.equals(that.left) : that.left != null) return false;
-    if (right != null ? !right.equals(that.right) : that.right != null) return false;
+    if (!data.equals(that.data)) {
+      return false;
+    }
+    if (left != null ? !left.equals(that.left) : that.left != null) {
+      return false;
+    }
+    if (right != null ? !right.equals(that.right) : that.right != null) {
+      return false;
+    }
 
     return true;
   }

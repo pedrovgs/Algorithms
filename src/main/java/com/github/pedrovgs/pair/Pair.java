@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.github.pedrovgs.pair;
 
 /**
@@ -31,13 +32,21 @@ public class Pair<A, B> {
   }
 
   @Override public boolean equals(Object o) {
-    if (this == o) return true;
-    if (!(o instanceof Pair)) return false;
+    if (this == o) {
+      return true;
+    }
+    if (!(o instanceof Pair)) {
+      return false;
+    }
 
     Pair pair = (Pair) o;
 
-    if (!a.equals(pair.a)) return false;
-    if (!b.equals(pair.b)) return false;
+    if (!a.equals(pair.a)) {
+      return false;
+    }
+    if (!b.equals(pair.b)) {
+      return false;
+    }
 
     return true;
   }
