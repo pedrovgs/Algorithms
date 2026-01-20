@@ -15,6 +15,8 @@
  */
 package com.github.pedrovgs.linkedlist;
 
+import java.util.Objects;
+
 /**
  * Main class for linked list data structure. A linked list is a data structure consisting of a
  * group of nodes which together represent a sequence. Under the simplest form, each node is
@@ -57,7 +59,7 @@ public class ListNode<T> {
 
     if (!data.equals(listNode.data)) return false;
 
-    return true;
+    return Objects.equals(next, listNode.next);
   }
 
   @Override public int hashCode() {
