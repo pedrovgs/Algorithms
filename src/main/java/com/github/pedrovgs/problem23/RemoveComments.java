@@ -45,29 +45,34 @@ public class RemoveComments {
     boolean openComment = false;
     String line = file.getLine();
     while (line != null) {
-      char previous = ANY_CHAR;
-      int openIndex = -1;
-
-      char[] arr = line.toCharArray();
-      for (int i = 0; i < arr.length; i++) {
-        char c = arr[i];
-        if (openComment) {
-          if (c == SLASH && previous == ASTERISK && openIndex < (i - 2)) {
-            openComment = false;
-          }
-        } else {
-          if (c == ASTERISK && previous == SLASH) {
-            openIndex = i - 1;
-            openComment = true;
-            result.deleteCharAt(result.length() - 1);
-          } else {
-            result.append(c);
-          }
-        }
-        previous = c;
-      }
+      openComment = handleLineAndGetEndsWithOpenComment(result, openComment, line);
       line = file.getLine();
     }
     return result.toString();
+  }
+
+  private boolean handleLineAndGetEndsWithOpenComment(StringBuilder result, boolean openComment, String line) {
+    char previous = ANY_CHAR;
+    int openIndex = -1;
+
+    char[] arr = line.toCharArray();
+    for (int i = 0; i < arr.length; i++) {
+      char c = arr[i];
+      if (openComment) {
+        if (c == SLASH && previous == ASTERISK && openIndex < (i - 2)) {
+          openComment = false;
+        }
+      } else {
+        if (c == ASTERISK && previous == SLASH) {
+          openIndex = i - 1;
+          openComment = true;
+          result.deleteCharAt(result.length() - 1);
+        } else {
+          result.append(c);
+        }
+      }
+      previous = c;
+    }
+    return openComment;
   }
 }
